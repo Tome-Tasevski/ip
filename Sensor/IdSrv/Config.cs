@@ -65,7 +65,7 @@ namespace IdSrv
                     }
                     //,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
                                                 //ovie podatoci na aplikacijata (vo nashiot slucha Client)
-                    ,EnableLocalLogin = false 
+                    ,EnableLocalLogin = true 
                 }
             };
         }
