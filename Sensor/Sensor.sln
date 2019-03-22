@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdSrv", "IdSrv\IdSrv.csproj", "{FDB5E76D-9361-4E11-9F3A-1489D2CD6DFB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sp-saml", "..\..\..\Documents\Visual Studio 2017\Projects\IdSvrHost\sp-saml\sp-saml.csproj", "{9633FC80-8B6D-406E-8D29-25E4D5223CE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sp-saml", "..\..\..\Documents\Visual Studio 2017\Projects\IdSvrHost\sp-saml\sp-saml.csproj", "{FBBBD95F-2460-48FA-B578-420C7D6B92B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{FDB5E76D-9361-4E11-9F3A-1489D2CD6DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDB5E76D-9361-4E11-9F3A-1489D2CD6DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDB5E76D-9361-4E11-9F3A-1489D2CD6DFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9633FC80-8B6D-406E-8D29-25E4D5223CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9633FC80-8B6D-406E-8D29-25E4D5223CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9633FC80-8B6D-406E-8D29-25E4D5223CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9633FC80-8B6D-406E-8D29-25E4D5223CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBBBD95F-2460-48FA-B578-420C7D6B92B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBBBD95F-2460-48FA-B578-420C7D6B92B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBBBD95F-2460-48FA-B578-420C7D6B92B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBBBD95F-2460-48FA-B578-420C7D6B92B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
