@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Quickstart.UI;
+using IdentityServer4.Saml;
+using IdentityServer4.Saml.Models;
 using IdentityServer4.Test;
 
 namespace IdSrv
@@ -66,8 +69,26 @@ namespace IdSrv
                     //,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
                                                 //ovie podatoci na aplikacijata (vo nashiot slucha Client)
                     ,EnableLocalLogin = true 
+                },
+                new Client {
+                      ClientId = "http://localhost:33117/saml",
+                      ClientName = "RSK SAML2P Test Client",
+                      ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
+                      AllowedScopes = { "openid", "profile", "sensorsapi" }
                 }
             };
+        }
+
+        public static List<ServiceProvider> GetServiceProviders()
+        {
+            return new List<ServiceProvider>
+            {
+                new ServiceProvider {
+                      EntityId = "http://localhost:33117/saml",
+                      SigningCertificates = {new X509Certificate2("TestClient.cer")},
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:33117/signin-saml") }
+                }
+        };
         }
     }
 }
