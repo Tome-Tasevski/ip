@@ -1,0 +1,485 @@
+2019-03-22T16:38:54.9714759+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:38:54.9999831+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:38:55.0293857+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:38:55.3859405+01:00 80000033-0007-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHNTsMwEIRfJfI9xLGTkK6aSoUeqFRE1QYOXJCbWK2lZF28DuLxcX9ARaBeLK13Ps%2FOekyq78QepoPf4Uq%2FD5p89Nl3SHDqVGxwCFaRIUDVawLfwHr6uABxw2HvrLeN7dglcx1RRNp5Y5FF81nF3so2bxqe87K4bbMsk2WWpbyQxaYtRoVOJYtetKOgr1jAA0Q06DmSV%2BjDFU9HMZexEHWagywhF68smoUUBtXBpWI77%2FeQJJ1tVLez5EHKVMjkMGpCZFk0%2FZ7o3iINvXZr7T5Mo59Xi3%2FogssRT8hs0WB8eIRFy%2FMW7gy2BrfX829OIoKHul7Gy6d1zSbj497gGM1N%2FljmIpPBMmjGx%2FNHeS5%2Ff9%2FkCwAA%2F%2F8DAA%3D%3D&RelayState=4_pwuciCzkq66Zy5fUKVSGzA&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=CMOzUDndUvk6PwpB5w7BQY8Gk3y%2BdhAxgA23eVo2r2ygGg3iiqOgRwsjPAXGJnEuv5M66XnuSrVagSmX6PmUF7fVWmon%2BNAX8rPhHSJCwgQGEkIUP60jIGA4XiDk66oJJUmNYNXMSDgER1Fn%2BelP%2BA9VhSEEc5Nnsj%2FRrWOsREwqqEEQ9K7hrT9VW%2Bu3GiirMQ2GOEUkxYtt9rL%2BFMzjlDGjc0hVU9lTu%2BMWVTLgJ1Cy%2B%2F2jIliQR31boOTJKFIjZbHuzO3erafM9LSpYyP%2FCTsNtwmfoBsda%2B926zZXKWI%2B6BXJnE3BZ1pQhyQaRjYX5DXcbqAMhRjOd1SAKkXDJw%3D%3D   (ca22a1cb)
+2019-03-22T16:38:55.5515104+01:00 80000033-0007-ff00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:38:55.8236645+01:00 80000033-0007-ff00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:38:52 PM is greater than curent time of 3/22/2019 3:38:55 PM. Allowing values 0 seconds in the future to continue. (58ed660d)
+2019-03-22T16:38:55.8295016+01:00 80000033-0007-ff00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:40:52 PM is less than curent time of 3/22/2019 3:38:55 PM. Allowing values 0 seconds in the past to continue. (b999edeb)
+2019-03-22T16:38:55.8639081+01:00 80000033-0007-ff00-b63f-84710c7967bb [ERR] Invalid ACS URL requested
+{
+  "ClientId": "http://localhost:52430/saml",
+  "ClientName": "RSK SAML2P Test Client",
+  "AllowedRedirectUris": [],
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "4_pwuciCzkq66Zy5fUKVSGzA",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (2238d2f3)
+2019-03-22T16:38:55.8695958+01:00 80000033-0007-ff00-b63f-84710c7967bb [ERR] Request validation failed (abd529bc)
+2019-03-22T16:38:55.8748649+01:00 80000033-0007-ff00-b63f-84710c7967bb [ERR] Request validation failed
+{
+  "ClientId": "http://localhost:52430/saml",
+  "ClientName": "RSK SAML2P Test Client",
+  "AllowedRedirectUris": [],
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "4_pwuciCzkq66Zy5fUKVSGzA",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (bc451faf)
+2019-03-22T16:38:55.9356957+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/home/error?errorId=CfDJ8Dx8IQbizV1LqviZVbcO2wyv1MB5-el8s1zukm4CWeZt6nxNeT5Tonu65k0Un8x9Tk2I-gw_xX8Xuv6yzbW8N4BPMEHdmETHtilMbwbWzdph7C-xVsWKVlSqoEYKt1gIa28eEFH4OwhrfpOGnBDCCPJqdGda_NDjGoR3FBxNSEfRc_uPUeYA2uaBWCkLiTxPfHRvxkASwSXTskJ9hNA2b_uKKfwGH1iULGCQHMXr5vRxVMYER5k0_AONXSakUqTmtUEverX8AyzQY-azrzO-WAul5A6UGEGwyrjj8UeAMaOXf-QlGc81s0jrYRjbu58KAtc4Ss-341dgmdyW-1BjROk   (ca22a1cb)
+2019-03-22T16:38:55.9635310+01:00 80000033-0007-ff00-b63f-84710c7967bb [INF] Request finished in 579.131ms 302  (791a596a)
+2019-03-22T16:38:56.1701677+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Error\", controller = \"Home\"}". Executing action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" (a44c0341)
+2019-03-22T16:38:56.2272484+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" with arguments (["CfDJ8Dx8IQbizV1LqviZVbcO2wyv1MB5-el8s1zukm4CWeZt6nxNeT5Tonu65k0Un8x9Tk2I-gw_xX8Xuv6yzbW8N4BPMEHdmETHtilMbwbWzdph7C-xVsWKVlSqoEYKt1gIa28eEFH4OwhrfpOGnBDCCPJqdGda_NDjGoR3FBxNSEfRc_uPUeYA2uaBWCkLiTxPfHRvxkASwSXTskJ9hNA2b_uKKfwGH1iULGCQHMXr5vRxVMYER5k0_AONXSakUqTmtUEverX8AyzQY-azrzO-WAul5A6UGEGwyrjj8UeAMaOXf-QlGc81s0jrYRjbu58KAtc4Ss-341dgmdyW-1BjROk"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:38:56.2469507+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 11.1309ms. (50a9e262)
+2019-03-22T16:38:56.2858823+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Error". (c83d0e25)
+2019-03-22T16:38:56.3917903+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Executed ViewResult - view "Error" executed in 116.3879ms. (f66409e9)
+2019-03-22T16:38:56.3980105+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" in 221.5684ms (afa2e885)
+2019-03-22T16:38:56.4115221+01:00 8000001d-0002-fe00-b63f-84710c7967bb [INF] Request finished in 472.8108ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:38:56.4529648+01:00 80000035-0007-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/lib/bootstrap/js/bootstrap.js   (ca22a1cb)
+2019-03-22T16:38:56.4649429+01:00 8000003c-0004-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/lib/bootstrap/css/bootstrap.css   (ca22a1cb)
+2019-03-22T16:38:56.4673630+01:00 8000000c-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/lib/jquery/jquery.js   (ca22a1cb)
+2019-03-22T16:38:56.4766280+01:00 80000019-0005-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/icon.png   (ca22a1cb)
+2019-03-22T16:38:56.4793453+01:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/css/site.css   (ca22a1cb)
+2019-03-22T16:38:56.4965141+01:00 80000035-0007-ff00-b63f-84710c7967bb [INF] The file "/lib/bootstrap/js/bootstrap.js" was not modified (f1f8d725)
+2019-03-22T16:38:56.4979742+01:00 8000000c-0001-fa00-b63f-84710c7967bb [INF] The file "/lib/jquery/jquery.js" was not modified (f1f8d725)
+2019-03-22T16:38:56.5003609+01:00 8000003c-0004-ff00-b63f-84710c7967bb [INF] The file "/lib/bootstrap/css/bootstrap.css" was not modified (f1f8d725)
+2019-03-22T16:38:56.5086278+01:00 80000019-0005-fb00-b63f-84710c7967bb [INF] The file "/icon.png" was not modified (f1f8d725)
+2019-03-22T16:38:56.5100933+01:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] The file "/css/site.css" was not modified (f1f8d725)
+2019-03-22T16:38:56.5232572+01:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Request finished in 53.7222ms 304 text/css (791a596a)
+2019-03-22T16:38:56.5265493+01:00 8000000c-0001-fa00-b63f-84710c7967bb [INF] Request finished in 65.7392ms 304 application/javascript (791a596a)
+2019-03-22T16:38:56.5280042+01:00 8000003c-0004-ff00-b63f-84710c7967bb [INF] Request finished in 80.9641ms 304 text/css (791a596a)
+2019-03-22T16:38:56.5358375+01:00 80000019-0005-fb00-b63f-84710c7967bb [INF] Request finished in 70.5469ms 304 image/png (791a596a)
+2019-03-22T16:38:56.5431896+01:00 80000035-0007-ff00-b63f-84710c7967bb [INF] Request finished in 103.2945ms 304 application/javascript (791a596a)
+2019-03-22T16:39:44.2795898+01:00 80000074-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHNTsMwEIRfJfI9xInT0qyaSoUeqFRE1QYOXJDjOq2lZF28DuLxcX%2BoQKBeLK13Ps%2FOekyya7M9THu%2Fw5V%2B7zX56LNrkeDUKVnvEKwkQ4Cy0wRewXr6uIDshsPeWW%2BVbdlP5joiibTzxiKL5rOSvXEtVS2LmkvR5KqRo1QOlWya25GqN8WQs%2BhFOwr6kgU8QES9niN5iT5c8bSIuYizrEoHIArI81cWzUIKg%2FLgUrKd93tIktYq2e4seRAizURyGDUhsiyafk90b5H6Tru1dh9G6efV4h96yEXBEzJbNBgfHmHR8ryFO4Mbg9vr%2BeuTiOChqpbx8mldscn4uDc4RnOTP5aDLBfBMmjGx%2FOiPJe%2Fv2%2FyBQAA%2F%2F8DAA%3D%3D&RelayState=x8Sd6-xGt5kuqD0pmg5G-aLS&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=I%2B3aNZS6CTJPCCwifcunq%2FZzjRKsn6%2BDPW0qN9LfArJQm30XgjkxPC7I4dAVman4bBJAj4ZYYl0WyNEuJnpn%2BrXVAZsa7qp4es5LZpVL3M6hHVCAPCCfOqJKaqMi6Prcya608OgLntY%2FaevePZqOjIFcL2%2FngZK39L%2BAJ4UdZ%2BkkOyEB0%2BJAaELN3ZP5ERsBjfl32q57DbRGjD%2F5RrRJIieMVTeHqnflPMAaZvAinzufGZrQdyp7o0nUKB8dOv3uptWkLoD8UtSEG5IgurWn90Un4W3%2ByTeOpTWU4gdXOtQ65F9Hp1053xRwW%2B3uaiOkTBBIzTtp3cU1hQ6yXVfSkQ%3D%3D   (ca22a1cb)
+2019-03-22T16:39:44.2930574+01:00 80000074-0004-fe00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:39:44.3105042+01:00 80000074-0004-fe00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:39:44 PM is greater than curent time of 3/22/2019 3:39:44 PM. Allowing values 0 seconds in the future to continue. (fb59aa44)
+2019-03-22T16:39:44.3167454+01:00 80000074-0004-fe00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:41:44 PM is less than curent time of 3/22/2019 3:39:44 PM. Allowing values 0 seconds in the past to continue. (21828e5b)
+2019-03-22T16:39:44.3264799+01:00 80000074-0004-fe00-b63f-84710c7967bb [ERR] Invalid ACS URL requested
+{
+  "ClientId": "http://localhost:52430/saml",
+  "ClientName": "RSK SAML2P Test Client",
+  "AllowedRedirectUris": [],
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "x8Sd6-xGt5kuqD0pmg5G-aLS",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (d3375917)
+2019-03-22T16:39:44.3334053+01:00 80000074-0004-fe00-b63f-84710c7967bb [ERR] Request validation failed (abd529bc)
+2019-03-22T16:39:44.3397106+01:00 80000074-0004-fe00-b63f-84710c7967bb [ERR] Request validation failed
+{
+  "ClientId": "http://localhost:52430/saml",
+  "ClientName": "RSK SAML2P Test Client",
+  "AllowedRedirectUris": [],
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "x8Sd6-xGt5kuqD0pmg5G-aLS",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (36de3360)
+2019-03-22T16:39:44.3469716+01:00 80000074-0004-fe00-b63f-84710c7967bb [INF] Request finished in 67.644ms 302  (791a596a)
+2019-03-22T16:39:44.3709162+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/home/error?errorId=CfDJ8Dx8IQbizV1LqviZVbcO2wxVPPGZgbS3J8KBbD3yAZKrgKM0IIe8ZwrpjJ4-qsqpoeqyidaCdMfjdspaQ8J1PyGJG9SYAUWlcrUfMS5J0FLec_e22j4SCXnsRPueOdVx-PP7ofZWpTn-tip76OpRjBGGX9LsNWF-wEckrgo_JKb8Ve2GPbioD-LyeFAv5vM_XT4jH21H4GLgQKdYG8CEHNViMgEhlzQqc67ZBRjeMkN1ZITZy-nhVbTrGAoh7ebI5jTkkUdqHT5ToZFVeB6UVoaJBzsZ5YCwDrpvIsBTTyQrFZZHckjkBGPHEuJaAitzqv4uySyRVqngikeytT1iNB8   (ca22a1cb)
+2019-03-22T16:39:44.3780499+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Error\", controller = \"Home\"}". Executing action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" (a44c0341)
+2019-03-22T16:39:44.3864139+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" with arguments (["CfDJ8Dx8IQbizV1LqviZVbcO2wxVPPGZgbS3J8KBbD3yAZKrgKM0IIe8ZwrpjJ4-qsqpoeqyidaCdMfjdspaQ8J1PyGJG9SYAUWlcrUfMS5J0FLec_e22j4SCXnsRPueOdVx-PP7ofZWpTn-tip76OpRjBGGX9LsNWF-wEckrgo_JKb8Ve2GPbioD-LyeFAv5vM_XT4jH21H4GLgQKdYG8CEHNViMgEhlzQqc67ZBRjeMkN1ZITZy-nhVbTrGAoh7ebI5jTkkUdqHT5ToZFVeB6UVoaJBzsZ5YCwDrpvIsBTTyQrFZZHckjkBGPHEuJaAitzqv4uySyRVqngikeytT1iNB8"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:39:44.3928603+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.3314ms. (50a9e262)
+2019-03-22T16:39:44.3993935+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Error". (c83d0e25)
+2019-03-22T16:39:44.4426050+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Executed ViewResult - view "Error" executed in 21.6751ms. (f66409e9)
+2019-03-22T16:39:44.4621653+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" in 77.7315ms (afa2e885)
+2019-03-22T16:39:44.4695957+01:00 80000075-0004-fe00-b63f-84710c7967bb [INF] Request finished in 98.9512ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:39:44.4786486+01:00 80000033-0005-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/lib/bootstrap/css/bootstrap.css   (ca22a1cb)
+2019-03-22T16:39:44.4840652+01:00 8000001f-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/lib/jquery/jquery.js   (ca22a1cb)
+2019-03-22T16:39:44.5004524+01:00 80000028-0004-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/lib/bootstrap/js/bootstrap.js   (ca22a1cb)
+2019-03-22T16:39:44.5139401+01:00 8000001f-0006-fd00-b63f-84710c7967bb [INF] The file "/lib/jquery/jquery.js" was not modified (f1f8d725)
+2019-03-22T16:39:44.5160719+01:00 80000028-0004-fd00-b63f-84710c7967bb [INF] The file "/lib/bootstrap/js/bootstrap.js" was not modified (f1f8d725)
+2019-03-22T16:39:44.5282890+01:00 80000033-0005-fd00-b63f-84710c7967bb [INF] The file "/lib/bootstrap/css/bootstrap.css" was not modified (f1f8d725)
+2019-03-22T16:39:44.5318642+01:00 8000001f-0006-fd00-b63f-84710c7967bb [INF] Request finished in 44.2082ms 304 application/javascript (791a596a)
+2019-03-22T16:39:44.5340422+01:00 80000028-0004-fd00-b63f-84710c7967bb [INF] Request finished in 46.2849ms 304 application/javascript (791a596a)
+2019-03-22T16:39:44.5538629+01:00 8000003a-0006-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/css/site.css   (ca22a1cb)
+2019-03-22T16:39:44.5577289+01:00 80000033-0005-fd00-b63f-84710c7967bb [INF] Request finished in 73.2061ms 304 text/css (791a596a)
+2019-03-22T16:39:44.5734070+01:00 8000003a-0006-fc00-b63f-84710c7967bb [INF] The file "/css/site.css" was not modified (f1f8d725)
+2019-03-22T16:39:44.5804063+01:00 8000003a-0006-fc00-b63f-84710c7967bb [INF] Request finished in 98.6946ms 304 text/css (791a596a)
+2019-03-22T16:39:44.5886095+01:00 80000009-0007-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/icon.png   (ca22a1cb)
+2019-03-22T16:39:44.5959326+01:00 80000009-0007-fb00-b63f-84710c7967bb [INF] The file "/icon.png" was not modified (f1f8d725)
+2019-03-22T16:39:44.6034366+01:00 80000009-0007-fb00-b63f-84710c7967bb [INF] Request finished in 17.9537ms 304 image/png (791a596a)
+2019-03-22T16:39:44.6556656+01:00 80000020-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/favicon.ico   (ca22a1cb)
+2019-03-22T16:39:44.6784695+01:00 80000020-0006-fd00-b63f-84710c7967bb [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\aleksandra.koceva\Desktop\ip\Sensor\IdSrv\wwwroot\favicon.ico"' (27b0a520)
+2019-03-22T16:39:44.6851225+01:00 80000020-0006-fd00-b63f-84710c7967bb [INF] Request finished in 29.6513ms 0 image/x-icon (791a596a)
+2019-03-22T16:46:04.0631530+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:46:04.0894475+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:46:04.1038268+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:46:04.4162647+01:00 80000005-0004-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHRT8IwEMb%2FlaXvc906prswEpQHSTASmD74YkpXoMl2xV5n%2FPMtA41Gw0uT632%2FfvddxyS7NjvAtPd7XOm3XpOPProWCU6divUOwUoyBCg7TeAVrKcPC8iuOByc9VbZlv1kLiOSSDtvLLJoPqvYa7G9VsW2zJXiMi9SKeXNNhejZtOIUuVpw6Jn7SjoKxbwABH1eo7kJfpwxdMy5iLOsjodQV4AT19YNAspDMqjS8X23h8gSVqrZLu35EGINBPJcdSEyLJo%2BjXRnUXqO%2B3W2r0bpZ9Wi3%2FogouSJ2R2aDA%2BPsKi5XkLtwYbg7vL%2BTcnEcF9XS%2Fj5eO6ZpPxsDcYornJH8tRlotgGTTj4fxWnsvf3zf5BAAA%2F%2F8DAA%3D%3D&RelayState=d33kS1ecvs1H8FVyH2u06Rm1&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=oeN0Z35tBkrmQCncUFG2yaD289zD8lGhVvHRw%2FHHDnuObPMLgvyxrMdE3U5v3RLc6y%2FbF9Vxs%2FKRb9SJGBxTSevYl2ZI%2FJ%2ByeRSmmyplPo6WsySZEqht10J9max9QBkB1fT%2B864Ay%2FaYJ%2B2OnDh9zILCOcd6lMlzzj7Az7BA3PzHwd9cXjtBeIgV6cgQVfPASs2fLvhQ3YsEfpoI6kNrmaF3t5Z4mCTgPFyP1TBdkMLA8DxSs4eRz6gO%2FAIYcKEoU5GYcoIwPNWpRWAu7%2FTsYYpwoZ1IUNTny%2FhUVu5F5z01YloqxSAcv6dvXeSfk1rN3qSB4HH0DPT0gowk10lBJw%3D%3D   (ca22a1cb)
+2019-03-22T16:46:04.5877538+01:00 80000005-0004-fb00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:46:04.8226262+01:00 80000005-0004-fb00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:46:01 PM is greater than curent time of 3/22/2019 3:46:04 PM. Allowing values 0 seconds in the future to continue. (5f7e5786)
+2019-03-22T16:46:04.8288798+01:00 80000005-0004-fb00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:48:01 PM is less than curent time of 3/22/2019 3:46:04 PM. Allowing values 0 seconds in the past to continue. (d2029a7e)
+2019-03-22T16:46:04.8542081+01:00 80000005-0004-fb00-b63f-84710c7967bb [ERR] Invalid ACS URL requested
+{
+  "ClientId": "http://localhost:52430/saml",
+  "ClientName": "RSK SAML2P Test Client",
+  "AllowedRedirectUris": [],
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "d33kS1ecvs1H8FVyH2u06Rm1",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (b859b3d5)
+2019-03-22T16:46:04.8603659+01:00 80000005-0004-fb00-b63f-84710c7967bb [ERR] Request validation failed (abd529bc)
+2019-03-22T16:46:04.8655580+01:00 80000005-0004-fb00-b63f-84710c7967bb [ERR] Request validation failed
+{
+  "ClientId": "http://localhost:52430/saml",
+  "ClientName": "RSK SAML2P Test Client",
+  "AllowedRedirectUris": [],
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "d33kS1ecvs1H8FVyH2u06Rm1",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (ebdee712)
+2019-03-22T16:46:04.9200389+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/home/error?errorId=CfDJ8Dx8IQbizV1LqviZVbcO2wy6vyQMKaajxtK6TfRdhHIN9Be9-QNAkSuiExCZKp62fxGmISqZbydbEycD5dKBuB-XaSMIwYtnZaVGLVbbpw3wT_D0T-0mXUuc3yk5wVp3ovQpOkI4Rb_rPnIZZUVEgXRz8MDFGmtCrzXBnKnqslM5CZ_3TDhsmHmBYk9ttjY-zGjPtxQgLPm031aeXLtmUe3lwuVUarlOKkmWxf93Tw4oJjnFf94WZZdHfs6WpRUzP3rgwogmboVe3rJV_HlI_aY1ApwQ-ZxL0UzecBv0OvklQ12Hy0t_hmdgEuH9tmsKuaKzsJjvOeIlsJ6kp2XVW3s   (ca22a1cb)
+2019-03-22T16:46:04.9618319+01:00 80000005-0004-fb00-b63f-84710c7967bb [INF] Request finished in 548.2454ms 302  (791a596a)
+2019-03-22T16:46:05.1363120+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"Error\", controller = \"Home\"}". Executing action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" (a44c0341)
+2019-03-22T16:46:05.1801974+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" with arguments (["CfDJ8Dx8IQbizV1LqviZVbcO2wy6vyQMKaajxtK6TfRdhHIN9Be9-QNAkSuiExCZKp62fxGmISqZbydbEycD5dKBuB-XaSMIwYtnZaVGLVbbpw3wT_D0T-0mXUuc3yk5wVp3ovQpOkI4Rb_rPnIZZUVEgXRz8MDFGmtCrzXBnKnqslM5CZ_3TDhsmHmBYk9ttjY-zGjPtxQgLPm031aeXLtmUe3lwuVUarlOKkmWxf93Tw4oJjnFf94WZZdHfs6WpRUzP3rgwogmboVe3rJV_HlI_aY1ApwQ-ZxL0UzecBv0OvklQ12Hy0t_hmdgEuH9tmsKuaKzsJjvOeIlsJ6kp2XVW3s"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:46:05.2024627+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 13.2572ms. (50a9e262)
+2019-03-22T16:46:05.2454966+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Error". (c83d0e25)
+2019-03-22T16:46:05.3388929+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Executed ViewResult - view "Error" executed in 116.7959ms. (f66409e9)
+2019-03-22T16:46:05.3444528+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" in 202.4921ms (afa2e885)
+2019-03-22T16:46:05.3559169+01:00 80000002-0004-fa00-b63f-84710c7967bb [INF] Request finished in 433.4449ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:46:53.9999005+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:46:54.0288152+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:46:54.0436406+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:46:54.3517486+01:00 8000000c-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHNTsMwEIRfJfI9xHHiNFkllQI9UKmIqg0cuCATrMZSsi5eB%2FH4pD8gkKCXlbyez7OzLkkNvdhDPfoON%2Fpt1OSDj6FHgtNNxUaHYBUZAlSDJvAtbOu7FYgrDntnvW1tz34ylxFFpJ03FlmwXFTsOU%2BzXIuccyF1ynmm8nzWylzKmVRFWmQseNSOJn3FJnyCiEa9RPIK%2FdTicRHyJBSiiSWkGcj4iQWLKYVBdXCpWOf9HqKot63qO0sekiQWSXQYNSKyLKi%2FJrqxSOOg3Va7d9Pqh83qDzrjScEjMjs0GB4eYcH6vIVrg68Gd5fzv5xEBLdNsw7X99uGzcvj3uAYzc3%2Fs5w05bF%2BK8%2FH3983%2FwQAAP%2F%2FAwA%3D&RelayState=d9z7jTIa5AT0fBFiXyQz0FKB&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=Zvt6kgVpcJhjDuHZAn9H5JoskrIsmjdCMBIuYkfzk41hict2QY3ssjgyGn3PSzOMCxNvfGajjh6MKFCUNlj9PgGC0oq1Sdzk5toled9fO%2FK1tZIY7nRPAbrfsMBXhtgJIcWmYgP35aMCIH8icUEerOtOu%2F9xm2r59wJkjcsezBRbA2CAP%2BnoOtnlsXkdQwn67GjDKU%2Fs9Q4dUjifpCv7so7VhbRLVoppN6mMqw%2FZbM%2FV8YbkP139ER7Vi80wKZzsPBQDkavLqTmIeRVjZwoMYRVCJpl5eJr0WQiOIBmZdyWT6RRPuDv%2FZknDE9vY4%2BHpEAEYb5dOosTrpMUe3pNjjQ%3D%3D   (ca22a1cb)
+2019-03-22T16:46:54.5222998+01:00 8000000c-0004-fc00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:46:54.7452125+01:00 8000000c-0004-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:46:51 PM is greater than curent time of 3/22/2019 3:46:54 PM. Allowing values 0 seconds in the future to continue. (d7aff5c4)
+2019-03-22T16:46:54.7528037+01:00 8000000c-0004-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:48:51 PM is less than curent time of 3/22/2019 3:46:54 PM. Allowing values 0 seconds in the past to continue. (d60c268f)
+2019-03-22T16:46:54.7736298+01:00 8000000c-0004-fc00-b63f-84710c7967bb [ERR] Unrecognized SAML service provider - cannot find Client configuration
+{
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "d9z7jTIa5AT0fBFiXyQz0FKB",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (00bffa35)
+2019-03-22T16:46:54.7794057+01:00 8000000c-0004-fc00-b63f-84710c7967bb [ERR] Request validation failed (abd529bc)
+2019-03-22T16:46:54.7845376+01:00 8000000c-0004-fc00-b63f-84710c7967bb [ERR] Request validation failed
+{
+  "SubjectId": "anonymous",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "d9z7jTIa5AT0fBFiXyQz0FKB",
+  "SignatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+} (a2b2491d)
+2019-03-22T16:46:54.8333427+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/home/error?errorId=CfDJ8Dx8IQbizV1LqviZVbcO2wzoh2MlT-TOXxMJ0Mla9a7jaz-AaY8g61EAdUlS1Db7P8dKLd730vMg5nJ-1IlY3nXv3juTQDfxi1AwDWb5exo9akMDnNITvhFkqHk6wJlA1td9lVbUVg1cdq917qTkjBR2u3JXlk4vKwyOlu8s-7EDQ0m2rWSj8CGA-Rn7AZIHOLRFVkMWgyTxrA0qAyk13Aq31EGLBEw1r6XUxLNXzl-d2sdEcwNTuvRKWHI4tXjw9_jDJm8Tyf0IGdXPhaf7OdKyg8yA12VEHySH9JLTg4lHfpMBavCT8C1Cb5zoREUEoIhcm2k2X3RgUK5P8HsmoXZHHLmne0xGuMw0_rN71EYPxCykyqff1QKYF8qmpfqWHHEAq-TgUkqo3HOOl-g6M9M   (ca22a1cb)
+2019-03-22T16:46:54.8679379+01:00 8000000c-0004-fc00-b63f-84710c7967bb [INF] Request finished in 509.4051ms 302  (791a596a)
+2019-03-22T16:46:55.0269379+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"Error\", controller = \"Home\"}". Executing action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" (a44c0341)
+2019-03-22T16:46:55.0742749+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" with arguments (["CfDJ8Dx8IQbizV1LqviZVbcO2wzoh2MlT-TOXxMJ0Mla9a7jaz-AaY8g61EAdUlS1Db7P8dKLd730vMg5nJ-1IlY3nXv3juTQDfxi1AwDWb5exo9akMDnNITvhFkqHk6wJlA1td9lVbUVg1cdq917qTkjBR2u3JXlk4vKwyOlu8s-7EDQ0m2rWSj8CGA-Rn7AZIHOLRFVkMWgyTxrA0qAyk13Aq31EGLBEw1r6XUxLNXzl-d2sdEcwNTuvRKWHI4tXjw9_jDJm8Tyf0IGdXPhaf7OdKyg8yA12VEHySH9JLTg4lHfpMBavCT8C1Cb5zoREUEoIhcm2k2X3RgUK5P8HsmoXZHHLmne0xGuMw0_rN71EYPxCykyqff1QKYF8qmpfqWHHEAq-TgUkqo3HOOl-g6M9M"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:46:55.0953692+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 11.1027ms. (50a9e262)
+2019-03-22T16:46:55.1366216+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Error". (c83d0e25)
+2019-03-22T16:46:55.2162326+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Executed ViewResult - view "Error" executed in 99.9036ms. (f66409e9)
+2019-03-22T16:46:55.2220118+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.HomeController.Error (IdSrv)" in 189.4478ms (afa2e885)
+2019-03-22T16:46:55.2328399+01:00 80000041-0000-fc00-b63f-84710c7967bb [INF] Request finished in 397.5374ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:47:56.4441330+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:47:56.4715685+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:47:56.4852353+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:47:56.8150850+01:00 80000035-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHNTsMwEIRfJfI9xLGbtF01kQo9UKmIqgkcuCA3cVpLybp4HcTjk%2F6AQIJeVvJ6Ps%2FOekaqa8UB5r3f40a%2F9Zp88NG1SHC%2ByVjvEKwiQ4Cq0wS%2BgmL%2BsAJxw%2BHgrLeVbdlP5jqiiLTzxiILlouMvSax1LLhNW%2BmetTwyXbbTMRYSZEm41qmKQuetaNBn7EBHyCiXi%2BRvEI%2FtHg8DbkMhSjjBEZjSEYvLFgMKQyqo0vG9t4fIIpaW6l2b8mDlLGQ0XHUiMiyYP410Z1F6jvtCu3eTaWfNqs%2F6JTLKY%2FI7NBgeHyEBevLFm4N1gZ31%2FNvzyKC%2B7Jch%2BvHomT57LQ3OEVz%2BX%2BWg2Z2qt%2FKy%2FH39%2BWfAAAA%2F%2F8DAA%3D%3D&RelayState=HNX0YBqVLmYQjHopdfZDSyS-&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=mjaibYvVp5zYNTFYDgyWEdrwafaLqyBf5G%2F%2FizpVywYSrAr1%2BUFGJYGgC77y%2Fz7JRamU9j%2B4ICedos9T9vBCk5vSqE3%2Bxaan7sUwPxTkdWIGSG5YxH7i%2FwWpSQz1NFiiJ0MXvaYnvx0dH1I409SWB%2F7QnARkixJci1XoPPNMrZWkhfkZn66n%2BiJTIjTRiJ%2FKwxwyAeD4%2FswK0EmwY4MBsUrt3vdc90oi5hT7wCBPfCVV45XTHjDiSpBW%2FjdgkckaK54QbMLBoKt%2BOQ9SzdaYlsswg78AHQOjPoKE72pluN8GtuEe4X8%2F%2BgPxky52fXEqRxtL0UsBxAIm6ZXEqxc0KA%3D%3D   (ca22a1cb)
+2019-03-22T16:47:57.0000459+01:00 80000035-0003-fc00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:47:57.2366439+01:00 80000035-0003-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:47:54 PM is greater than curent time of 3/22/2019 3:47:57 PM. Allowing values 0 seconds in the future to continue. (bf425051)
+2019-03-22T16:47:57.2426836+01:00 80000035-0003-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:49:54 PM is less than curent time of 3/22/2019 3:47:57 PM. Allowing values 0 seconds in the past to continue. (4bd7dc2d)
+2019-03-22T16:47:57.2701631+01:00 80000035-0003-fc00-b63f-84710c7967bb [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-22T16:47:57.3210022+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DF6QMu3x%252FS7blTLPjFUWZ%252FioQqiJnsEXanw%253D%253D   (ca22a1cb)
+2019-03-22T16:47:57.3512922+01:00 80000035-0003-fc00-b63f-84710c7967bb [INF] Request finished in 536.6039ms 302  (791a596a)
+2019-03-22T16:47:57.5172262+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:47:57.5587471+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=F6QMu3x%2FS7blTLPjFUWZ%2FioQqiJnsEXanw%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:47:57.5969697+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 29.2176ms. (50a9e262)
+2019-03-22T16:47:57.6347303+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:47:57.7722652+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 157.1758ms. (f66409e9)
+2019-03-22T16:47:57.7786518+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 255.9573ms (afa2e885)
+2019-03-22T16:47:57.7925718+01:00 80000012-0001-fa00-b63f-84710c7967bb [INF] Request finished in 470.1106ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:48:02.5531787+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DF6QMu3x%252FS7blTLPjFUWZ%252FioQqiJnsEXanw%253D%253D application/x-www-form-urlencoded 340 (ca22a1cb)
+2019-03-22T16:48:02.5670106+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:48:02.5989531+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["IdentityServer4.Quickstart.UI.LoginInputModel", "login"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:48:02.6490198+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:48:02.6565379+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 51.7695ms. (50a9e262)
+2019-03-22T16:48:02.6626268+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/saml/sso/login?requestId=F6QMu3x%2FS7blTLPjFUWZ%2FioQqiJnsEXanw%3D%3D". (d98d540e)
+2019-03-22T16:48:02.6680639+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 95.6061ms (afa2e885)
+2019-03-22T16:48:02.6737183+01:00 80000013-0001-fa00-b63f-84710c7967bb [INF] Request finished in 120.6824ms 302  (791a596a)
+2019-03-22T16:48:02.6881690+01:00 8000003c-0006-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso/login?requestId=F6QMu3x%2FS7blTLPjFUWZ%2FioQqiJnsEXanw%3D%3D   (ca22a1cb)
+2019-03-22T16:48:02.7032677+01:00 8000003c-0006-fc00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso/login" (f7642de5)
+2019-03-22T16:48:02.7236148+01:00 8000003c-0006-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:47:54 PM is greater than curent time of 3/22/2019 3:48:02 PM. Allowing values 0 seconds in the future to continue. (99933144)
+2019-03-22T16:48:02.7289601+01:00 8000003c-0006-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:49:54 PM is less than curent time of 3/22/2019 3:48:02 PM. Allowing values 0 seconds in the past to continue. (1676283e)
+2019-03-22T16:48:02.8743125+01:00 8000003c-0006-fc00-b63f-84710c7967bb [INF] SAML2P SSO endpoint response
+{
+  "SubjectId": "88421113",
+  "ClientId": "http://localhost:60390/saml",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "HNX0YBqVLmYQjHopdfZDSyS-"
+} (e76c5732)
+2019-03-22T16:48:02.9037913+01:00 8000003c-0006-fc00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:48:02.9134420+01:00 8000003c-0006-fc00-b63f-84710c7967bb [INF] Request finished in 224.9883ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-22T16:51:08.4224567+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:51:08.4500110+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:51:08.4650755+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:51:08.7898754+01:00 8000000e-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJFPT8MwDMW%2FSpV7adquW2utkwY7MGmIaS0cuKCsc9dIrTPiFPHx6f6AQIJdLMV5vzw%2FZ8qqa6MDzHvX0AbfemTnfXQtMZxvctFbAqNYM5DqkMFVUMwfVhDdSDhY40xlWvGTuY4oZrROGxLecpGL1zqVUZJgnYYTHKk0zeosxXA7UlWiJhnuhPeMlgd9LgZ8gJh7XBI7RW5oyTDzZexHURkmkIQgxy%2FCWwwpNKmjSy4a5w4QBK2pVNsYdhDHYRQHx1EDZiO8%2BddEd4a479AWaN91hU%2Bb1R%2F0WMaZDFjvSZN%2FfER468sWbjXtNO2v59%2BeRQz3Zbn2149FKWbT097gFM3O%2FrMcNNNT%2FVZejr%2B%2Fb%2FYJAAD%2F%2FwMA&RelayState=qNCL1cvv_dfkdeefoPPG5zln&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=ssOA2eCPDqWRBjQ1sMUQ4poH%2BA9Vi5I0ey8UD%2BVX4NdgDkKBCCK%2F%2BZ4tSqR9gTHp%2BiSZETy4zK1jxohYUZe5Aw7pWgwu9AQc9AEoXTcdYQ8t%2BvOwKACiXPVxyR1jQk5FmrTJ%2Fpxhutp1UgtUCROGZyDNX%2FEcVU9gWXpUvO2s3qYZ%2FaBB0DF5%2BhrKXre%2BKzLOCPZcjsSsoqP56byExmWgQhP1twRh9%2BPA8XXTHram6nmbUyeGp%2F9vHume4FPZQ8aaHpH%2FfiXhCxkeJkRgHGz7uSJ13kSyiepDQt7moCvKo%2FYNBkjG64Ufhg%2F6aQuLM7zUSB4zTlq3Ls%2BOneCABggeuQ%3D%3D   (ca22a1cb)
+2019-03-22T16:51:08.9557079+01:00 8000000e-0004-fc00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:51:09.1865015+01:00 8000000e-0004-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:51:06 PM is greater than curent time of 3/22/2019 3:51:09 PM. Allowing values 0 seconds in the future to continue. (9dcc1d90)
+2019-03-22T16:51:09.1926580+01:00 8000000e-0004-fc00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:53:06 PM is less than curent time of 3/22/2019 3:51:09 PM. Allowing values 0 seconds in the past to continue. (49b2f237)
+2019-03-22T16:51:09.2195866+01:00 8000000e-0004-fc00-b63f-84710c7967bb [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-22T16:51:09.2726568+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3D0jr6Q%252FBDBD%252BzTbw%252FHAGZBlJN2lbmw0yXvQ%253D%253D   (ca22a1cb)
+2019-03-22T16:51:09.3113125+01:00 8000000e-0004-fc00-b63f-84710c7967bb [INF] Request finished in 495.0898ms 302  (791a596a)
+2019-03-22T16:51:09.4817076+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:51:09.5244056+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=0jr6Q%2FBDBD%2BzTbw%2FHAGZBlJN2lbmw0yXvQ%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:51:09.5681101+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 34.9935ms. (50a9e262)
+2019-03-22T16:51:09.6037291+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:51:09.7595439+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 170.897ms. (f66409e9)
+2019-03-22T16:51:09.7649259+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 278.3441ms (afa2e885)
+2019-03-22T16:51:09.7760157+01:00 80000037-0003-fc00-b63f-84710c7967bb [INF] Request finished in 501.455ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:51:13.9431068+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3D0jr6Q%252FBDBD%252BzTbw%252FHAGZBlJN2lbmw0yXvQ%253D%253D application/x-www-form-urlencoded 344 (ca22a1cb)
+2019-03-22T16:51:13.9588131+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:51:14.0047005+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["IdentityServer4.Quickstart.UI.LoginInputModel", "login"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:51:14.0590651+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:51:14.0650154+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 54.687ms. (50a9e262)
+2019-03-22T16:51:14.0705001+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/saml/sso/login?requestId=0jr6Q%2FBDBD%2BzTbw%2FHAGZBlJN2lbmw0yXvQ%3D%3D". (d98d540e)
+2019-03-22T16:51:14.0755776+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 111.4909ms (afa2e885)
+2019-03-22T16:51:14.0808620+01:00 80000038-0003-fc00-b63f-84710c7967bb [INF] Request finished in 138.4399ms 302  (791a596a)
+2019-03-22T16:51:14.0952075+01:00 80000043-0002-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso/login?requestId=0jr6Q%2FBDBD%2BzTbw%2FHAGZBlJN2lbmw0yXvQ%3D%3D   (ca22a1cb)
+2019-03-22T16:51:14.1064189+01:00 80000043-0002-fd00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso/login" (f7642de5)
+2019-03-22T16:51:14.1235945+01:00 80000043-0002-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:51:06 PM is greater than curent time of 3/22/2019 3:51:14 PM. Allowing values 0 seconds in the future to continue. (79cf8f87)
+2019-03-22T16:51:14.1281905+01:00 80000043-0002-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:53:06 PM is less than curent time of 3/22/2019 3:51:14 PM. Allowing values 0 seconds in the past to continue. (f01847dc)
+2019-03-22T16:51:14.2582663+01:00 80000043-0002-fd00-b63f-84710c7967bb [INF] SAML2P SSO endpoint response
+{
+  "SubjectId": "88421113",
+  "ClientId": "http://localhost:60390/saml",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "qNCL1cvv_dfkdeefoPPG5zln"
+} (11ed5fee)
+2019-03-22T16:51:14.2860995+01:00 80000043-0002-fd00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:51:14.2951332+01:00 80000043-0002-fd00-b63f-84710c7967bb [INF] Request finished in 199.8718ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-22T16:52:22.3673731+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:52:22.3952068+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:52:22.4089630+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:52:22.7325212+01:00 80000010-0007-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHRT8IwEMb%2FlaXvc6XdkF4YCcqDJBgJTB98Md0srMl2xV5n%2FPPdAI0mysslvX6%2Ffvddp6TbRhxg3oUaN%2BatMxSij7ZBgtNNzjqP4DRZAtStIQgVbOf3KxBXHA7eBVe5hv1kLiOayPhgHbJoucjZS1YqPrneqbEQOh1nWum03MlKlHKiTKpSFj0ZT70%2BZz3eQ0SdWSIFjaFv8ZGKuYyFKEYZZAIEf2bRok9hUQ8uOatDOECSNK7STe0ogJQjIZNh1ITIsWj%2BNdGtQ%2Bpa47fGv9vKPG5Wf9BjLhVPyO7RYjw8wqL1eQs3Fl8t7i%2FnL08igruiWMfrh23BZtPj3uAYzc%2F%2Bs%2Bw102P9Vp6Pv79v9gkAAP%2F%2FAwA%3D&RelayState=eQjkq7rxh12_0HfgKaB-CWge&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=E%2BygzP65wUQrb4MaHZAyKfY7%2F0bvpQLlvq1usQonNSw4elLKOjMwxbHCWcgC1tiXglexDyGViEawBq2YpqkOeOksD2YQ%2BFedXtvS9ACSUTx5%2Fb77wjclpEq9YEx7vTdcepEHlT%2FEQlZZ9qpdnLgwiJLqCAYTN0da44sBT4dwfX%2FqJC9Lhc230zbNHAVpVD%2BnaEeKJmWG2m1uX9HonHPBLncYzekhKBjS9anPAYFd4xuWr%2B8iGEZ%2FXRleRLTkUnGr4cpnOHf67xrpH33kYwcC27m8oPzIWkWyYDxOumSYxo3RTOTPCAQ2uoERwHpe%2BFgtTslaT%2BStCu87HgFmJBYYCQ%3D%3D   (ca22a1cb)
+2019-03-22T16:52:22.8950034+01:00 80000010-0007-fb00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:52:23.1277402+01:00 80000010-0007-fb00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:52:20 PM is greater than curent time of 3/22/2019 3:52:23 PM. Allowing values 0 seconds in the future to continue. (d40af905)
+2019-03-22T16:52:23.1338483+01:00 80000010-0007-fb00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:54:20 PM is less than curent time of 3/22/2019 3:52:23 PM. Allowing values 0 seconds in the past to continue. (5d146057)
+2019-03-22T16:52:23.1611341+01:00 80000010-0007-fb00-b63f-84710c7967bb [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-22T16:52:23.2018306+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DeVcCeYBZRbTNTuIlgXgFHkBnfgKBxVDlvg%253D%253D   (ca22a1cb)
+2019-03-22T16:52:23.2440068+01:00 80000010-0007-fb00-b63f-84710c7967bb [INF] Request finished in 513.3831ms 302  (791a596a)
+2019-03-22T16:52:23.4127541+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:52:23.4533887+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=eVcCeYBZRbTNTuIlgXgFHkBnfgKBxVDlvg%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:52:23.4938020+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 31.069ms. (50a9e262)
+2019-03-22T16:52:23.5310619+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:52:23.6685643+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 156.5044ms. (f66409e9)
+2019-03-22T16:52:23.6742131+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 256.1159ms (afa2e885)
+2019-03-22T16:52:23.6883756+01:00 80000016-0002-f900-b63f-84710c7967bb [INF] Request finished in 482.3043ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:52:28.2511520+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DeVcCeYBZRbTNTuIlgXgFHkBnfgKBxVDlvg%253D%253D application/x-www-form-urlencoded 332 (ca22a1cb)
+2019-03-22T16:52:28.2649774+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:52:28.2977239+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["IdentityServer4.Quickstart.UI.LoginInputModel", "login"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:52:28.3538577+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:52:28.3613548+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 57.9705ms. (50a9e262)
+2019-03-22T16:52:28.3683490+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/saml/sso/login?requestId=eVcCeYBZRbTNTuIlgXgFHkBnfgKBxVDlvg%3D%3D". (d98d540e)
+2019-03-22T16:52:28.3743716+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 103.4074ms (afa2e885)
+2019-03-22T16:52:28.3813530+01:00 80000017-0002-f900-b63f-84710c7967bb [INF] Request finished in 130.0626ms 302  (791a596a)
+2019-03-22T16:52:28.3965697+01:00 80000045-0002-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso/login?requestId=eVcCeYBZRbTNTuIlgXgFHkBnfgKBxVDlvg%3D%3D   (ca22a1cb)
+2019-03-22T16:52:28.4171803+01:00 80000045-0002-fd00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso/login" (f7642de5)
+2019-03-22T16:52:28.4347961+01:00 80000045-0002-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:52:20 PM is greater than curent time of 3/22/2019 3:52:28 PM. Allowing values 0 seconds in the future to continue. (0f6bc37e)
+2019-03-22T16:52:28.4398539+01:00 80000045-0002-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:54:20 PM is less than curent time of 3/22/2019 3:52:28 PM. Allowing values 0 seconds in the past to continue. (f774977e)
+2019-03-22T16:52:28.5714428+01:00 80000045-0002-fd00-b63f-84710c7967bb [INF] SAML2P SSO endpoint response
+{
+  "SubjectId": "88421113",
+  "ClientId": "http://localhost:60390/saml",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "eQjkq7rxh12_0HfgKaB-CWge"
+} (731f2416)
+2019-03-22T16:52:28.5990378+01:00 80000045-0002-fd00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:52:28.6080056+01:00 80000045-0002-fd00-b63f-84710c7967bb [INF] Request finished in 213.4006ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-22T16:55:17.9098763+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:55:17.9368559+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:55:17.9512219+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:55:18.2956686+01:00 80000019-0000-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHNTsMwEIRfJfI9xI4T1KyaSoUeqFRE1aYcuCDbtVpLybp4HcTjk%2F6AQIJeVvJ6Ps%2FOekyqa%2FMDTPu4x5V96y3F5KNrkeB8U7M%2BIHhFjgBVZwmigfX0cQH5DYdD8NEb37KfzHVEEdkQnUeWzGc1e9XaWKELoaWsCjWqtNC8yEcjvjXG6oKz5NkGGvQ1G%2FABIurtHCkqjEOLiyrlMs3zRpRQliDKF5bMhhQO1dGlZvsYD5BlrTeq3XuKIKXIZXYcNSPyLJl%2BTXTvkfrOhrUN787YzWrxB33LZcUzcjt0mB4fYcnysoU7h1uHu%2Bv59VlE8NA0y3T5tG7YZHzaG5yihcl%2FloNmfKrfysvx9%2FdNPgEAAP%2F%2FAwA%3D&RelayState=Gwa7kGtS4Yw16n1uqPULv4AA&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=nZDhGDxbfFbRI5cxEsR9CgyACP0%2B1KIdVEAYc%2BDNoHptcG1GOphx4zz%2B34bUBUGjX%2FH1hiTNCS2dJT3%2Fc2uek0gRno7YMOa7wTv8f6421LEUjIueS8SI8uUKlA944ghRqZCth7JUXcvIBlK3nhGrvjEeWTsH1TwFEfal51fnLmgwiOTleu0nTMUbWXTDQz0rUYCCCvK3U6G87D9Mm1Tpn7D6hAT9EzXXZsT91dfJPHy4%2FI3Q3yZ%2Fe7B%2BMKA%2Fh%2FNkVBIoTibgpB39vO0bU1d2DFGwcbiCE4V8YNZum1H4XtedyvwpWViIMX6bac4pgdt0xXO0zCZHrGUb0kZQs9yIJg%3D%3D   (ca22a1cb)
+2019-03-22T16:55:18.4559904+01:00 80000019-0000-fa00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:55:18.6884055+01:00 80000019-0000-fa00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:55:15 PM is greater than curent time of 3/22/2019 3:55:18 PM. Allowing values 0 seconds in the future to continue. (76dd4cad)
+2019-03-22T16:55:18.6943563+01:00 80000019-0000-fa00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:57:15 PM is less than curent time of 3/22/2019 3:55:18 PM. Allowing values 0 seconds in the past to continue. (c60669ac)
+2019-03-22T16:55:18.7221861+01:00 80000019-0000-fa00-b63f-84710c7967bb [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-22T16:55:18.7612755+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DnFQKvfjhUj4aO%252BKRg%252FtZv9FO3cXzIFag9A%253D%253D   (ca22a1cb)
+2019-03-22T16:55:18.7953896+01:00 80000019-0000-fa00-b63f-84710c7967bb [INF] Request finished in 501.8228ms 302  (791a596a)
+2019-03-22T16:55:18.9591485+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:55:19.0002563+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:55:19.0376894+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 28.4244ms. (50a9e262)
+2019-03-22T16:55:19.0675142+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:55:19.2163737+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 158.7671ms. (f66409e9)
+2019-03-22T16:55:19.2223159+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 257.5516ms (afa2e885)
+2019-03-22T16:55:19.2352540+01:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Request finished in 469.9597ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:55:36.8744869+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DnFQKvfjhUj4aO%252BKRg%252FtZv9FO3cXzIFag9A%253D%253D application/x-www-form-urlencoded 340 (ca22a1cb)
+2019-03-22T16:55:36.8886699+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:55:36.9206193+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["IdentityServer4.Quickstart.UI.LoginInputModel", "login"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:55:36.9718099+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:55:36.9779505+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 52.3259ms. (50a9e262)
+2019-03-22T16:55:36.9836644+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D". (d98d540e)
+2019-03-22T16:55:36.9885819+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 94.679ms (afa2e885)
+2019-03-22T16:55:36.9940174+01:00 80000014-0004-fc00-b63f-84710c7967bb [INF] Request finished in 119.8451ms 302  (791a596a)
+2019-03-22T16:55:37.0198444+01:00 80000035-0006-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D   (ca22a1cb)
+2019-03-22T16:55:37.0311567+01:00 80000035-0006-ff00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso/login" (f7642de5)
+2019-03-22T16:55:37.0492672+01:00 80000035-0006-ff00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:55:15 PM is greater than curent time of 3/22/2019 3:55:37 PM. Allowing values 0 seconds in the future to continue. (f44e052a)
+2019-03-22T16:55:37.0544618+01:00 80000035-0006-ff00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:57:15 PM is less than curent time of 3/22/2019 3:55:37 PM. Allowing values 0 seconds in the past to continue. (76a418d3)
+2019-03-22T16:55:37.1845492+01:00 80000035-0006-ff00-b63f-84710c7967bb [INF] SAML2P SSO endpoint response
+{
+  "SubjectId": "88421113",
+  "ClientId": "http://localhost:60390/saml",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "Gwa7kGtS4Yw16n1uqPULv4AA"
+} (16931008)
+2019-03-22T16:55:37.2126869+01:00 80000035-0006-ff00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:55:37.2212929+01:00 80000035-0006-ff00-b63f-84710c7967bb [INF] Request finished in 202.4172ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-22T16:55:46.1392392+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DnFQKvfjhUj4aO%252BKRg%252FtZv9FO3cXzIFag9A%253D%253D   (ca22a1cb)
+2019-03-22T16:55:46.1451429+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:55:46.1508230+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:55:46.1598097+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3.5426ms. (50a9e262)
+2019-03-22T16:55:46.1648726+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:55:46.1744695+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 9.3023ms. (f66409e9)
+2019-03-22T16:55:46.1819581+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 31.571ms (afa2e885)
+2019-03-22T16:55:46.1881291+01:00 80000036-0006-ff00-b63f-84710c7967bb [INF] Request finished in 48.6173ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:55:59.3032757+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/ExternalLogin?provider=AAD&returnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DnFQKvfjhUj4aO%252BKRg%252FtZv9FO3cXzIFag9A%253D%253D   (ca22a1cb)
+2019-03-22T16:55:59.3164191+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"ExternalLogin\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.ExternalLogin (IdSrv)" (a44c0341)
+2019-03-22T16:55:59.3219627+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.ExternalLogin (IdSrv)" with arguments (["AAD", "/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:55:59.3299499+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.ExternalLogin (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ChallengeResult" in 2.787ms. (50a9e262)
+2019-03-22T16:55:59.3366816+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] Executing ChallengeResult with authentication schemes (["AAD"]). (f3dca807)
+2019-03-22T16:55:59.8876800+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] AuthenticationScheme: "AAD" was challenged. (d45f1f38)
+2019-03-22T16:55:59.9049746+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.ExternalLogin (IdSrv)" in 583.269ms (afa2e885)
+2019-03-22T16:55:59.9205273+01:00 80000037-0006-ff00-b63f-84710c7967bb [INF] Request finished in 617.3854ms 302  (791a596a)
+2019-03-22T16:56:00.5909094+01:00 8000001b-0000-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:33123/signin-oidc application/x-www-form-urlencoded 2154 (ca22a1cb)
+2019-03-22T16:56:00.6617360+01:00 8000001b-0000-fa00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv.external" signed in. (c66dd7e7)
+2019-03-22T16:56:00.6685502+01:00 8000001b-0000-fa00-b63f-84710c7967bb [INF] Request finished in 77.5788ms 302  (791a596a)
+2019-03-22T16:56:00.6749893+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/ExternalLoginCallback   (ca22a1cb)
+2019-03-22T16:56:00.6999325+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"ExternalLoginCallback\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.ExternalLoginCallback (IdSrv)" (a44c0341)
+2019-03-22T16:56:00.7088720+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.ExternalLoginCallback (IdSrv)" - Validation state: Valid (dad538d7)
+2019-03-22T16:56:00.7303850+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:56:00.7414928+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv.external" signed out. (d3f50c8d)
+2019-03-22T16:56:00.7471310+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.ExternalLoginCallback (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 33.4292ms. (50a9e262)
+2019-03-22T16:56:00.7516705+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D". (d98d540e)
+2019-03-22T16:56:00.7560457+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.ExternalLoginCallback (IdSrv)" in 51.2888ms (afa2e885)
+2019-03-22T16:56:00.7609954+01:00 80000044-0000-fc00-b63f-84710c7967bb [INF] Request finished in 86.5595ms 302  (791a596a)
+2019-03-22T16:56:00.7661840+01:00 80000037-0001-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D   (ca22a1cb)
+2019-03-22T16:56:00.7767620+01:00 80000037-0001-fe00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso/login" (f7642de5)
+2019-03-22T16:56:00.7961007+01:00 80000037-0001-fe00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:55:15 PM is greater than curent time of 3/22/2019 3:56:00 PM. Allowing values 0 seconds in the future to continue. (01718860)
+2019-03-22T16:56:00.8007476+01:00 80000037-0001-fe00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:57:15 PM is less than curent time of 3/22/2019 3:56:00 PM. Allowing values 0 seconds in the past to continue. (5c246e41)
+2019-03-22T16:56:00.8270664+01:00 80000037-0001-fe00-b63f-84710c7967bb [INF] SAML2P SSO endpoint response
+{
+  "SubjectId": "0141b9a517cdafd3e4981e54cbefb3a6b25918d284976af48db16b7b2e3a9bda",
+  "ClientId": "http://localhost:60390/saml",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "Gwa7kGtS4Yw16n1uqPULv4AA"
+} (81e39bbe)
+2019-03-22T16:56:00.8361883+01:00 80000037-0001-fe00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:56:00.8415724+01:00 80000037-0001-fe00-b63f-84710c7967bb [INF] Request finished in 75.1352ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-22T16:56:05.6878710+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DnFQKvfjhUj4aO%252BKRg%252FtZv9FO3cXzIFag9A%253D%253D   (ca22a1cb)
+2019-03-22T16:56:05.6968128+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:56:05.7045041+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:56:05.7174960+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 4.2602ms. (50a9e262)
+2019-03-22T16:56:05.7262381+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:56:05.7351588+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 10.2859ms. (f66409e9)
+2019-03-22T16:56:05.7436417+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 41.4554ms (afa2e885)
+2019-03-22T16:56:05.7490062+01:00 80000038-0001-fe00-b63f-84710c7967bb [INF] Request finished in 62.9582ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:56:24.0687227+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Logout   (ca22a1cb)
+2019-03-22T16:56:24.0781126+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Logout\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)" (a44c0341)
+2019-03-22T16:56:24.0845253+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:56:24.1224305+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed out. (d3f50c8d)
+2019-03-22T16:56:24.1300974+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.SignOutResult" in 40.423ms. (50a9e262)
+2019-03-22T16:56:24.1366956+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] Executing SignOutResult with authentication schemes (["AAD"]). (aecfa1d4)
+2019-03-22T16:56:24.1442573+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] AuthenticationScheme: "AAD" signed out. (d3f50c8d)
+2019-03-22T16:56:24.1489285+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)" in 65.8128ms (afa2e885)
+2019-03-22T16:56:24.1539478+01:00 80000039-0001-fe00-b63f-84710c7967bb [INF] Request finished in 86.3427ms 302  (791a596a)
+2019-03-22T16:56:26.9022470+01:00 80000046-0000-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/signout-callback-oidc?state=CfDJ8Dx8IQbizV1LqviZVbcO2wwMTPyzfNRbEBpTXqAv0SDRDX33KxVtm6A4JZHmHgE4xyrD3aotPD8ct32yy6zH3B--vMQHEoxwSMCTIOVw85LZcj4oAPmTNFzuvkOTe4kGdkS2SzrTQIFhvPWSPKnLTH5xsrnddv2dt-pLrNzfWF63_MPKw4gNMPUTZJsoE6qnudTrFWYx7ECUoMzo0FndqxnQuxtCE71dE23P_bZxPrxcDHy_TK8ea007xAauNI7sIqrk_OEkBEdQixRc1a3PX-8yN-gKTGW0cWphJ_mlT2U6mF-_3hCe8mwGaRwustq-kiB_KitRTwv5qrGWoy95_aYi4gAur2Fq-rXm7QtR-Aa-SX2HNoRSxGsMpHwizvO32bCiFCyiA0vHCiOYlBEkKIJaZ_yAo6t9YrQumjqAZOgYXsXhR3r6iWnz_UXwfHByiBZgMo0ZfYlO7us21DYSzypUlhHJ6npneS5ZsnPZ8BrSpmdvwl5cQ6AlNM1RvlshY-JJ5oUntzc6r3I53Ue10p0ZwZ3bpyZ45SprR43smMluuKNFurSr7b90TSlyC8f37KHkbHpWv4tn3GrFQdEMsFaTK1A3Ux1bVG2U_yPy8iZbDNSRgwQA4g2vi5zqbUEV3oAtgu6W2feDam8F3O1V5ZwcjpeaXiUQXgQzpeSkBBTq93RqSMQtv4o1icjo29QPRepT9l-gFLeACACnxhRWgwzb2-mveSZr3b7ouEnTRNZR   (ca22a1cb)
+2019-03-22T16:56:26.9166293+01:00 80000046-0000-fc00-b63f-84710c7967bb [INF] Request finished in 14.0466ms 302  (791a596a)
+2019-03-22T16:56:26.9241957+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Logout?logoutId=CfDJ8Dx8IQbizV1LqviZVbcO2wzYdt9FPzFCra7aLmgeE364kBP0n68BSW6JePvNTdDafEMXRxUkXHBDt_Csz-rARce_Oby9aEcYpxNRHYGtIRfHRbAV4Ti990R478_PCy644wpLByv24Vihe4psAhjRnCyBe-o_iJEF-C-yH-M9UWsFoLydxzNs3xSlY2w9Siyhq-H1jXa_lmCrVn7GbL3RbsyydaK9ymS1jbCcxSlNV6H-iohOsxNL2QaOgO_Yx1v_05Sjf3NCRBmtAZtj8d5klIHTybICZSzeErCDXxIfEooht7WuhfnzOrG72-q-vsHLEDd3QRQZJyrbsAKYAOHGXrAWU2jAA9gstnF9WgxGC2u8W-23jB8-bNLKMjhkFKKgo8NXtSOD4yBCknLE_rm6cJbYI6wU5sDCxBCnhNCdXbjj   (ca22a1cb)
+2019-03-22T16:56:26.9312730+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Logout\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)" (a44c0341)
+2019-03-22T16:56:26.9381201+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)" with arguments (["CfDJ8Dx8IQbizV1LqviZVbcO2wzYdt9FPzFCra7aLmgeE364kBP0n68BSW6JePvNTdDafEMXRxUkXHBDt_Csz-rARce_Oby9aEcYpxNRHYGtIRfHRbAV4Ti990R478_PCy644wpLByv24Vihe4psAhjRnCyBe-o_iJEF-C-yH-M9UWsFoLydxzNs3xSlY2w9Siyhq-H1jXa_lmCrVn7GbL3RbsyydaK9ymS1jbCcxSlNV6H-iohOsxNL2QaOgO_Yx1v_05Sjf3NCRBmtAZtj8d5klIHTybICZSzeErCDXxIfEooht7WuhfnzOrG72-q-vsHLEDd3QRQZJyrbsAKYAOHGXrAWU2jAA9gstnF9WgxGC2u8W-23jB8-bNLKMjhkFKKgo8NXtSOD4yBCknLE_rm6cJbYI6wU5sDCxBCnhNCdXbjj"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:56:26.9498719+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 5.1284ms. (50a9e262)
+2019-03-22T16:56:26.9705714+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Executing ViewResult, running view "LoggedOut". (c83d0e25)
+2019-03-22T16:56:26.9833543+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Executed ViewResult - view "LoggedOut" executed in 26.5495ms. (f66409e9)
+2019-03-22T16:56:26.9910242+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Logout (IdSrv)" in 53.2064ms (afa2e885)
+2019-03-22T16:56:26.9976592+01:00 8000003b-0001-fe00-b63f-84710c7967bb [INF] Request finished in 73.5768ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:56:27.0102407+01:00 8000003c-0001-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/connect/endsession/callback?endSessionId=CfDJ8Dx8IQbizV1LqviZVbcO2wxp4ZPoaHnXWWRwp2EOk_u6PIWAAKY_rnd2io5BUmyKuq7UtKiA0Eu5SmVyNKLqj4V-AknyhY1PJQl4sIhgLEBIUUVQdoDrZHJNC2Glk18LLrV3ecWO_ZetP6vkNwDFioqcMo9JTCfb_Hz1ETQu3keAI3iy0KhJVXg45n1sTDoEUpYAnr1yCp_QiocXg0Euwvn93L5F7TQi6B1e1gzRg77DSAqu7lra79iXM1b630wVSRNKwg98PkTPzk43GbGtMkEXGWMKiuV6GlygG39yNOG1x3IrJ7xxtClHTU3n8_EpyIvQGowPDQ19ICs3rUwYFi6z6IzVx4O-FVKbDzgcDWVuhF67WwagVCOmsB9obud9vKu8Vbuk8pqFFpDKYWucvRo   (ca22a1cb)
+2019-03-22T16:56:27.0277367+01:00 8000003c-0001-fe00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.EndSessionCallbackEndpoint" for "/connect/endsession/callback" (f7642de5)
+2019-03-22T16:56:27.0647657+01:00 8000003c-0001-fe00-b63f-84710c7967bb [INF] Successful signout callback. (d13fac4f)
+2019-03-22T16:56:27.0855529+01:00 8000003c-0001-fe00-b63f-84710c7967bb [INF] Request finished in 76.4618ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-22T16:56:30.9010769+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DnFQKvfjhUj4aO%252BKRg%252FtZv9FO3cXzIFag9A%253D%253D   (ca22a1cb)
+2019-03-22T16:56:30.9070940+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:56:30.9139103+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=nFQKvfjhUj4aO%2BKRg%2FtZv9FO3cXzIFag9A%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:56:30.9225749+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.9901ms. (50a9e262)
+2019-03-22T16:56:30.9289068+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:56:30.9361567+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 7.5369ms. (f66409e9)
+2019-03-22T16:56:30.9449389+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 30.9266ms (afa2e885)
+2019-03-22T16:56:30.9514867+01:00 8000003d-0001-fe00-b63f-84710c7967bb [INF] Request finished in 50.3651ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:58:13.2247241+01:00  [INF] Starting IdentityServer4 version "2.3.2.0" (8add0571)
+2019-03-22T16:58:13.2735929+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-22T16:58:13.2908367+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-22T16:58:13.5729371+01:00 80000004-0004-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJFPT4NAEMW%2FCtk7skCLZQIkaA82qZEU9ODFbOlSNoFZ3FmMH1%2F6x0YT7WWSnX2%2FffNmExJ9FwyQj7bFjXwfJVnns%2B%2BQ4HSTstEgaEGKAEUvCWwNZf64huCGw2C01bXu2E%2FmOiKIpLFKI3NWy5S9RSIKG9FwMePBbMflIm58eRs3kagFl9stc16koUmfsgmfIKJRrpCsQDu1uB%2B7PHSDoPLnMF%2BAz1%2BZs5xSKBQHl5S11g7geZ2uRddqshCGfhB6h1E9Is2c%2FHuie4009tKU0nyoWj5v1n%2FQEQ9j7pHao0L38AhzivMW7hTuFO6v59%2BeRAQPVVW4xVNZsSw57g2O0Uz2n%2BWkSY71ojwff39f9gUAAP%2F%2FAwA%3D&RelayState=_JAG3yHNIUtU2QCdqKxVgZgc&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=AJWR5%2B9e71%2BUcqIxfl3AGeTHnHmrPLD6X7qks7d21UwmrKkCB2S491W3CUhMIPTOsXnyVsnhNTw7fDDPvDA2tLNhB6IXRiBg%2Fjpsw2m9ghB59Vmg684W%2FUuFJz%2BhtsuU1kqo8bwQ7%2Bzuc5LdWqnUT%2F1caE257bPoQJhRQ8X5ivNldkDyeukfWQFChijdA8S962OFfXImZmw%2BmaqCOCbn6XQ5vUdrEQwhA9aFKNDhY3pb1YD32NxDiYzCIOV%2Fcukru4yQ5mtA4FkxdSaf1EJo6RmFE4%2FS4Dz2%2F%2Fnplq%2Fjg8DWQXMWVqqIQtNwEEp3QiMZa1TJChWqUSutgDebgmKGSA%3D%3D   (ca22a1cb)
+2019-03-22T16:58:13.7465671+01:00 80000004-0004-fa00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:58:13.9843648+01:00 80000004-0004-fa00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:58:10 PM is greater than curent time of 3/22/2019 3:58:13 PM. Allowing values 0 seconds in the future to continue. (a7e12f64)
+2019-03-22T16:58:13.9905584+01:00 80000004-0004-fa00-b63f-84710c7967bb [INF] Checking if 3/22/2019 4:00:10 PM is less than curent time of 3/22/2019 3:58:13 PM. Allowing values 0 seconds in the past to continue. (ef7d2828)
+2019-03-22T16:58:14.0205568+01:00 80000004-0004-fa00-b63f-84710c7967bb [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-22T16:58:14.0668534+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DoKHDM9%252FfMLOJ7GhXyVN4UOBfVeNi7nN9ig%253D%253D   (ca22a1cb)
+2019-03-22T16:58:14.1123532+01:00 80000004-0004-fa00-b63f-84710c7967bb [INF] Request finished in 541.5864ms 302  (791a596a)
+2019-03-22T16:58:14.2728471+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:58:14.3159021+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=oKHDM9%2FfMLOJ7GhXyVN4UOBfVeNi7nN9ig%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:58:14.3515027+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 27.6691ms. (50a9e262)
+2019-03-22T16:58:14.3782951+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:58:14.5267086+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 157.7561ms. (f66409e9)
+2019-03-22T16:58:14.5329407+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 253.9426ms (afa2e885)
+2019-03-22T16:58:14.5454161+01:00 80000007-0004-fb00-b63f-84710c7967bb [INF] Request finished in 476.6225ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:58:21.8264121+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DoKHDM9%252FfMLOJ7GhXyVN4UOBfVeNi7nN9ig%253D%253D application/x-www-form-urlencoded 336 (ca22a1cb)
+2019-03-22T16:58:21.8405985+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:58:21.8703891+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["IdentityServer4.Quickstart.UI.LoginInputModel", "login"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:58:21.9204024+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:58:21.9270528+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 51.3389ms. (50a9e262)
+2019-03-22T16:58:21.9327679+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/saml/sso/login?requestId=oKHDM9%2FfMLOJ7GhXyVN4UOBfVeNi7nN9ig%3D%3D". (d98d540e)
+2019-03-22T16:58:21.9379702+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 92.2529ms (afa2e885)
+2019-03-22T16:58:21.9442619+01:00 80000008-0004-fb00-b63f-84710c7967bb [INF] Request finished in 117.4515ms 302  (791a596a)
+2019-03-22T16:58:21.9580510+01:00 8000001c-0002-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso/login?requestId=oKHDM9%2FfMLOJ7GhXyVN4UOBfVeNi7nN9ig%3D%3D   (ca22a1cb)
+2019-03-22T16:58:21.9707347+01:00 8000001c-0002-f900-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso/login" (f7642de5)
+2019-03-22T16:58:21.9891078+01:00 8000001c-0002-f900-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:58:10 PM is greater than curent time of 3/22/2019 3:58:21 PM. Allowing values 0 seconds in the future to continue. (d20b9f78)
+2019-03-22T16:58:21.9944085+01:00 8000001c-0002-f900-b63f-84710c7967bb [INF] Checking if 3/22/2019 4:00:10 PM is less than curent time of 3/22/2019 3:58:21 PM. Allowing values 0 seconds in the past to continue. (3bce8329)
+2019-03-22T16:58:22.1247864+01:00 8000001c-0002-f900-b63f-84710c7967bb [INF] SAML2P SSO endpoint response
+{
+  "SubjectId": "88421113",
+  "ClientId": "http://localhost:60390/saml",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "_JAG3yHNIUtU2QCdqKxVgZgc"
+} (9c850263)
+2019-03-22T16:58:22.1561494+01:00 8000001c-0002-f900-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:58:22.1655902+01:00 8000001c-0002-f900-b63f-84710c7967bb [INF] Request finished in 207.1924ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-22T16:58:28.5079903+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DoKHDM9%252FfMLOJ7GhXyVN4UOBfVeNi7nN9ig%253D%253D   (ca22a1cb)
+2019-03-22T16:58:28.5160866+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:58:28.5224342+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=oKHDM9%2FfMLOJ7GhXyVN4UOBfVeNi7nN9ig%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:58:28.5320362+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3.8206ms. (50a9e262)
+2019-03-22T16:58:28.5383543+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:58:28.5523561+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 10.7088ms. (f66409e9)
+2019-03-22T16:58:28.5600076+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 37.7921ms (afa2e885)
+2019-03-22T16:58:28.5666122+01:00 8000001d-0002-f900-b63f-84710c7967bb [INF] Request finished in 58.3874ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:58:47.5536557+01:00 8000002d-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso?SAMLRequest=fJHLTsMwEEV%2FJfI%2BxLHT16ipFOiCSkVUTWDBBrmu21hKxsXjID6f9AECCboZyeN7fOeOp6TaRhyg6EKNa%2FPWGQrRR9sgwfkmZ51HcIosAarWEAQNZfGwBHHD4eBdcNo17CdzHVFExgfrkEWLec5etd6NtlLydLiTGddmnMlMcC0nUuhhlm5Y9Gw89fqc9XgPEXVmgRQUhr7F00nMZSxElQ5gMIZs9MKieZ%2FCojq65KwO4QBJ0jitmtpRAClTIZPjqAmRY1HxNdGdQ%2Bpa40vj3602T%2BvlH%2FSQywlPyO7RYnx8hEWryxZuLW4t7q%2Fn35xFBPdVtYpXj2XFZtPT3uAUzc%2F%2Bs%2Bw101P9Vl6Ov79v9gkAAP%2F%2FAwA%3D&RelayState=V_kpbClf9L_xSeoB36TK10j6&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=UqT9gNZcoYHuMV62LC49lCkLy96UVS9cfz%2BS6%2F7hp2imLqWKE3Gh1kmGTutOJFO4Gfzmmaqh6s0QpAGzC2QLL%2BOqNSeH93wPibGp3jn0bg%2Bv3O2G73rQ9TEidhGl%2FhOo0UDPNZnnm6Ww%2F%2BTZrg8JdTNFvQVCKbANESLfVnW5NnG9u9K%2F2jnrdsrX4TTiyDH0cuOEzH8ltKYbEuTH41xkM3MQJj%2BhOWO3tckCoePkEQ%2BkvbEhtywtOPaMHD9xHQCBNkY5nrxLHcntuaaZwqt%2ByvcFgWNP4hod4ryWpgjq0izRZYSS3CQVsh%2Fq3LznobmHFUK%2BqdpjxEtYXH%2BZVpAV%2FA%3D%3D   (ca22a1cb)
+2019-03-22T16:58:47.5665314+01:00 8000002d-0003-fd00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso" (f7642de5)
+2019-03-22T16:58:47.5825986+01:00 8000002d-0003-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:58:47 PM is greater than curent time of 3/22/2019 3:58:47 PM. Allowing values 0 seconds in the future to continue. (75656f97)
+2019-03-22T16:58:47.5873058+01:00 8000002d-0003-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 4:00:47 PM is less than curent time of 3/22/2019 3:58:47 PM. Allowing values 0 seconds in the past to continue. (5924bf52)
+2019-03-22T16:58:47.5956463+01:00 8000002d-0003-fd00-b63f-84710c7967bb [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-22T16:58:47.6012310+01:00 8000002d-0003-fd00-b63f-84710c7967bb [INF] Request finished in 48.6476ms 302  (791a596a)
+2019-03-22T16:58:47.6321493+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DuhbEyAMREcnCgWjmvu2WWsIhbyJwA7c%252B5Q%253D%253D   (ca22a1cb)
+2019-03-22T16:58:47.6374606+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:58:47.6436017+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["/saml/sso/login?requestId=uhbEyAMREcnCgWjmvu2WWsIhbyJwA7c%2B5Q%3D%3D"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:58:47.6531631+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.9153ms. (50a9e262)
+2019-03-22T16:58:47.6587512+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Executing ViewResult, running view "Login". (c83d0e25)
+2019-03-22T16:58:47.6668034+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Executed ViewResult - view "Login" executed in 7.3586ms. (f66409e9)
+2019-03-22T16:58:47.6733842+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 30.2329ms (afa2e885)
+2019-03-22T16:58:47.6800072+01:00 8000002e-0003-fd00-b63f-84710c7967bb [INF] Request finished in 47.5251ms 200 text/html; charset=utf-8 (791a596a)
+2019-03-22T16:58:52.3707572+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:33123/Account/Login?ReturnUrl=%2Fsaml%2Fsso%2Flogin%3FrequestId%3DuhbEyAMREcnCgWjmvu2WWsIhbyJwA7c%252B5Q%253D%253D application/x-www-form-urlencoded 336 (ca22a1cb)
+2019-03-22T16:58:52.3789763+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" (a44c0341)
+2019-03-22T16:58:52.3852388+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] Executing action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" with arguments (["IdentityServer4.Quickstart.UI.LoginInputModel", "login"]) - Validation state: Valid (4e3479ed)
+2019-03-22T16:58:52.4001783+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:58:52.4053589+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] Executed action method "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)", returned result "Microsoft.AspNetCore.Mvc.RedirectResult" in 14.1946ms. (50a9e262)
+2019-03-22T16:58:52.4110346+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] Executing RedirectResult, redirecting to "/saml/sso/login?requestId=uhbEyAMREcnCgWjmvu2WWsIhbyJwA7c%2B5Q%3D%3D". (d98d540e)
+2019-03-22T16:58:52.4163649+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] Executed action "IdentityServer4.Quickstart.UI.AccountController.Login (IdSrv)" in 32.0607ms (afa2e885)
+2019-03-22T16:58:52.4217011+01:00 8000002f-0003-fd00-b63f-84710c7967bb [INF] Request finished in 51.7507ms 302  (791a596a)
+2019-03-22T16:58:52.4342527+01:00 80000030-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:33123/saml/sso/login?requestId=uhbEyAMREcnCgWjmvu2WWsIhbyJwA7c%2B5Q%3D%3D   (ca22a1cb)
+2019-03-22T16:58:52.4447793+01:00 80000030-0003-fd00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Saml.Endpoints.Saml2SingleSignOnEndpoint" for "/saml/sso/login" (f7642de5)
+2019-03-22T16:58:52.4583628+01:00 80000030-0003-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 3:58:47 PM is greater than curent time of 3/22/2019 3:58:52 PM. Allowing values 0 seconds in the future to continue. (c1219709)
+2019-03-22T16:58:52.4633761+01:00 80000030-0003-fd00-b63f-84710c7967bb [INF] Checking if 3/22/2019 4:00:47 PM is less than curent time of 3/22/2019 3:58:52 PM. Allowing values 0 seconds in the past to continue. (fae5dca0)
+2019-03-22T16:58:52.4892537+01:00 80000030-0003-fd00-b63f-84710c7967bb [INF] SAML2P SSO endpoint response
+{
+  "SubjectId": "88421113",
+  "ClientId": "http://localhost:60390/saml",
+  "BindingType": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+  "RelayState": "V_kpbClf9L_xSeoB36TK10j6"
+} (837eb322)
+2019-03-22T16:58:52.4973572+01:00 80000030-0003-fd00-b63f-84710c7967bb [INF] AuthenticationScheme: "idsrv" signed in. (c66dd7e7)
+2019-03-22T16:58:52.5026070+01:00 80000030-0003-fd00-b63f-84710c7967bb [INF] Request finished in 68.6344ms 200 text/html; charset=UTF-8 (791a596a)

@@ -78,7 +78,7 @@ namespace sp_saml
                     };
                     options.ServiceProviderOptions = new SpOptions
                     {
-                        EntityId = "http://localhost:52430/saml",
+                        EntityId = "http://localhost:60390/saml",
                         MetadataPath = "/saml/metadata",
                         SignAuthenticationRequests = true,
                         SigningCertificate = new X509Certificate2("testclient.pfx", "test")

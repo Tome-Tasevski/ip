@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using IdentityServer4;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,7 +22,6 @@ namespace IdSrv
 
             services
                 .AddIdentityServer()
-                //.AddDeveloperSigningCredential()
                 .AddTestUsers(Config.GetUsers())
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
@@ -49,6 +49,7 @@ namespace IdSrv
                     };
                     options.GetClaimsFromUserInfoEndpoint = true;
                 });
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
