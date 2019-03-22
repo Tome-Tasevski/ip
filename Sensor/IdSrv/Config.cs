@@ -71,7 +71,7 @@ namespace IdSrv
                     ,EnableLocalLogin = true 
                 },
                 new Client {
-                      ClientId = "http://localhost:33117/saml",
+                      ClientId = "http://localhost:52430/saml",
                       ClientName = "RSK SAML2P Test Client",
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                       AllowedScopes = { "openid", "profile", "sensorsapi" }
@@ -84,9 +84,9 @@ namespace IdSrv
             return new List<ServiceProvider>
             {
                 new ServiceProvider {
-                      EntityId = "http://localhost:33117/saml",
+                      EntityId = "http://localhost:52430/saml",
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:33117/signin-saml") }
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:52430/signin-saml") }
                 }
         };
         }
