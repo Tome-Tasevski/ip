@@ -17,15 +17,22 @@
                     <li><strong>@claim.Type:</strong> @claim.Value</li>
                 }
             </ul>
+
+            <div class="col-xs-12">
+                <a asp-action="Logout" class="btn btn-default">Logout</a>
+            </div>
         }
         else
         {
-            <h2>Unauthenticated</h2>
+           
+            <div class="col-xs-12">
+                <h2>Unauthenticated</h2>
+                <a asp-action="ChallengeScheme" asp-route-scheme="saml2p" class="btn btn-default">Login</a>
+            </div>
         }
     </div>
-    <div class="col-xs-12">
-        <a asp-action="ChallengeScheme" asp-route-scheme="saml2p" class="btn btn-default">Login</a>
-    </div>
+   
+   
 </div>
 <script>
     (function () {
