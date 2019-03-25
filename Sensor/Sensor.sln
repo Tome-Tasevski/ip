@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdSrv", "IdSrv\IdSrv.csproj", "{FDB5E76D-9361-4E11-9F3A-1489D2CD6DFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client-Saml", "Client-Saml\Client-Saml.csproj", "{DECA8324-7102-4180-8990-23E80695E79C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client-Saml", "Client-Saml\Client-Saml.csproj", "{DECA8324-7102-4180-8990-23E80695E79C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIdClient", "WebApplication1\OpenIdClient.csproj", "{12570E83-0ACB-4E17-AA7D-1778EB828364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{DECA8324-7102-4180-8990-23E80695E79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DECA8324-7102-4180-8990-23E80695E79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DECA8324-7102-4180-8990-23E80695E79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12570E83-0ACB-4E17-AA7D-1778EB828364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12570E83-0ACB-4E17-AA7D-1778EB828364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12570E83-0ACB-4E17-AA7D-1778EB828364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12570E83-0ACB-4E17-AA7D-1778EB828364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

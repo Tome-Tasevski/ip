@@ -30,7 +30,7 @@ namespace IdSrv
 
         public static IEnumerable<ApiResource> GetApiResources()
         {
-            return new List<ApiResource> { new ApiResource("sensorsapi", "Sensors API")};
+            return new List<ApiResource> { new ApiResource("sensorsapi", "Sensors API") };
         }
 
         public static IEnumerable<Client> GetClients()
@@ -68,13 +68,22 @@ namespace IdSrv
                     }
                     ,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
                                                 //ovie podatoci na aplikacijata (vo nashiot slucha Client)
-                    ,EnableLocalLogin = false 
+                    ,EnableLocalLogin = false
                 },
                 new Client {
                       ClientId = "http://localhost:60390/saml",
                       ClientName = "RSK SAML2P Test Client",
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                       AllowedScopes = { "openid", "profile" }
+                },
+                new Client
+                {
+                    ClientId = "oid client",
+                    ClientName = "OpenID Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RedirectUris = { "https://localhost:44352/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
+                    AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile }
                 }
             };
         }
