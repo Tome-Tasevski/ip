@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Quickstart.UI;
+using IdentityServer4.Saml;
+using IdentityServer4.Saml.Models;
 using IdentityServer4.Test;
 
 namespace IdSrv
@@ -14,20 +18,22 @@ namespace IdSrv
             return TestUsers.Users;
         }
 
+       
         /*se definiraat resursite shto gi chuva Identity serverot*/
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new List<IdentityResource>
             {
                 new IdentityResources.OpenId(),//sopstvenoto unique userId, i kje bide istata vrednost koga i da se najavi uesrot na aplikacijata
-                new IdentityResources.Profile()// nekolku properia za userot: firstName, lastName, displayName, url....
+                new IdentityResources.Profile(),
+                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role })// nekolku properia za userot: firstName, lastName, displayName, url....
                 //a mozat da se definiraat i svoi IdentityResources
             };
         }
 
         public static IEnumerable<ApiResource> GetApiResources()
         {
-            return new List<ApiResource> { new ApiResource("sensorsapi", "Sensors API")};
+            return new List<ApiResource> { new ApiResource("sensorsapi", "Sensors API") };
         }
 
         public static IEnumerable<Client> GetClients()
@@ -63,11 +69,38 @@ namespace IdSrv
                     {
                         "AAD"
                     }
-                    //,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
+                    ,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
                                                 //ovie podatoci na aplikacijata (vo nashiot slucha Client)
-                    ,EnableLocalLogin = true 
+                    ,EnableLocalLogin = false
+                },
+                new Client {
+                      ClientId = "http://localhost:60390/saml",
+                      ClientName = "RSK SAML2P Test Client",
+                      ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
+                      AllowedScopes = { "openid", "profile" }
+                },
+                new Client
+                {
+                    ClientId = "oid client",
+                    ClientName = "OpenID Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RedirectUris = { "https://localhost:44352/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
+                    AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile,"role" },
                 }
             };
+        }
+
+        public static List<ServiceProvider> GetServiceProviders()
+        {
+            return new List<ServiceProvider>
+            {
+                new ServiceProvider {
+                      EntityId = "http://localhost:60390/saml",
+                      SigningCertificates = {new X509Certificate2("TestClient.cer")},
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:60390/signin-saml") }
+                }
+        };
         }
     }
 }
