@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        
+        [Authorize(Policy = "User")]
         public IActionResult Index()
         {
             return View();

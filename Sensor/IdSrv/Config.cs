@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Quickstart.UI;
@@ -17,13 +18,15 @@ namespace IdSrv
             return TestUsers.Users;
         }
 
+       
         /*se definiraat resursite shto gi chuva Identity serverot*/
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new List<IdentityResource>
             {
                 new IdentityResources.OpenId(),//sopstvenoto unique userId, i kje bide istata vrednost koga i da se najavi uesrot na aplikacijata
-                new IdentityResources.Profile()// nekolku properia za userot: firstName, lastName, displayName, url....
+                new IdentityResources.Profile(),
+                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role })// nekolku properia za userot: firstName, lastName, displayName, url....
                 //a mozat da se definiraat i svoi IdentityResources
             };
         }
@@ -83,7 +86,7 @@ namespace IdSrv
                     AllowedGrantTypes = GrantTypes.Implicit,
                     RedirectUris = { "https://localhost:44352/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
-                    AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile }
+                    AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile,"role" },
                 }
             };
         }

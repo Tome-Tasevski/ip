@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -36,7 +37,9 @@ namespace WebApplication1
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
+            services.AddAuthorization(opt => {
+                opt.AddPolicy("User", p => p.RequireClaim("role"));
+            });
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = "Cookies";
@@ -48,6 +51,9 @@ namespace WebApplication1
                 opt.RequireHttpsMetadata = false;
                 opt.ClientId = "oid client";
                 opt.SaveTokens = true;
+                opt.ClaimActions.MapJsonKey("role", "role", "role");
+                opt.Scope.Add("role");
+                opt.ClaimActions.MapJsonKey("role", "role", "role");
             });
         }
 
