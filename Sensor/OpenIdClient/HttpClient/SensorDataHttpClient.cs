@@ -28,14 +28,8 @@ namespace OpenIdClient.Services
 
                 //konfiguriranje na headeri na http requesti
                 //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                
                 _httpClient.SetBearerToken(accessToken);
             }
-
-            _httpClient.BaseAddress = new Uri("http://localhost:33118/");
-            _httpClient.DefaultRequestHeaders.Accept.Clear();
-            _httpClient.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
 
             return _httpClient;
         }
@@ -43,8 +37,10 @@ namespace OpenIdClient.Services
         private async Task<string> GetValidAccessToken()
         {
             var currentContext = _httpContextAccessor.HttpContext;
-            
-            string accessToken = await currentContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
+            var expiresAtToken = await currentContext.GetTokenAsync("expires_at");
+            var expiresAt = string.IsNullOrWhiteSpace(expiresAtToken) ? DateTime.MinValue : DateTime.Parse(expiresAtToken).AddSeconds(-60).ToUniversalTime();
+            string accessToken = await (expiresAt < DateTime.UtcNow && expiresAtToken != null ?
+                RenewTokens() : currentContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken));
             return accessToken;
         }
 

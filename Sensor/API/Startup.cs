@@ -25,6 +25,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddAuthorization();
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {

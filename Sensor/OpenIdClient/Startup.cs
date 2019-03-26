@@ -33,7 +33,7 @@ namespace WebApplication1
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -51,15 +51,16 @@ namespace WebApplication1
             }).AddCookie("Cookies")
             .AddOpenIdConnect("oidc", opt =>
             {
+                opt.SignInScheme = "Cookies";
                 opt.Authority = "http://localhost:33123/";
                 opt.RequireHttpsMetadata = false;
-                opt.ClientId = "oid client";
                 opt.SaveTokens = true;
-                opt.ClaimActions.MapJsonKey("role", "role", "role");
+                opt.ClientId = "oid client";
                 opt.Scope.Add("role");
-                opt.Scope.Add("openid");
-                opt.Scope.Add("profile");
-                opt.Scope.Add("sensorapi");
+                opt.Scope.Add("sensorsapi");
+                opt.ResponseType = "code id_token";
+                opt.ClientSecret = "secret";
+                opt.ClaimActions.MapJsonKey("role", "role", "role");
             });
         }
 

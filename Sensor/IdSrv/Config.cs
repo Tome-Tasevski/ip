@@ -18,7 +18,7 @@ namespace IdSrv
             return TestUsers.Users;
         }
 
-       
+
         /*se definiraat resursite shto gi chuva Identity serverot*/
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
@@ -83,16 +83,18 @@ namespace IdSrv
                 {
                     ClientId = "oid client",
                     ClientName = "OpenID Client",
-                    ClientSecrets = { new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.Hybrid,
+                    ClientSecrets = { new Secret("secret".Sha256()) },
                     RedirectUris = { "https://localhost:44352/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
                     AllowedScopes =
-                    { IdentityServerConstants.StandardScopes.OpenId,
-                      IdentityServerConstants.StandardScopes.Profile,
-                      "sensorapi",
-                      "role"
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "sensorsapi",
+                        "role"
                     },
+                    //AllowAccessTokensViaBrowser = true
                 }
             };
         }
