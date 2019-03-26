@@ -59,6 +59,8 @@ namespace WebApplication1
                 opt.Scope.Add("role");
                 opt.Scope.Add("sensorsapi");
                 opt.ResponseType = "code id_token";
+                opt.Scope.Add("openid");
+                opt.Scope.Add("profile");
                 opt.ClientSecret = "secret";
                 opt.ClaimActions.MapJsonKey("role", "role", "role");
             });

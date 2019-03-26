@@ -8,7 +8,7 @@ using Model;
 
 namespace API.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class SensorsController : Controller
@@ -44,7 +44,7 @@ namespace API.Controllers
             };
         }
 
-        //[Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet("Admin")]
         public IEnumerable<SensorData> GetAsAdmin()
         {
