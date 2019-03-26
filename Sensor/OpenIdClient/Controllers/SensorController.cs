@@ -74,7 +74,7 @@ namespace OpenIdClient.Controllers
         {
             var client = await _client.GetClientAsync();
 
-            var response = await client.GetAsync("api/sensors/moderator");
+            var response = await client.GetAsync("http://localhost:33118/api/sensors/moderator");
 
             return await HandleApiResponse(response, async () =>
             {
@@ -89,7 +89,7 @@ namespace OpenIdClient.Controllers
         {
             var client = await _client.GetClientAsync();
 
-            var response = await client.GetAsync("api/sensors/admin");
+            var response = await client.GetAsync("http://localhost:33118/api/sensors/admin");
 
             return await HandleApiResponse(response, async () =>
             {
