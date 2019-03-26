@@ -42,11 +42,6 @@ namespace Client.Controllers
             return View(new TokensViewModel { IdToken = idToken, AccessToken = accessToken });
         }
 
-        public async Task<IActionResult> LoginWithSaml()
-        {
-           return Redirect("http://localhost:52430/Test/Index");
-        }
-
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
