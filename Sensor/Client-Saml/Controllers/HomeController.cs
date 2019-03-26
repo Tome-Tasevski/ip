@@ -20,7 +20,8 @@ namespace Client_Saml.Controllers
             await HttpContext.SignOutAsync("saml2p");
 
             return View();
-        } 
+        }
+      
         public async Task<IActionResult> ChallengeScheme(string scheme)
         {
             var result = await HttpContext.AuthenticateAsync(scheme);
@@ -28,7 +29,8 @@ namespace Client_Saml.Controllers
 
             return Challenge(scheme);
         }
-   
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Privacy()
         {
             return View();
