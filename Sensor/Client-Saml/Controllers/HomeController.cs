@@ -14,7 +14,13 @@ namespace Client_Saml.Controllers
 
     {
         public IActionResult Index() => View();
-        public IActionResult Logout() => SignOut("cookie");
+        public async Task<IActionResult> Logout() {
+
+            await HttpContext.SignOutAsync("cookie");
+            await HttpContext.SignOutAsync("saml2p");
+
+            return View();
+        } 
         public async Task<IActionResult> ChallengeScheme(string scheme)
         {
             var result = await HttpContext.AuthenticateAsync(scheme);
