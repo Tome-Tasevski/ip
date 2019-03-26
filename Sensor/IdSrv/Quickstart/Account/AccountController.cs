@@ -95,6 +95,7 @@ namespace IdentityServer4.Quickstart.UI
                 }
             }
 
+
             if (ModelState.IsValid)
             {
                 // validate username/password against in-memory store

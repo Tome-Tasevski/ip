@@ -77,7 +77,7 @@ namespace IdSrv
                       ClientId = "http://localhost:60390/saml",
                       ClientName = "RSK SAML2P Test Client",
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
-                      AllowedScopes = { "openid", "profile" }
+                      AllowedScopes = { "openid", "profile", "role"}
                 },
                 new Client
                 {
@@ -87,6 +87,7 @@ namespace IdSrv
                     RedirectUris = { "https://localhost:44352/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
                     AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile,"role" },
+                 
                 }
             };
         }
@@ -98,7 +99,8 @@ namespace IdSrv
                 new ServiceProvider {
                       EntityId = "http://localhost:60390/saml",
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:60390/signin-saml") }
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:60390/signin-saml") },
+  
                 }
         };
         }
