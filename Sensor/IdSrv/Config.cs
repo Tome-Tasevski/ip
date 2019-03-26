@@ -84,7 +84,7 @@ namespace IdSrv
                     ClientId = "oid client",
                     ClientName = "OpenID Client",
                     ClientSecrets = { new Secret("secret".Sha256())},
-                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    AllowedGrantTypes = GrantTypes.Implicit,
                     RedirectUris = { "https://localhost:44352/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
                     AllowedScopes =

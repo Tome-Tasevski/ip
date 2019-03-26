@@ -55,11 +55,41 @@ namespace OpenIdClient.Controllers
             return View();
         }
 
-        public async Task<IActionResult> FetchData()
+        public async Task<IActionResult> FetchDataUser()
         {
             var client = await _client.GetClientAsync();
 
             var response = await client.GetAsync("api/sensors/user");
+
+            return await HandleApiResponse(response, async () =>
+            {
+                var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
+                    .ToList();
+
+                return View(sensorData);
+            });
+        }
+        public async Task<IActionResult> FetchDataModerator()
+        {
+            var client = await _client.GetClientAsync();
+
+            var response = await client.GetAsync("api/sensors/moderator");
+
+            return await HandleApiResponse(response, async () =>
+            {
+                var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
+                    .ToList();
+
+                return View(sensorData);
+            });
+        }
+        public async Task<IActionResult> FetchDataAdmin()
+        {
+            var client = await _client.GetClientAsync();
+
+            var response = await client.GetAsync("api/sensors/admin");
 
             return await HandleApiResponse(response, async () =>
             {
@@ -86,7 +116,7 @@ namespace OpenIdClient.Controllers
                     }
                 case HttpStatusCode.Unauthorized:
                 case HttpStatusCode.Forbidden:
-                    return RedirectToAction("AccessDenied", "Authorization");
+                    return RedirectToAction("AccessDenied", "Home");
                 default:
                     throw new Exception($"A problem happened while calling the API: {response.ReasonPhrase}");
             }

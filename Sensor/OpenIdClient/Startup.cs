@@ -59,7 +59,6 @@ namespace WebApplication1
                 opt.Scope.Add("role");
                 opt.Scope.Add("openid");
                 opt.Scope.Add("profile");
-                opt.Scope.Add("sensorapi");
             });
         }
 
