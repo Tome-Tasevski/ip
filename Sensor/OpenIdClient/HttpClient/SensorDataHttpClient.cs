@@ -31,6 +31,11 @@ namespace OpenIdClient.Services
                 _httpClient.SetBearerToken(accessToken);
             }
 
+            _httpClient.BaseAddress = new Uri("http://localhost:33118/");
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            _httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
             return _httpClient;
         }
 

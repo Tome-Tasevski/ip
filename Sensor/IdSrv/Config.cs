@@ -83,7 +83,7 @@ namespace IdSrv
                 {
                     ClientId = "oid client",
                     ClientName = "OpenID Client",
-                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    AllowedGrantTypes = GrantTypes.Implicit,
                     ClientSecrets = { new Secret("secret".Sha256()) },
                     RedirectUris = { "https://localhost:44352/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
@@ -94,7 +94,8 @@ namespace IdSrv
                         "sensorsapi",
                         "role"
                     },
-                    //AllowAccessTokensViaBrowser = true
+                    AllowAccessTokensViaBrowser = true,
+                    AlwaysIncludeUserClaimsInIdToken = true
                 }
             };
         }

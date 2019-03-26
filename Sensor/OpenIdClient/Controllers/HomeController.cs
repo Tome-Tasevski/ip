@@ -19,7 +19,13 @@ namespace WebApplication1.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-       
+        private readonly ISensorDataHttpClient _sensorDataHttpClient;
+
+        public HomeController(ISensorDataHttpClient sensorDataHttpClient)
+        {
+            _sensorDataHttpClient = sensorDataHttpClient;
+        }
+        
         public async Task<IActionResult> Index()
         {
             var idToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
@@ -28,7 +34,38 @@ namespace WebApplication1.Controllers
             return View(new TokensViewModel { IdToken = idToken, AccessToken = accessToken });
         }
 
-       
+        [Authorize(Policy = "User")]
+        public async Task<IActionResult> FetchDataUser()
+        {
+            var client = await _sensorDataHttpClient.GetClientAsync();
+            var response = await client.GetAsync("/api/sensors/user");
+
+            return await HandleApiResponse(response, async () =>
+            {
+                var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
+                    .ToList();
+
+                return View(sensorData);
+            });
+        }
+
+        [Authorize(Policy = "Admin")]
+        public async Task<IActionResult> FetchDataAdmin()
+        {
+            var client = await _sensorDataHttpClient.GetClientAsync();
+            var response = await client.GetAsync("/api/sensors/admin");
+
+            return await HandleApiResponse(response, async () =>
+            {
+                var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
+                    .ToList();
+
+                return View(sensorData);
+            });
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -42,6 +79,22 @@ namespace WebApplication1.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }     
+        }
+
+        private async Task<IActionResult> HandleApiResponse(HttpResponseMessage response, Func<Task<IActionResult>> onSuccess)
+        {
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.OK:
+                    {
+                        return await onSuccess();
+                    }
+                case HttpStatusCode.Unauthorized:
+                case HttpStatusCode.Forbidden:
+                    return RedirectToAction("AccessDenied", "Home");
+                default:
+                    throw new Exception($"A problem happened while calling the API: {response.ReasonPhrase}");
+            }
+        }
     }
 }

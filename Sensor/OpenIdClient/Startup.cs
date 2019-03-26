@@ -41,8 +41,10 @@ namespace WebApplication1
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
             services.AddAuthorization(opt => {
-                opt.AddPolicy("User", p => p.RequireClaim("role"));
+                opt.AddPolicy("User", p => p.RequireClaim("role", "User"));
+                opt.AddPolicy("Admin", p => p.RequireClaim("role", "Admin"));
             });
             services.AddAuthentication(options =>
             {
@@ -56,13 +58,13 @@ namespace WebApplication1
                 opt.RequireHttpsMetadata = false;
                 opt.SaveTokens = true;
                 opt.ClientId = "oid client";
-                opt.Scope.Add("role");
-                opt.Scope.Add("sensorsapi");
-                opt.ResponseType = "code id_token";
                 opt.Scope.Add("openid");
                 opt.Scope.Add("profile");
+                opt.Scope.Add("role");
+                opt.Scope.Add("sensorsapi");
+                opt.ResponseType = "id_token token";
                 opt.ClientSecret = "secret";
-                opt.ClaimActions.MapJsonKey("role", "role", "role");
+                opt.ClaimActions.MapJsonKey("role", "role");
             });
         }
 
