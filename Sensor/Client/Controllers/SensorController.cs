@@ -65,7 +65,7 @@ namespace Client.Controllers
         {
             var client = await _client.GetClientAsync();
 
-            var response = await client.GetAsync("api/sensors");
+            var response = await client.GetAsync("api/sensors/user");
 
             return await HandleApiResponse(response, async () =>
             {

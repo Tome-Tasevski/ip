@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OpenIdClient.Services;
 
 namespace WebApplication1
 {
@@ -26,6 +27,9 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped<ISensorDataHttpClient, SensorDataHttpClient>();
+            services.AddHttpContextAccessor();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -53,7 +57,9 @@ namespace WebApplication1
                 opt.SaveTokens = true;
                 opt.ClaimActions.MapJsonKey("role", "role", "role");
                 opt.Scope.Add("role");
-                opt.ClaimActions.MapJsonKey("role", "role", "role");
+                opt.Scope.Add("openid");
+                opt.Scope.Add("profile");
+                opt.Scope.Add("sensorapi");
             });
         }
 
