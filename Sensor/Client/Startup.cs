@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Client.Services;
+using System.IdentityModel.Tokens.Jwt;
+using IdentityModel;
 
 namespace Client
 {
@@ -28,6 +30,13 @@ namespace Client
             services.AddScoped<ISensorDataHttpClient, SensorDataHttpClient>();
             services.AddHttpContextAccessor();
 
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            services.AddAuthorization(opt => {
+                opt.AddPolicy("User", p => p.RequireClaim("role", "User"));
+                opt.AddPolicy("Admin", p => p.RequireClaim("role", "Admin"));
+            });
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = "Cookies";
@@ -43,6 +52,7 @@ namespace Client
                     options.Scope.Add("openid");
                     options.Scope.Add("profile");
                     options.Scope.Add("sensorsapi");
+                    options.Scope.Add("role");
                     /*shto treba da ni vrati token serverot; 
                      id_token - identification token;
                      code ne e access token, toj se isporachuva na preku serevr side (front chanal??) na app (vo nashiot sluchaj Client)
@@ -55,7 +65,8 @@ namespace Client
                     options.GetClaimsFromUserInfoEndpoint = true;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        NameClaimType = "name"
+                        NameClaimType = JwtClaimTypes.Name,
+                        RoleClaimType = JwtClaimTypes.Role
                     };
                 });
         }

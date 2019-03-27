@@ -56,11 +56,27 @@ namespace Client.Controllers
             return View();
         }
 
-        public async Task<IActionResult> FetchData()
+        [Authorize(Policy = "User")]
+        public async Task<IActionResult> FetchDataUser()
         {
             var client = await _client.GetClientAsync();
+            var response = await client.GetAsync("/api/sensors/user");
 
-            var response = await client.GetAsync("api/sensors/user");
+            return await HandleApiResponse(response, async () =>
+            {
+                var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
+                    .ToList();
+
+                return View(sensorData);
+            });
+        }
+
+        [Authorize(Policy = "Admin")]
+        public async Task<IActionResult> FetchDataAdmin()
+        {
+            var client = await _client.GetClientAsync();
+            var response = await client.GetAsync("/api/sensors/admin");
 
             return await HandleApiResponse(response, async () =>
             {

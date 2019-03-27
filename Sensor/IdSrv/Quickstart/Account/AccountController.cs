@@ -240,6 +240,10 @@ namespace IdentityServer4.Quickstart.UI
             var user = _users.FindByExternalProvider(provider, userId);
             if (user == null)
             {
+                if (userId == "2VmJDh20iV6ogfedY_5GPwVySh4T1ZU47AqqnXEqX4E")
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "Admin"));
+                }
                 // this sample simply auto-provisions new external user
                 // another common approach is to start a registrations workflow first
                 user = _users.AutoProvisionUser(provider, userId, claims);
@@ -250,6 +254,7 @@ namespace IdentityServer4.Quickstart.UI
                 .SingleOrDefault(c => c.Type.Equals("name") && c.Issuer.Equals("LOCAL AUTHORITY")));
 
             var additionalClaims = new List<Claim>();
+            additionalClaims.Add(new Claim(JwtClaimTypes.Role, "Admin"));
 
             // if the external system sent a session id claim, copy it over
             // so we can use it for single sign-out

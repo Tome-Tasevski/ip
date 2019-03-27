@@ -25,9 +25,8 @@ namespace IdSrv
             return new List<IdentityResource>
             {
                 new IdentityResources.OpenId(),//sopstvenoto unique userId, i kje bide istata vrednost koga i da se najavi uesrot na aplikacijata
-                new IdentityResources.Profile(),
-                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role })// nekolku properia za userot: firstName, lastName, displayName, url....
-                //a mozat da se definiraat i svoi IdentityResources
+                new IdentityResources.Profile(),// nekolku properia za userot: firstName, lastName, displayName, url....
+                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role })//a mozat da se definiraat i svoi IdentityResources
             };
         }
 
@@ -63,7 +62,8 @@ namespace IdSrv
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "sensorsapi"
+                        "sensorsapi",
+                        "role"
                     },
                     IdentityProviderRestrictions =
                     {
@@ -71,7 +71,9 @@ namespace IdSrv
                     }
                     ,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
                                                 //ovie podatoci na aplikacijata (vo nashiot slucha Client)
-                    ,EnableLocalLogin = false
+                    ,EnableLocalLogin = false,
+                    AllowAccessTokensViaBrowser = true,
+                    AlwaysIncludeUserClaimsInIdToken = true
                 },
                 new Client {
                       ClientId = "http://localhost:60390/saml",
