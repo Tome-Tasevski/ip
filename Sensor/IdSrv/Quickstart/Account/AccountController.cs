@@ -240,9 +240,13 @@ namespace IdentityServer4.Quickstart.UI
             var user = _users.FindByExternalProvider(provider, userId);
             if (user == null)
             {
-                if (userId == "2VmJDh20iV6ogfedY_5GPwVySh4T1ZU47AqqnXEqX4E")
+                if (userId == "2VmJDh20iV6ogfedY_5GPwVySh4T1ZU47AqqnXEqX4E")//elena
                 {
                     claims.Add(new Claim(JwtClaimTypes.Role, "Admin"));
+                }
+                if (userId == "7XUQhp3Ht9Uk_lpuUSEAvFndCRxSeCHkivdykbB1gIM")//sani
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, "User"));
                 }
                 // this sample simply auto-provisions new external user
                 // another common approach is to start a registrations workflow first

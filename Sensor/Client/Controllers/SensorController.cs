@@ -56,7 +56,6 @@ namespace Client.Controllers
             return View();
         }
 
-        [Authorize(Policy = "User")]
         public async Task<IActionResult> FetchDataUser()
         {
             var client = await _client.GetClientAsync();
@@ -72,7 +71,6 @@ namespace Client.Controllers
             });
         }
 
-        [Authorize(Policy = "Admin")]
         public async Task<IActionResult> FetchDataAdmin()
         {
             var client = await _client.GetClientAsync();

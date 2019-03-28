@@ -10,6 +10,10 @@ using Microsoft.IdentityModel.Tokens;
 using Client.Services;
 using System.IdentityModel.Tokens.Jwt;
 using IdentityModel;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.OAuth.Claims;
 
 namespace Client
 {
@@ -31,11 +35,6 @@ namespace Client
             services.AddHttpContextAccessor();
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
-            services.AddAuthorization(opt => {
-                opt.AddPolicy("User", p => p.RequireClaim("role", "User"));
-                opt.AddPolicy("Admin", p => p.RequireClaim("role", "Admin"));
-            });
 
             services.AddAuthentication(options =>
             {
@@ -60,14 +59,14 @@ namespace Client
                     options.ResponseType = "code id_token";
                     //it_token kje se zachuva vo cookie-to
                     options.SaveTokens = true;
-                    //se koristi pri razmena na code za acces token so token serverot
                     options.ClientSecret = "secret";
                     options.GetClaimsFromUserInfoEndpoint = true;
-                    options.TokenValidationParameters = new TokenValidationParameters
+                    options.SecurityTokenValidator = new JwtSecurityTokenHandler
                     {
-                        NameClaimType = JwtClaimTypes.Name,
-                        RoleClaimType = JwtClaimTypes.Role
+                        InboundClaimTypeMap = new Dictionary<string, string>()
                     };
+                    options.TokenValidationParameters.NameClaimType = "name";
+                    options.ClaimActions.Add(new JsonKeyClaimAction("role", "role", "role"));
                 });
         }
 

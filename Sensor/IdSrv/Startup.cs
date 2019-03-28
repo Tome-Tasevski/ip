@@ -26,6 +26,7 @@ namespace IdSrv
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
+                .AddProfileService<ProfileService>()
                 .AddSigningCredential(new X509Certificate2("idsrv3test.pfx", "idsrv3test"))
                 .AddSamlPlugin(options => {
                     options.Licensee = "Demo";

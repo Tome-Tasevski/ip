@@ -32,7 +32,10 @@ namespace IdSrv
 
         public static IEnumerable<ApiResource> GetApiResources()
         {
-            return new List<ApiResource> { new ApiResource("sensorsapi", "Sensors API") };
+            return new List<ApiResource> {
+                new ApiResource("sensorsapi", JwtClaimTypes.Role)
+                
+            };
         }
 
         public static IEnumerable<Client> GetClients()
