@@ -25,11 +25,11 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: LoginComponent, pathMatch: 'full' },
+      // { path: '**', component: HomeComponent, pathMatch: 'full' },
+      { path: 'Home', component: HomeComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LoginComponent },
-    
     ])
   ],
   providers: [],
