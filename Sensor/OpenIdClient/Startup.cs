@@ -54,7 +54,7 @@ namespace WebApplication1
             .AddOpenIdConnect("oidc", opt =>
             {
                 opt.SignInScheme = "Cookies";
-                opt.Authority = "http://localhost:33123/";
+                opt.Authority = "https://localhost:5001/";
                 opt.RequireHttpsMetadata = false;
                 opt.SaveTokens = true;
                 opt.ClientId = "oid client";

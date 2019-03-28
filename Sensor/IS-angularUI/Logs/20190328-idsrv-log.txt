@@ -1,0 +1,616 @@
+2019-03-28T14:02:19.1121520+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:02:19.1535771+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:02:19.2158201+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:02:19.7339715+01:00  [INF] Starting @angular/cli on port 57544... (e8db2aa9)
+2019-03-28T14:02:20.2890289+01:00 0HLLJFMEB0024:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:61266/  0 (ca22a1cb)
+2019-03-28T14:02:20.2890288+01:00 0HLLJFMEB0025:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/   (ca22a1cb)
+2019-03-28T14:02:20.3564381+01:00 0HLLJFMEB0024:00000001 [INF] Request finished in 67.8202ms 200  (791a596a)
+2019-03-28T14:02:27.2744043+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "57544"
+
+** Angular Live Development Server is listening on localhost:57544, open your browser on http://localhost:57544/ **
+ (7ad3642a)
+2019-03-28T14:02:34.8307356+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:02:42.1594169+01:00  [INF] Date: 2019-03-28T13:02:42.133Z
+Hash: 0639025397b853461aaa
+Time: 14682ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (bbba313d)
+2019-03-28T14:02:42.2453407+01:00 0HLLJFMEB0025:00000001 [INF] Request finished in 21954.5759ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:02:42.2609489+01:00 0HLLJFMEB0026:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/runtime.js   (ca22a1cb)
+2019-03-28T14:02:42.2610594+01:00 0HLLJFMEB0027:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/polyfills.js   (ca22a1cb)
+2019-03-28T14:02:42.2796507+01:00 0HLLJFMEB0025:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/vendor.js   (ca22a1cb)
+2019-03-28T14:02:42.2933682+01:00 0HLLJFMEB0024:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/styles.css   (ca22a1cb)
+2019-03-28T14:02:42.3129760+01:00 0HLLJFMEB0028:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/main.js   (ca22a1cb)
+2019-03-28T14:02:43.1224748+01:00 0HLLJFMEB0028:00000001 [INF] Request finished in 810.2969ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:02:43.7223907+01:00 0HLLJFMEB0026:00000001 [INF] Request finished in 1457.4824ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:02:43.8593057+01:00 0HLLJFMEB0024:00000002 [INF] Request finished in 1579.9717ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:02:43.8644118+01:00 0HLLJFMEB0027:00000001 [INF] Request finished in 1582.3592ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:02:43.9278209+01:00 0HLLJFMEB0025:00000002 [INF] Request finished in 1667.4227ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:02:44.6351969+01:00 0HLLJFMEB0028:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/favicon.ico   (ca22a1cb)
+2019-03-28T14:02:44.6594417+01:00 0HLLJFMEB0026:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/info?t=1553778164617   (ca22a1cb)
+2019-03-28T14:02:44.7551267+01:00 0HLLJFMEB0026:00000002 [INF] Request finished in 89.164ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:02:44.7596966+01:00 0HLLJFMEB0028:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:02:44.7674311+01:00 0HLLJFMEB0028:00000002 [INF] Request finished in 141.7977ms 200 image/x-icon (791a596a)
+2019-03-28T14:02:44.7723891+01:00 0HLLJFMEB0024:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/941/qnw2p31w/websocket   (ca22a1cb)
+2019-03-28T14:02:45.8652099+01:00 0HLLJFMEB0027:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44300/sockjs-node/941/pkwqno0d/xhr_streaming?t=1553778165855  0 (ca22a1cb)
+2019-03-28T14:03:06.1317799+01:00 0HLLJFMEB0025:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/api/SampleData/WeatherForecasts   (ca22a1cb)
+2019-03-28T14:03:06.1385032+01:00 0HLLJFMEB0025:00000003 [INF] Executing endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (500cc934)
+2019-03-28T14:03:06.1644214+01:00 0HLLJFMEB0025:00000003 [INF] Route matched with "{action = \"WeatherForecasts\", controller = \"SampleData\", page = \"\"}". Executing action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" (a44c0341)
+2019-03-28T14:03:06.2467857+01:00 0HLLJFMEB0025:00000003 [INF] Executing action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" - Validation state: Valid (dad538d7)
+2019-03-28T14:03:06.2589098+01:00 0HLLJFMEB0025:00000003 [INF] Executed action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.6803ms. (50a9e262)
+2019-03-28T14:03:06.2732707+01:00 0HLLJFMEB0025:00000003 [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+SelectIPartitionIterator`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[IS_angularUI.Controllers.SampleDataController+WeatherForecast, IS-angularUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-28T14:03:06.3658136+01:00 0HLLJFMEB0025:00000003 [INF] Executed action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" in 190.356ms (afa2e885)
+2019-03-28T14:03:06.3710699+01:00 0HLLJFMEB0025:00000003 [INF] Executed endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (99874f2b)
+2019-03-28T14:03:06.3761241+01:00 0HLLJFMEB0025:00000003 [INF] Request finished in 245.0104ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-28T14:03:31.4317043+01:00 0HLLJFMEB0028:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/api/SampleData/WeatherForecasts   (ca22a1cb)
+2019-03-28T14:03:31.4411932+01:00 0HLLJFMEB0028:00000003 [INF] Executing endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (500cc934)
+2019-03-28T14:03:31.4477142+01:00 0HLLJFMEB0028:00000003 [INF] Route matched with "{action = \"WeatherForecasts\", controller = \"SampleData\", page = \"\"}". Executing action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" (a44c0341)
+2019-03-28T14:03:31.4820278+01:00 0HLLJFMEB0028:00000003 [INF] Executing action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" - Validation state: Valid (dad538d7)
+2019-03-28T14:03:31.4899512+01:00 0HLLJFMEB0028:00000003 [INF] Executed action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.0706ms. (50a9e262)
+2019-03-28T14:03:31.4971121+01:00 0HLLJFMEB0028:00000003 [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+SelectIPartitionIterator`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[IS_angularUI.Controllers.SampleDataController+WeatherForecast, IS-angularUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-28T14:03:31.5047865+01:00 0HLLJFMEB0028:00000003 [INF] Executed action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" in 50.4709ms (afa2e885)
+2019-03-28T14:03:31.5128369+01:00 0HLLJFMEB0028:00000003 [INF] Executed endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (99874f2b)
+2019-03-28T14:03:31.5232468+01:00 0HLLJFMEB0028:00000003 [INF] Request finished in 90.2332ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-28T14:03:33.2868112+01:00 0HLLJFMEB0026:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/api/SampleData/WeatherForecasts   (ca22a1cb)
+2019-03-28T14:03:33.2953356+01:00 0HLLJFMEB0026:00000003 [INF] Executing endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (500cc934)
+2019-03-28T14:03:33.3020719+01:00 0HLLJFMEB0026:00000003 [INF] Route matched with "{action = \"WeatherForecasts\", controller = \"SampleData\", page = \"\"}". Executing action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" (a44c0341)
+2019-03-28T14:03:33.3354089+01:00 0HLLJFMEB0026:00000003 [INF] Executing action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" - Validation state: Valid (dad538d7)
+2019-03-28T14:03:33.3419812+01:00 0HLLJFMEB0026:00000003 [INF] Executed action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.0164ms. (50a9e262)
+2019-03-28T14:03:33.3477257+01:00 0HLLJFMEB0026:00000003 [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+SelectIPartitionIterator`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[IS_angularUI.Controllers.SampleDataController+WeatherForecast, IS-angularUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-28T14:03:33.3548100+01:00 0HLLJFMEB0026:00000003 [INF] Executed action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" in 45.6257ms (afa2e885)
+2019-03-28T14:03:33.3617670+01:00 0HLLJFMEB0026:00000003 [INF] Executed endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (99874f2b)
+2019-03-28T14:03:33.3691970+01:00 0HLLJFMEB0026:00000003 [INF] Request finished in 83.1106ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-28T14:21:42.5204755+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:21:42.5565440+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:21:42.5782538+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:21:43.0353426+01:00  [INF] Starting @angular/cli on port 58791... (71535ef1)
+2019-03-28T14:21:43.5977305+01:00 0HLLJG191PCT2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/   (ca22a1cb)
+2019-03-28T14:21:43.5977305+01:00 0HLLJG191PCT3:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:61266/  0 (ca22a1cb)
+2019-03-28T14:21:43.6466947+01:00 0HLLJG191PCT3:00000001 [INF] Request finished in 50.376ms 200  (791a596a)
+2019-03-28T14:21:50.6331325+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "58791"
+
+** Angular Live Development Server is listening on localhost:58791, open your browser on http://localhost:58791/ **
+ (99f5207f)
+2019-03-28T14:21:57.6663742+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:22:03.7488442+01:00  [INF] Date: 2019-03-28T13:22:03.722Z
+Hash: 0639025397b853461aaa
+Time: 12911ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (ac0c1997)
+2019-03-28T14:22:03.8662571+01:00 0HLLJG191PCT4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/runtime.js   (ca22a1cb)
+2019-03-28T14:22:03.8763714+01:00 0HLLJG191PCT3:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/main.js   (ca22a1cb)
+2019-03-28T14:22:03.8869032+01:00 0HLLJG191PCT5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/polyfills.js   (ca22a1cb)
+2019-03-28T14:22:03.8954136+01:00 0HLLJG191PCT6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/vendor.js   (ca22a1cb)
+2019-03-28T14:22:04.3060970+01:00 0HLLJG191PCT2:00000001 [INF] Request finished in 20704.0263ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:22:04.3399377+01:00 0HLLJG191PCT2:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/styles.css   (ca22a1cb)
+2019-03-28T14:22:04.8064710+01:00 0HLLJG191PCT5:00000001 [INF] Request finished in 919.5453ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:22:05.3491771+01:00 0HLLJG191PCT3:00000002 [INF] Request finished in 1473.2759ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:22:05.4009678+01:00 0HLLJG191PCT4:00000001 [INF] Request finished in 1550.2036ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:22:05.4316227+01:00 0HLLJG191PCT6:00000001 [INF] Request finished in 1536.8173ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:22:05.4732719+01:00 0HLLJG191PCT2:00000002 [INF] Request finished in 1136.476ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:22:06.1546411+01:00 0HLLJG191PCT3:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/favicon.ico   (ca22a1cb)
+2019-03-28T14:22:06.1583545+01:00 0HLLJG191PCT5:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/info?t=1553779326120   (ca22a1cb)
+2019-03-28T14:22:06.2273358+01:00 0HLLJG191PCT5:00000002 [INF] Request finished in 73.0938ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:22:06.2399998+01:00 0HLLJG191PCT4:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/813/2xmgxg4q/websocket   (ca22a1cb)
+2019-03-28T14:22:06.2509810+01:00 0HLLJG191PCT3:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:22:06.2593583+01:00 0HLLJG191PCT3:00000003 [INF] Request finished in 122.8509ms 200 image/x-icon (791a596a)
+2019-03-28T14:22:07.0942396+01:00 0HLLJG191PCT2:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44300/sockjs-node/813/5zkmhrjf/xhr_streaming?t=1553779327088  0 (ca22a1cb)
+2019-03-28T14:23:10.4215916+01:00 0HLLJG191PCT7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/api/SampleData/WeatherForecasts   (ca22a1cb)
+2019-03-28T14:23:10.5387278+01:00 0HLLJG191PCT7:00000001 [INF] Executing endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (500cc934)
+2019-03-28T14:23:10.5718184+01:00 0HLLJG191PCT7:00000001 [INF] Route matched with "{action = \"WeatherForecasts\", controller = \"SampleData\", page = \"\"}". Executing action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" (a44c0341)
+2019-03-28T14:23:10.6696051+01:00 0HLLJG191PCT7:00000001 [INF] Executing action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" - Validation state: Valid (dad538d7)
+2019-03-28T14:23:10.6829053+01:00 0HLLJG191PCT7:00000001 [INF] Executed action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.6591ms. (50a9e262)
+2019-03-28T14:23:10.6997639+01:00 0HLLJG191PCT7:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+SelectIPartitionIterator`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[IS_angularUI.Controllers.SampleDataController+WeatherForecast, IS-angularUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-28T14:23:10.8014012+01:00 0HLLJG191PCT7:00000001 [INF] Executed action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" in 217.2145ms (afa2e885)
+2019-03-28T14:23:10.8077997+01:00 0HLLJG191PCT7:00000001 [INF] Executed endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (99874f2b)
+2019-03-28T14:23:10.8144818+01:00 0HLLJG191PCT7:00000001 [INF] Request finished in 398.3429ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-28T14:23:11.8114836+01:00 0HLLJG191PCT7:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/api/SampleData/WeatherForecasts   (ca22a1cb)
+2019-03-28T14:23:11.8222734+01:00 0HLLJG191PCT7:00000002 [INF] Executing endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (500cc934)
+2019-03-28T14:23:11.8292469+01:00 0HLLJG191PCT7:00000002 [INF] Route matched with "{action = \"WeatherForecasts\", controller = \"SampleData\", page = \"\"}". Executing action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" (a44c0341)
+2019-03-28T14:23:11.8687426+01:00 0HLLJG191PCT7:00000002 [INF] Executing action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" - Validation state: Valid (dad538d7)
+2019-03-28T14:23:11.8756552+01:00 0HLLJG191PCT7:00000002 [INF] Executed action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.0486ms. (50a9e262)
+2019-03-28T14:23:11.8834750+01:00 0HLLJG191PCT7:00000002 [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+SelectIPartitionIterator`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[IS_angularUI.Controllers.SampleDataController+WeatherForecast, IS-angularUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-28T14:23:11.8907100+01:00 0HLLJG191PCT7:00000002 [INF] Executed action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" in 52.0761ms (afa2e885)
+2019-03-28T14:23:11.8980892+01:00 0HLLJG191PCT7:00000002 [INF] Executed endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (99874f2b)
+2019-03-28T14:23:11.9053001+01:00 0HLLJG191PCT7:00000002 [INF] Request finished in 94.7429ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-28T14:25:42.8310717+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:25:42.8680415+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:25:42.8863517+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:25:43.4298735+01:00  [INF] Starting @angular/cli on port 59054... (b514d8e7)
+2019-03-28T14:25:43.7412005+01:00 0HLLJG3GK0TLA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/   (ca22a1cb)
+2019-03-28T14:25:43.7412004+01:00 0HLLJG3GK0TLB:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:61266/  0 (ca22a1cb)
+2019-03-28T14:25:43.7956648+01:00 0HLLJG3GK0TLB:00000001 [INF] Request finished in 57.5996ms 200  (791a596a)
+2019-03-28T14:25:50.2331399+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "59054"
+
+** Angular Live Development Server is listening on localhost:59054, open your browser on http://localhost:59054/ **
+ (827a4f73)
+2019-03-28T14:25:56.7126489+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:26:01.9711912+01:00  [INF] Date: 2019-03-28T13:26:01.949Z
+Hash: 0639025397b853461aaa
+Time: 11552ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (327dbc46)
+2019-03-28T14:26:02.0758349+01:00 0HLLJG3GK0TLB:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/styles.css   (ca22a1cb)
+2019-03-28T14:26:02.0841471+01:00 0HLLJG3GK0TLD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/vendor.js   (ca22a1cb)
+2019-03-28T14:26:02.1003847+01:00 0HLLJG3GK0TLC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/polyfills.js   (ca22a1cb)
+2019-03-28T14:26:02.1046723+01:00 0HLLJG3GK0TLE:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/main.js   (ca22a1cb)
+2019-03-28T14:26:02.2627136+01:00 0HLLJG3GK0TLA:00000001 [INF] Request finished in 18374.5275ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:26:02.3026825+01:00 0HLLJG3GK0TLA:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/runtime.js   (ca22a1cb)
+2019-03-28T14:26:02.8758654+01:00 0HLLJG3GK0TLD:00000001 [INF] Request finished in 814.6249ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:26:03.6280867+01:00 0HLLJG3GK0TLC:00000001 [INF] Request finished in 1571.8085ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:26:03.6503191+01:00 0HLLJG3GK0TLE:00000001 [INF] Request finished in 1527.531ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:26:03.6576263+01:00 0HLLJG3GK0TLA:00000002 [INF] Request finished in 1352.4484ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:26:03.6846499+01:00 0HLLJG3GK0TLB:00000002 [INF] Request finished in 1642.4987ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:26:04.3444500+01:00 0HLLJG3GK0TLD:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/favicon.ico   (ca22a1cb)
+2019-03-28T14:26:04.3818996+01:00 0HLLJG3GK0TLC:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/info?t=1553779564331   (ca22a1cb)
+2019-03-28T14:26:04.4425233+01:00 0HLLJG3GK0TLC:00000002 [INF] Request finished in 60.4172ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:26:04.4560037+01:00 0HLLJG3GK0TLE:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/775/mvxsbjlu/websocket   (ca22a1cb)
+2019-03-28T14:26:04.4676210+01:00 0HLLJG3GK0TLD:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:26:04.4756506+01:00 0HLLJG3GK0TLD:00000002 [INF] Request finished in 137.7584ms 200 image/x-icon (791a596a)
+2019-03-28T14:26:05.3507338+01:00 0HLLJG3GK0TLA:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44300/sockjs-node/775/lv2op0qg/xhr_streaming?t=1553779565343  0 (ca22a1cb)
+2019-03-28T14:26:08.6056124+01:00 0HLLJG3GK0TLB:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/.well-known/openid-configuration   (ca22a1cb)
+2019-03-28T14:26:08.6278062+01:00 0HLLJG3GK0TLB:00000003 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2019-03-28T14:26:08.7711043+01:00 0HLLJG3GK0TLB:00000003 [INF] Request finished in 166.2556ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:26:08.8964167+01:00 0HLLJG3GK0TLE:00000002 [INF] Request finished in 4440.2176ms 101  (791a596a)
+2019-03-28T14:26:19.8638141+01:00 0HLLJG3GK0TLC:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/connect/authorize   (ca22a1cb)
+2019-03-28T14:26:19.8864429+01:00 0HLLJG3GK0TLC:00000003 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2019-03-28T14:26:19.9626579+01:00 0HLLJG3GK0TLC:00000003 [ERR] client_id is missing or too long
+AuthorizeRequestValidationLog { ClientId: null, ClientName: null, RedirectUri: null, AllowedRedirectUris: null, SubjectId: "anonymous", ResponseType: null, ResponseMode: null, GrantType: null, RequestedScopes: "", State: null, UiLocales: null, Nonce: null, AuthenticationContextReferenceClasses: null, DisplayMode: null, PromptMode: null, MaxAge: null, LoginHint: null, SessionId: null, Raw: [] } (ca2b819d)
+2019-03-28T14:26:19.9713497+01:00 0HLLJG3GK0TLC:00000003 [ERR] Request validation failed (abd529bc)
+2019-03-28T14:26:19.9799817+01:00 0HLLJG3GK0TLC:00000003 [INF] AuthorizeRequestValidationLog { ClientId: null, ClientName: null, RedirectUri: null, AllowedRedirectUris: null, SubjectId: "anonymous", ResponseType: null, ResponseMode: null, GrantType: null, RequestedScopes: "", State: null, UiLocales: null, Nonce: null, AuthenticationContextReferenceClasses: null, DisplayMode: null, PromptMode: null, MaxAge: null, LoginHint: null, SessionId: null, Raw: [] } (28fd41e2)
+2019-03-28T14:26:20.0108623+01:00 0HLLJG3GK0TLC:00000003 [INF] Request finished in 151.7526ms 302  (791a596a)
+2019-03-28T14:26:20.0182961+01:00 0HLLJG3GK0TLD:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/home/error?errorId=CfDJ8FLcvaAou9FHvs9V4gEWB153fTRZ2rhgh-LuO4OrRbzYmRZgAaHHd_3b1i3jhxxaWK5hHwos8jD07eSz8O4de7XdPUOd8ucPtNvCC0copH-QCZ_lbQs8KYfMxmpJdlanVOxlHi9BShfXBPegWm8rq5zvsYTYk2Phe6Uo7q_6JjbFpOeBfXPD8ub8Q7hRbkkG2eFuoRIjb4FQ5zM936sbBbeIHZIanCLWgvwZ4SjbnDAb_RrS7bDy7VKN6wdQ6rkjm1CbvqBaVMMMGc7I1g9eJUGpKqPJhYcsLfPNepEneJLz   (ca22a1cb)
+2019-03-28T14:26:20.0279205+01:00 0HLLJG3GK0TLD:00000003 [INF] Executing endpoint '"IS_angularUI.Controllers.Home.HomeController.Error (IS-angularUI)"' (500cc934)
+2019-03-28T14:26:20.0773196+01:00 0HLLJG3GK0TLD:00000003 [INF] Route matched with "{action = \"Error\", controller = \"Home\", page = \"\"}". Executing action "IS_angularUI.Controllers.Home.HomeController.Error (IS-angularUI)" (a44c0341)
+2019-03-28T14:26:20.1864423+01:00 0HLLJG3GK0TLD:00000003 [INF] Executing action method "IS_angularUI.Controllers.Home.HomeController.Error (IS-angularUI)" with arguments (["CfDJ8FLcvaAou9FHvs9V4gEWB153fTRZ2rhgh-LuO4OrRbzYmRZgAaHHd_3b1i3jhxxaWK5hHwos8jD07eSz8O4de7XdPUOd8ucPtNvCC0copH-QCZ_lbQs8KYfMxmpJdlanVOxlHi9BShfXBPegWm8rq5zvsYTYk2Phe6Uo7q_6JjbFpOeBfXPD8ub8Q7hRbkkG2eFuoRIjb4FQ5zM936sbBbeIHZIanCLWgvwZ4SjbnDAb_RrS7bDy7VKN6wdQ6rkjm1CbvqBaVMMMGc7I1g9eJUGpKqPJhYcsLfPNepEneJLz"]) - Validation state: Valid (4e3479ed)
+2019-03-28T14:26:20.2098928+01:00 0HLLJG3GK0TLD:00000003 [INF] Executed action method "IS_angularUI.Controllers.Home.HomeController.Error (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 12.5441ms. (50a9e262)
+2019-03-28T14:26:20.2352631+01:00 0HLLJG3GK0TLD:00000003 [INF] Executing ViewResult, running view "Error". (c83d0e25)
+2019-03-28T14:26:20.2414461+01:00 0HLLJG3GK0TLD:00000003 [ERR] The view '"Error"' was not found. Searched locations: ["/Views/Home/Error.cshtml", "/Views/Shared/Error.cshtml", "/Pages/Shared/Error.cshtml"] (9bb2756c)
+2019-03-28T14:26:20.2551099+01:00 0HLLJG3GK0TLD:00000003 [INF] Executed action "IS_angularUI.Controllers.Home.HomeController.Error (IS-angularUI)" in 166.6968ms (afa2e885)
+2019-03-28T14:26:20.2622436+01:00 0HLLJG3GK0TLD:00000003 [INF] Executed endpoint '"IS_angularUI.Controllers.Home.HomeController.Error (IS-angularUI)"' (99874f2b)
+2019-03-28T14:26:20.3487967+01:00 0HLLJG3GK0TLD:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The view 'Error' was not found. The following locations were searched:
+/Views/Home/Error.cshtml
+/Views/Shared/Error.cshtml
+/Pages/Shared/Error.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Saml.Hosting.IdentityServerSamlMiddleware.Invoke(HttpContext context, ISamlEndpointRouter router, IMemoryCache cache, SamlIdpOptions options) in E:\TeamCity\buildAgent\work\73e6199d397b0702\src\IdentityServer4.Saml\Hosting\IdentityServerSamlMiddleware.cs:line 56
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\IdentityServerMiddleware.cs:line 72
+   at IdentityServer4.Hosting.MutualTlsTokenEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\MtlsTokenEndpointMiddleware.cs:line 60
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\src\Hosting\BaseUrlMiddleware.cs:line 36
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-03-28T14:26:20.3924458+01:00 0HLLJG3GK0TLD:00000003 [INF] Request finished in 372.3409ms 500 text/html; charset=utf-8 (791a596a)
+2019-03-28T14:26:30.4029247+01:00 0HLLJG3GK0TLA:00000003 [INF] Request finished in 25052.5883ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:26:36.7056408+01:00 0HLLJG3GK0TLB:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44300/connect/token   (ca22a1cb)
+2019-03-28T14:26:36.7274407+01:00 0HLLJG3GK0TLB:00000004 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2019-03-28T14:26:36.7371836+01:00 0HLLJG3GK0TLB:00000004 [WRN] Invalid HTTP request for token endpoint (e4210d16)
+2019-03-28T14:26:36.7494096+01:00 0HLLJG3GK0TLB:00000004 [INF] Request finished in 44.0667ms 400 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:26:50.8720281+01:00 0HLLJG3GK0TLC:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44300/connect/deviceauthorization   (ca22a1cb)
+2019-03-28T14:26:50.8876826+01:00 0HLLJG3GK0TLC:00000004 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DeviceAuthorizationEndpoint" for "/connect/deviceauthorization" (f7642de5)
+2019-03-28T14:26:50.8966703+01:00 0HLLJG3GK0TLC:00000004 [WRN] Invalid HTTP request for device authorize endpoint (a9ad88e8)
+2019-03-28T14:26:50.9036202+01:00 0HLLJG3GK0TLC:00000004 [ERR] Device authorization error: "invalid_request":"invalid_request" (9e005fe6)
+2019-03-28T14:26:50.9107465+01:00 0HLLJG3GK0TLC:00000004 [INF] Request finished in 38.6606ms 400 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:30:41.9985803+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:30:42.0295066+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:30:42.0462802+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:30:42.5139775+01:00  [INF] Starting @angular/cli on port 59350... (11967d23)
+2019-03-28T14:30:42.7952561+01:00 0HLLJG69OAHL4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/   (ca22a1cb)
+2019-03-28T14:30:42.7952561+01:00 0HLLJG69OAHL3:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:61266/  0 (ca22a1cb)
+2019-03-28T14:30:42.8397610+01:00 0HLLJG69OAHL3:00000001 [INF] Request finished in 47.1815ms 200  (791a596a)
+2019-03-28T14:31:47.7356286+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:31:47.7559440+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:31:47.7666625+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:31:47.9760548+01:00  [INF] Starting @angular/cli on port 59417... (367045be)
+2019-03-28T14:31:48.1220543+01:00 0HLLJG6T7SN6F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:61266/   (ca22a1cb)
+2019-03-28T14:31:48.1388032+01:00 0HLLJG6T7SN6F:00000001 [INF] Request finished in 18.7004ms 307  (791a596a)
+2019-03-28T14:31:48.1547347+01:00 0HLLJG6T7SN6F:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/   (ca22a1cb)
+2019-03-28T14:31:54.2455952+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "59417"
+
+** Angular Live Development Server is listening on localhost:59417, open your browser on http://localhost:59417/ **
+ (451348a1)
+2019-03-28T14:32:00.4289240+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:32:20.1953827+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:32:20.2323218+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:32:20.2497754+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:32:20.6922564+01:00  [INF] Starting @angular/cli on port 59469... (1631073e)
+2019-03-28T14:32:21.0211899+01:00 0HLLJG770U3PS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/   (ca22a1cb)
+2019-03-28T14:32:21.0211898+01:00 0HLLJG770U3PR:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:61266/  0 (ca22a1cb)
+2019-03-28T14:32:21.0684881+01:00 0HLLJG770U3PR:00000001 [INF] Request finished in 53.028ms 200  (791a596a)
+2019-03-28T14:33:00.8471042+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:33:00.8744505+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:33:00.8910380+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:33:01.3100327+01:00  [INF] Starting @angular/cli on port 59510... (a7d79585)
+2019-03-28T14:33:03.3345739+01:00 0HLLJG7J66O2F:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-03-28T14:33:08.5548999+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "59510"
+
+** Angular Live Development Server is listening on localhost:59510, open your browser on http://localhost:59510/ **
+ (a6f22b22)
+2019-03-28T14:33:16.0544509+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:33:21.5647844+01:00  [INF] Date: 2019-03-28T13:33:21.540Z
+Hash: 0639025397b853461aaa
+Time: 12795ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (656172db)
+2019-03-28T14:33:21.7559829+01:00 0HLLJG7J66O2H:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/main.js   (ca22a1cb)
+2019-03-28T14:33:21.7594340+01:00 0HLLJG7J66O2I:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   (ca22a1cb)
+2019-03-28T14:33:21.7633091+01:00 0HLLJG7J66O2G:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   (ca22a1cb)
+2019-03-28T14:33:21.7786682+01:00 0HLLJG7J66O2J:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   (ca22a1cb)
+2019-03-28T14:33:22.1120893+01:00 0HLLJG7J66O2F:00000001 [INF] Request finished in 18511.089ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:33:22.1274477+01:00 0HLLJG7J66O2F:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/styles.css   (ca22a1cb)
+2019-03-28T14:33:22.4079918+01:00 0HLLJG7J66O2J:00000001 [INF] Request finished in 654.9226ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:33:23.1806135+01:00 0HLLJG7J66O2G:00000001 [INF] Request finished in 1417.3297ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:33:23.2508713+01:00 0HLLJG7J66O2H:00000001 [INF] Request finished in 1497.5297ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:33:23.2834638+01:00 0HLLJG7J66O2F:00000002 [INF] Request finished in 1155.2696ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:33:23.3051993+01:00 0HLLJG7J66O2I:00000001 [INF] Request finished in 1550.3265ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:33:23.8771999+01:00 0HLLJG7J66O2I:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   (ca22a1cb)
+2019-03-28T14:33:23.8903527+01:00 0HLLJG7J66O2F:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1553780003864   (ca22a1cb)
+2019-03-28T14:33:23.9483972+01:00 0HLLJG7J66O2F:00000003 [INF] Request finished in 61.7126ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:33:23.9728208+01:00 0HLLJG7J66O2K:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/268/xx3kfk1s/websocket   (ca22a1cb)
+2019-03-28T14:33:23.9811643+01:00 0HLLJG7J66O2I:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:33:23.9892568+01:00 0HLLJG7J66O2I:00000002 [INF] Request finished in 119.7144ms 200 image/x-icon (791a596a)
+2019-03-28T14:33:24.7246716+01:00 0HLLJG7J66O2I:00000003 [INF] Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/268/tfdssc2w/xhr_streaming?t=1553780004718  0 (ca22a1cb)
+2019-03-28T14:34:57.7020792+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:34:57.7314284+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:34:57.7508947+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:34:58.2158484+01:00  [INF] Starting @angular/cli on port 59646... (90784971)
+2019-03-28T14:35:00.4695084+01:00 0HLLJG8M2SHIQ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-03-28T14:35:05.4596465+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "59646"
+
+** Angular Live Development Server is listening on localhost:59646, open your browser on http://localhost:59646/ **
+ (fbc94495)
+2019-03-28T14:35:12.8566668+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:35:17.6214818+01:00  [INF] Date: 2019-03-28T13:35:17.598Z
+Hash: 0639025397b853461aaa
+Time: 11966ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (0f0d1173)
+2019-03-28T14:35:17.7828576+01:00 0HLLJG8M2SHIT:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   (ca22a1cb)
+2019-03-28T14:35:17.7884105+01:00 0HLLJG8M2SHIU:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/main.js   (ca22a1cb)
+2019-03-28T14:35:17.7989921+01:00 0HLLJG8M2SHIR:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   (ca22a1cb)
+2019-03-28T14:35:17.8119976+01:00 0HLLJG8M2SHIS:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   (ca22a1cb)
+2019-03-28T14:35:18.1718348+01:00 0HLLJG8M2SHIQ:00000001 [INF] Request finished in 17476.4871ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:35:18.2001802+01:00 0HLLJG8M2SHIQ:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/styles.css   (ca22a1cb)
+2019-03-28T14:35:18.4899142+01:00 0HLLJG8M2SHIU:00000001 [INF] Request finished in 708.0468ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:35:19.2757438+01:00 0HLLJG8M2SHIT:00000001 [INF] Request finished in 1492.4618ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:35:19.2802818+01:00 0HLLJG8M2SHIS:00000001 [INF] Request finished in 1494.5012ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:35:19.3178501+01:00 0HLLJG8M2SHIR:00000001 [INF] Request finished in 1524.1513ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:35:19.3661158+01:00 0HLLJG8M2SHIQ:00000002 [INF] Request finished in 1181.2724ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:35:19.9823390+01:00 0HLLJG8M2SHIQ:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   (ca22a1cb)
+2019-03-28T14:35:19.9942613+01:00 0HLLJG8M2SHIR:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1553780119970   (ca22a1cb)
+2019-03-28T14:35:20.0608328+01:00 0HLLJG8M2SHIR:00000002 [INF] Request finished in 71.234ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:35:20.0750357+01:00 0HLLJG8M2SHIQ:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:35:20.0788086+01:00 0HLLJG8M2SHIV:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/241/b0twymjo/websocket   (ca22a1cb)
+2019-03-28T14:35:20.0912358+01:00 0HLLJG8M2SHIQ:00000003 [INF] Request finished in 110.1825ms 200 image/x-icon (791a596a)
+2019-03-28T14:35:20.8499590+01:00 0HLLJG8M2SHIQ:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/241/0xar1ruu/xhr_streaming?t=1553780120842  0 (ca22a1cb)
+2019-03-28T14:35:21.7911418+01:00 0HLLJG8M2SHIR:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/.well-known/openid-configuration   (ca22a1cb)
+2019-03-28T14:35:21.8137977+01:00 0HLLJG8M2SHIR:00000003 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2019-03-28T14:35:21.9479364+01:00 0HLLJG8M2SHIR:00000003 [INF] Request finished in 157.5745ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:35:21.9747177+01:00 0HLLJG8M2SHIQ:00000004 [INF] Request finished in 1124.0527ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:35:22.0632444+01:00 0HLLJG8M2SHIV:00000001 [INF] Request finished in 1985.0622ms 101  (791a596a)
+2019-03-28T14:42:47.9987242+01:00 0HLLJG8M2SHJ1:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-03-28T14:42:49.0563227+01:00 0HLLJG8M2SHJ1:00000001 [INF] Request finished in 1057.2655ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:42:59.9702050+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:43:00.0020840+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:43:00.0242985+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:43:00.5163327+01:00  [INF] Starting @angular/cli on port 60143... (6e92004d)
+2019-03-28T14:43:02.8713231+01:00 0HLLJGD5QGS12:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-03-28T14:43:07.8729307+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "60143"
+
+** Angular Live Development Server is listening on localhost:60143, open your browser on http://localhost:60143/ **
+ (7f514ff3)
+2019-03-28T14:43:12.8200672+01:00  [ERR]   0% compiling 10% building modules 0/1 modules 1 active ΓÇªnsor\IS-angularUI\ClientApp\src\main.ts                                          10% building modules 1/1 modules 0 active 10% building modules 1/2 modules 1 active ΓÇªIS-angularUI\ClientApp\src\polyfills.ts                                          10% building modules 2/2 modules 0 active 10% building modules 2/3 modules 1 active ΓÇªr\IS-angularUI\ClientApp\src\styles.css                                          10% building modules 3/3 modules 0 activeinternal/process/per_thread.js:198
+ (3b5b066d)
+2019-03-28T14:43:12.8268662+01:00  [ERR]       throw errnoException(err, 'kill');
+      ^
+
+Error: kill ENOSYS
+    at process.kill (internal/process/per_thread.js:198:13)
+ (b6988b28)
+2019-03-28T14:44:19.4670789+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:44:19.5055753+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:44:19.5331889+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:44:20.0342846+01:00  [INF] Starting @angular/cli on port 60232... (12218926)
+2019-03-28T14:44:20.5607327+01:00 0HLLJGDTF2M9R:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/   (ca22a1cb)
+2019-03-28T14:44:20.5607327+01:00 0HLLJGDTF2M9Q:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:61266/  0 (ca22a1cb)
+2019-03-28T14:44:20.6092362+01:00 0HLLJGDTF2M9Q:00000001 [INF] Request finished in 50.8175ms 200  (791a596a)
+2019-03-28T14:44:26.9912850+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "60232"
+
+** Angular Live Development Server is listening on localhost:60232, open your browser on http://localhost:60232/ **
+ (368273a7)
+2019-03-28T14:44:33.4690059+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:44:39.4917672+01:00  [INF] Date: 2019-03-28T13:44:39.467Z
+Hash: 0639025397b853461aaa
+Time: 12307ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (712e14cc)
+2019-03-28T14:44:39.5777048+01:00 0HLLJGDTF2M9Q:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/styles.css   (ca22a1cb)
+2019-03-28T14:44:39.5879669+01:00 0HLLJGDTF2M9S:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/polyfills.js   (ca22a1cb)
+2019-03-28T14:44:39.6039720+01:00 0HLLJGDTF2M9T:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/main.js   (ca22a1cb)
+2019-03-28T14:44:39.6082272+01:00 0HLLJGDTF2M9U:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44300/vendor.js   (ca22a1cb)
+2019-03-28T14:44:39.7095219+01:00 0HLLJGDTF2M9R:00000001 [INF] Request finished in 19115.6322ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:44:39.9004131+01:00 0HLLJGDTF2M9R:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/runtime.js   (ca22a1cb)
+2019-03-28T14:44:40.3121747+01:00 0HLLJGDTF2M9T:00000001 [INF] Request finished in 711.9597ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:44:41.0542410+01:00 0HLLJGDTF2M9R:00000002 [INF] Request finished in 1156.6291ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:44:41.0765300+01:00 0HLLJGDTF2M9Q:00000002 [INF] Request finished in 1491.2647ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:44:41.1507100+01:00 0HLLJGDTF2M9S:00000001 [INF] Request finished in 1563.0045ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:44:41.1867903+01:00 0HLLJGDTF2M9U:00000001 [INF] Request finished in 1581.6175ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:44:41.7434203+01:00 0HLLJGDTF2M9T:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44300/favicon.ico   (ca22a1cb)
+2019-03-28T14:44:41.7503201+01:00 0HLLJGDTF2M9R:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/info?t=1553780681736   (ca22a1cb)
+2019-03-28T14:44:41.8388261+01:00 0HLLJGDTF2M9R:00000003 [INF] Request finished in 89.5558ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:44:41.8627194+01:00 0HLLJGDTF2M9Q:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44300/sockjs-node/174/xagxlltb/websocket   (ca22a1cb)
+2019-03-28T14:44:41.8708723+01:00 0HLLJGDTF2M9T:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:44:41.8787115+01:00 0HLLJGDTF2M9T:00000002 [INF] Request finished in 135.1406ms 200 image/x-icon (791a596a)
+2019-03-28T14:44:42.6667909+01:00 0HLLJGDTF2M9S:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44300/sockjs-node/174/f0esbxfd/xhr_streaming?t=1553780682658  0 (ca22a1cb)
+2019-03-28T14:46:06.9989545+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:46:07.0290460+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:46:07.0496438+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:46:07.5402635+01:00  [INF] Starting @angular/cli on port 60386... (a2518356)
+2019-03-28T14:46:09.4790150+01:00 0HLLJGETGIQCF:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/   (ca22a1cb)
+2019-03-28T14:46:09.4920787+01:00 0HLLJGETGIQCF:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-28T14:46:14.4674498+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "60386"
+
+** Angular Live Development Server is listening on localhost:60386, open your browser on http://localhost:60386/ **
+ (aa5d684b)
+2019-03-28T14:46:21.3516275+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:46:26.0534643+01:00  [INF] Date: 2019-03-28T13:46:26.023Z
+Hash: 0639025397b853461aaa
+Time: 11385ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (1bd3b880)
+2019-03-28T14:46:26.1344397+01:00 0HLLJGETGIQCG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/runtime.js   (ca22a1cb)
+2019-03-28T14:46:26.1393774+01:00 0HLLJGETGIQCH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/polyfills.js   (ca22a1cb)
+2019-03-28T14:46:26.1524711+01:00 0HLLJGETGIQCI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/vendor.js   (ca22a1cb)
+2019-03-28T14:46:26.3350282+01:00 0HLLJGETGIQCJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/main.js   (ca22a1cb)
+2019-03-28T14:46:26.3365360+01:00 0HLLJGETGIQCF:00000001 [INF] Request finished in 16781.6561ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:46:26.4981102+01:00 0HLLJGETGIQCF:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5001/styles.css   (ca22a1cb)
+2019-03-28T14:46:26.8956945+01:00 0HLLJGETGIQCH:00000001 [INF] Request finished in 760.4076ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:46:27.5358982+01:00 0HLLJGETGIQCJ:00000001 [INF] Request finished in 1202.1321ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:46:27.5870934+01:00 0HLLJGETGIQCG:00000001 [INF] Request finished in 1456.6094ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:46:27.6108916+01:00 0HLLJGETGIQCI:00000001 [INF] Request finished in 1455.9112ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:46:27.6439384+01:00 0HLLJGETGIQCF:00000002 [INF] Request finished in 1146.2239ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:46:28.4182687+01:00 0HLLJGETGIQCF:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5001/favicon.ico   (ca22a1cb)
+2019-03-28T14:46:28.4386294+01:00 0HLLJGETGIQCI:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5001/sockjs-node/info?t=1553780788402   (ca22a1cb)
+2019-03-28T14:46:28.5403645+01:00 0HLLJGETGIQCI:00000002 [INF] Request finished in 114.6376ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:46:28.5500675+01:00 0HLLJGETGIQCF:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:46:28.5591678+01:00 0HLLJGETGIQCF:00000003 [INF] Request finished in 150.9896ms 200 image/x-icon (791a596a)
+2019-03-28T14:46:28.5669832+01:00 0HLLJGETGIQCK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/sockjs-node/462/azihtsd3/websocket   (ca22a1cb)
+2019-03-28T14:46:29.6765308+01:00 0HLLJGETGIQCI:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5001/sockjs-node/462/sn5zoxbx/xhr_streaming?t=1553780789628  0 (ca22a1cb)
+2019-03-28T14:46:35.6396976+01:00  [INF] Connection id ""0HLLJGETGIQCL"" bad request data: ""Invalid request line: '\x16\x03\x03\x00\xA0\x01\x00\x00\x9C\x03\x03\\x9C\xD0;v\xDF\xF9\xBA\xACO\xAB\xEE9\xA5\x82\x18\x956\x10\xB3\xBE\x01\x15b\xAA\xC8\xCC'\xD9h\xB8\xAA\x00\x00*\xC0,\xC0+\xC00\xC0/\x00\x9F\x00\x9E\xC0$\xC0#\xC0(\xC0'\xC0\x0A'"" (86f1a409)
+Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Invalid request line: '\x16\x03\x03\x00\xA0\x01\x00\x00\x9C\x03\x03\\x9C\xD0;v\xDF\xF9\xBA\xACO\xAB\xEE9\xA5\x82\x18\x956\x10\xB3\xBE\x01\x15b\xAA\xC8\xCC'\xD9h\xB8\xAA\x00\x00*\xC0,\xC0+\xC00\xC0/\x00\x9F\x00\x9E\xC0$\xC0#\xC0(\xC0'\xC0\x0A'
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.RejectRequestLine(Byte* requestLine, Int32 length)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.GetUnknownMethod(Byte* data, Int32 length, Int32& methodLength)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, Byte* data, Int32 length)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, ReadOnlySequence`1& buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.IHttpParser<TRequestHandler>.ParseRequestLine(TRequestHandler handler, ReadOnlySequence`1& buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TakeStartLine(ReadOnlySequence`1 buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.ParseRequest(ReadOnlySequence`1 buffer, SequencePosition& consumed, SequencePosition& examined)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TryParseRequest(ReadResult result, Boolean& endConnection)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2019-03-28T14:49:15.4839096+01:00 0HLLJGETGIQCM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/   (ca22a1cb)
+2019-03-28T14:49:16.5488175+01:00 0HLLJGETGIQCM:00000001 [INF] Request finished in 1064.9433ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:49:41.6763966+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:49:41.7168412+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:49:41.7332052+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:49:42.2214374+01:00  [INF] Starting @angular/cli on port 60637... (6679e39f)
+2019-03-28T14:49:44.3063630+01:00 0HLLJGGTFRUSE:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-03-28T14:49:50.2923063+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "60637"
+
+** Angular Live Development Server is listening on localhost:60637, open your browser on http://localhost:60637/ **
+ (12b9ac93)
+2019-03-28T14:49:57.9605548+01:00 0HLLJGGTFRUSF:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/.well-known/openid-configuration   (ca22a1cb)
+2019-03-28T14:49:57.9868341+01:00 0HLLJGGTFRUSF:00000001 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2019-03-28T14:49:58.1967517+01:00 0HLLJGGTFRUSF:00000001 [INF] Request finished in 234.9842ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:49:58.3900565+01:00 0HLLJGGTFRUSF:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/.well-known/openid-configuration/jwks   (ca22a1cb)
+2019-03-28T14:49:58.4126036+01:00 0HLLJGGTFRUSF:00000002 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2019-03-28T14:49:58.4695752+01:00 0HLLJGGTFRUSF:00000002 [INF] Request finished in 79.9957ms 200 application/jwk-set+json; charset=UTF-8 (791a596a)
+2019-03-28T14:49:58.5878346+01:00 0HLLJGGTFRUSG:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/connect/authorize?client_id=oid%20client&redirect_uri=https%3A%2F%2Flocalhost%3A44352%2Fsignin-oidc&response_type=id_token%20token&scope=openid%20profile%20role%20sensorsapi&response_mode=form_post&nonce=636893777985019620.OWIyMzM5NTMtYmU0NC00ZjViLThkM2UtNDQ3MjFhZDFlMTcxMTZjY2QxOWMtZDdmMS00OTkxLWJhMDMtOTA4MDUyMzk1OGI2&state=CfDJ8FLcvaAou9FHvs9V4gEWB16yJ4RYkckCWWOQhcK3HW3ppDQ-pcj151VqPshFFSqjyVNA2g0flWV0QeokVG6S2PsxupLxJbGF2XufjK9yXcuL8x0sgPnXuHOjuJNt7EHWUr6FjfbAq1LC5P-zdZHaUcyPFS4_aD-xO7q7jmCTxI2CIBmQ1gKkGUYiKWcX4lf272LefUYCxxPvJHZ1Nkd7P8ztukBvDK6P_dFfBXXiyKYjXmvl0wIcoYYSs1HtZetk6BFztPYu9TPhO8HFjMhbAdrRKhNFCVLDam5qgB1LTNxPqF59tr6n-1Pc2tjdTPla0TG-P2Uv05BH7SEa5ul0Ucg&x-client-SKU=ID_NETSTANDARD2_0&x-client-ver=5.3.0.0   (ca22a1cb)
+2019-03-28T14:49:58.6246021+01:00 0HLLJGGTFRUSG:00000001 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2019-03-28T14:49:58.8062355+01:00 0HLLJGGTFRUSG:00000001 [INF] ValidatedAuthorizeRequest
+AuthorizeRequestValidationLog { ClientId: "oid client", ClientName: "OpenID Client", RedirectUri: "https://localhost:44352/signin-oidc", AllowedRedirectUris: ["https://localhost:44352/signin-oidc"], SubjectId: "anonymous", ResponseType: "id_token token", ResponseMode: "form_post", GrantType: "implicit", RequestedScopes: "openid profile role sensorsapi", State: "CfDJ8FLcvaAou9FHvs9V4gEWB16yJ4RYkckCWWOQhcK3HW3ppDQ-pcj151VqPshFFSqjyVNA2g0flWV0QeokVG6S2PsxupLxJbGF2XufjK9yXcuL8x0sgPnXuHOjuJNt7EHWUr6FjfbAq1LC5P-zdZHaUcyPFS4_aD-xO7q7jmCTxI2CIBmQ1gKkGUYiKWcX4lf272LefUYCxxPvJHZ1Nkd7P8ztukBvDK6P_dFfBXXiyKYjXmvl0wIcoYYSs1HtZetk6BFztPYu9TPhO8HFjMhbAdrRKhNFCVLDam5qgB1LTNxPqF59tr6n-1Pc2tjdTPla0TG-P2Uv05BH7SEa5ul0Ucg", UiLocales: null, Nonce: "636893777985019620.OWIyMzM5NTMtYmU0NC00ZjViLThkM2UtNDQ3MjFhZDFlMTcxMTZjY2QxOWMtZDdmMS00OTkxLWJhMDMtOTA4MDUyMzk1OGI2", AuthenticationContextReferenceClasses: null, DisplayMode: null, PromptMode: null, MaxAge: null, LoginHint: null, SessionId: null, Raw: [("client_id": "oid client"), ("redirect_uri": "https://localhost:44352/signin-oidc"), ("response_type": "id_token token"), ("scope": "openid profile role sensorsapi"), ("response_mode": "form_post"), ("nonce": "636893777985019620.OWIyMzM5NTMtYmU0NC00ZjViLThkM2UtNDQ3MjFhZDFlMTcxMTZjY2QxOWMtZDdmMS00OTkxLWJhMDMtOTA4MDUyMzk1OGI2"), ("state": "CfDJ8FLcvaAou9FHvs9V4gEWB16yJ4RYkckCWWOQhcK3HW3ppDQ-pcj151VqPshFFSqjyVNA2g0flWV0QeokVG6S2PsxupLxJbGF2XufjK9yXcuL8x0sgPnXuHOjuJNt7EHWUr6FjfbAq1LC5P-zdZHaUcyPFS4_aD-xO7q7jmCTxI2CIBmQ1gKkGUYiKWcX4lf272LefUYCxxPvJHZ1Nkd7P8ztukBvDK6P_dFfBXXiyKYjXmvl0wIcoYYSs1HtZetk6BFztPYu9TPhO8HFjMhbAdrRKhNFCVLDam5qgB1LTNxPqF59tr6n-1Pc2tjdTPla0TG-P2Uv05BH7SEa5ul0Ucg"), ("x-client-SKU": "ID_NETSTANDARD2_0"), ("x-client-ver": "5.3.0.0")] } (7fffff14)
+2019-03-28T14:49:58.8299666+01:00 0HLLJGGTFRUSG:00000001 [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-28T14:49:58.8435874+01:00 0HLLJGGTFRUSG:00000001 [INF] Request finished in 256.6964ms 302  (791a596a)
+2019-03-28T14:49:58.8516327+01:00 0HLLJGGTFRUSG:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Doid%2520client%26redirect_uri%3Dhttps%253A%252F%252Flocalhost%253A44352%252Fsignin-oidc%26response_type%3Did_token%2520token%26scope%3Dopenid%2520profile%2520role%2520sensorsapi%26response_mode%3Dform_post%26nonce%3D636893777985019620.OWIyMzM5NTMtYmU0NC00ZjViLThkM2UtNDQ3MjFhZDFlMTcxMTZjY2QxOWMtZDdmMS00OTkxLWJhMDMtOTA4MDUyMzk1OGI2%26state%3DCfDJ8FLcvaAou9FHvs9V4gEWB16yJ4RYkckCWWOQhcK3HW3ppDQ-pcj151VqPshFFSqjyVNA2g0flWV0QeokVG6S2PsxupLxJbGF2XufjK9yXcuL8x0sgPnXuHOjuJNt7EHWUr6FjfbAq1LC5P-zdZHaUcyPFS4_aD-xO7q7jmCTxI2CIBmQ1gKkGUYiKWcX4lf272LefUYCxxPvJHZ1Nkd7P8ztukBvDK6P_dFfBXXiyKYjXmvl0wIcoYYSs1HtZetk6BFztPYu9TPhO8HFjMhbAdrRKhNFCVLDam5qgB1LTNxPqF59tr6n-1Pc2tjdTPla0TG-P2Uv05BH7SEa5ul0Ucg%26x-client-SKU%3DID_NETSTANDARD2_0%26x-client-ver%3D5.3.0.0   (ca22a1cb)
+2019-03-28T14:50:00.3409709+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:50:00.3489550+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Doid%2520client%26redirect_uri%3Dhttps%253A%252F%252Flocalhost%253A44352%252Fsignin-oidc%26response_type%3Did_token%2520token%26scope%3Dopenid%2520profile%2520role%2520sensorsapi%26response_mode%3Dform_post%26nonce%3D636893777985019620.OWIyMzM5NTMtYmU0NC00ZjViLThkM2UtNDQ3MjFhZDFlMTcxMTZjY2QxOWMtZDdmMS00OTkxLWJhMDMtOTA4MDUyMzk1OGI2%26state%3DCfDJ8FLcvaAou9FHvs9V4gEWB16yJ4RYkckCWWOQhcK3HW3ppDQ-pcj151VqPshFFSqjyVNA2g0flWV0QeokVG6S2PsxupLxJbGF2XufjK9yXcuL8x0sgPnXuHOjuJNt7EHWUr6FjfbAq1LC5P-zdZHaUcyPFS4_aD-xO7q7jmCTxI2CIBmQ1gKkGUYiKWcX4lf272LefUYCxxPvJHZ1Nkd7P8ztukBvDK6P_dFfBXXiyKYjXmvl0wIcoYYSs1HtZetk6BFztPYu9TPhO8HFjMhbAdrRKhNFCVLDam5qgB1LTNxPqF59tr6n-1Pc2tjdTPla0TG-P2Uv05BH7SEa5ul0Ucg%26x-client-SKU%3DID_NETSTANDARD2_0%26x-client-ver%3D5.3.0.0
+ (bad264f1)
+2019-03-28T14:50:05.9934096+01:00  [INF] Date: 2019-03-28T13:50:05.969Z
+Hash: 0639025397b853461aaa
+Time: 15454ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (bce5d99b)
+2019-03-28T14:50:06.1471132+01:00 0HLLJGGTFRUSH:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   (ca22a1cb)
+2019-03-28T14:50:06.1577944+01:00 0HLLJGGTFRUSI:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   (ca22a1cb)
+2019-03-28T14:50:06.1692669+01:00 0HLLJGGTFRUSJ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/main.js   (ca22a1cb)
+2019-03-28T14:50:06.3703869+01:00 0HLLJGGTFRUSG:00000002 [INF] Request finished in 7328.1934ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:50:06.3753976+01:00 0HLLJGGTFRUSE:00000001 [INF] Request finished in 21973.4024ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:50:06.4011814+01:00 0HLLJGGTFRUSG:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/styles.css   (ca22a1cb)
+2019-03-28T14:50:06.4094176+01:00 0HLLJGGTFRUSE:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   (ca22a1cb)
+2019-03-28T14:50:06.8123531+01:00 0HLLJGGTFRUSJ:00000001 [INF] Request finished in 644.1105ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:50:06.8589020+01:00 0HLLJGGTFRUSJ:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/main.js   (ca22a1cb)
+2019-03-28T14:50:06.8658048+01:00 0HLLJGGTFRUSK:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   (ca22a1cb)
+2019-03-28T14:50:06.9699406+01:00 0HLLJGGTFRUSJ:00000002 [INF] Request finished in 110.3828ms 304  (791a596a)
+2019-03-28T14:50:07.0048080+01:00 0HLLJGGTFRUSI:00000001 [INF] Request finished in 849.3616ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:50:07.2920006+01:00 0HLLJGGTFRUSK:00000001 [INF] Request finished in 428.0374ms 304  (791a596a)
+2019-03-28T14:50:07.4304473+01:00 0HLLJGGTFRUSH:00000001 [INF] Request finished in 1283.9833ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:50:07.4391954+01:00 0HLLJGGTFRUSK:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   (ca22a1cb)
+2019-03-28T14:50:07.4966867+01:00 0HLLJGGTFRUSK:00000002 [INF] Request finished in 61.2404ms 304  (791a596a)
+2019-03-28T14:50:07.6100926+01:00 0HLLJGGTFRUSG:00000003 [INF] Request finished in 1203.9731ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:50:07.6140648+01:00 0HLLJGGTFRUSK:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/styles.css   (ca22a1cb)
+2019-03-28T14:50:07.6262498+01:00 0HLLJGGTFRUSG:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   (ca22a1cb)
+2019-03-28T14:50:07.6557042+01:00 0HLLJGGTFRUSE:00000002 [INF] Request finished in 1209.5363ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:50:07.7555302+01:00 0HLLJGGTFRUSK:00000003 [INF] Request finished in 164.8364ms 304  (791a596a)
+2019-03-28T14:50:07.7850377+01:00 0HLLJGGTFRUSG:00000004 [INF] Request finished in 164.9812ms 304  (791a596a)
+2019-03-28T14:50:08.2887552+01:00 0HLLJGGTFRUSG:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   (ca22a1cb)
+2019-03-28T14:50:08.3082604+01:00 0HLLJGGTFRUSK:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1553781008283   (ca22a1cb)
+2019-03-28T14:50:08.3680820+01:00 0HLLJGGTFRUSK:00000004 [INF] Request finished in 64.2079ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:50:08.3787114+01:00 0HLLJGGTFRUSG:00000005 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:50:08.3875424+01:00 0HLLJGGTFRUSG:00000005 [INF] Request finished in 97.2767ms 200 image/x-icon (791a596a)
+2019-03-28T14:50:08.3973965+01:00 0HLLJGGTFRUSL:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/369/dfvlh1zo/websocket   (ca22a1cb)
+2019-03-28T14:50:08.4223388+01:00 0HLLJGGTFRUSG:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1553781008401   (ca22a1cb)
+2019-03-28T14:50:08.4755545+01:00 0HLLJGGTFRUSG:00000006 [INF] Request finished in 56.2698ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:50:08.7888624+01:00 0HLLJGGTFRUSM:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/940/ez3p4pi1/websocket   (ca22a1cb)
+2019-03-28T14:50:09.1500443+01:00 0HLLJGGTFRUSG:00000007 [INF] Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/369/xfbycun3/xhr_streaming?t=1553781009143  0 (ca22a1cb)
+2019-03-28T14:50:09.2437393+01:00 0HLLJGGTFRUSK:00000005 [INF] Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/940/oa4iqd2s/xhr_streaming?t=1553781009238  0 (ca22a1cb)
+2019-03-28T14:50:26.3922595+01:00 0HLLJGGTFRUSE:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/SampleData/WeatherForecasts   (ca22a1cb)
+2019-03-28T14:50:26.4018423+01:00 0HLLJGGTFRUSE:00000003 [INF] Executing endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (500cc934)
+2019-03-28T14:50:26.4300752+01:00 0HLLJGGTFRUSE:00000003 [INF] Route matched with "{action = \"WeatherForecasts\", controller = \"SampleData\", page = \"\"}". Executing action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" (a44c0341)
+2019-03-28T14:50:26.5083382+01:00 0HLLJGGTFRUSE:00000003 [INF] Executing action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" - Validation state: Valid (dad538d7)
+2019-03-28T14:50:26.5242619+01:00 0HLLJGGTFRUSE:00000003 [INF] Executed action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.8318ms. (50a9e262)
+2019-03-28T14:50:26.5380748+01:00 0HLLJGGTFRUSE:00000003 [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+SelectIPartitionIterator`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[IS_angularUI.Controllers.SampleDataController+WeatherForecast, IS-angularUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-28T14:50:26.5572903+01:00 0HLLJGGTFRUSE:00000003 [INF] Executed action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" in 117.6985ms (afa2e885)
+2019-03-28T14:50:26.5626390+01:00 0HLLJGGTFRUSE:00000003 [INF] Executed endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (99874f2b)
+2019-03-28T14:50:26.5676266+01:00 0HLLJGGTFRUSE:00000003 [INF] Request finished in 176.5829ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-28T14:50:29.8885734+01:00 0HLLJGGTFRUSE:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/SampleData/WeatherForecasts   (ca22a1cb)
+2019-03-28T14:50:29.9010300+01:00 0HLLJGGTFRUSE:00000004 [INF] Executing endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (500cc934)
+2019-03-28T14:50:29.9088855+01:00 0HLLJGGTFRUSE:00000004 [INF] Route matched with "{action = \"WeatherForecasts\", controller = \"SampleData\", page = \"\"}". Executing action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" (a44c0341)
+2019-03-28T14:50:29.9481891+01:00 0HLLJGGTFRUSE:00000004 [INF] Executing action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" - Validation state: Valid (dad538d7)
+2019-03-28T14:50:29.9548976+01:00 0HLLJGGTFRUSE:00000004 [INF] Executed action method "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.0637ms. (50a9e262)
+2019-03-28T14:50:29.9615752+01:00 0HLLJGGTFRUSE:00000004 [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+SelectIPartitionIterator`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[IS_angularUI.Controllers.SampleDataController+WeatherForecast, IS-angularUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-28T14:50:29.9686519+01:00 0HLLJGGTFRUSE:00000004 [INF] Executed action "IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)" in 52.4896ms (afa2e885)
+2019-03-28T14:50:29.9752546+01:00 0HLLJGGTFRUSE:00000004 [INF] Executed endpoint '"IS_angularUI.Controllers.SampleDataController.WeatherForecasts (IS-angularUI)"' (99874f2b)
+2019-03-28T14:50:29.9817772+01:00 0HLLJGGTFRUSE:00000004 [INF] Request finished in 94.0094ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-28T14:50:49.4926863+01:00  [INF] Starting IdentityServer4 version "2.4.0.0" (8add0571)
+2019-03-28T14:50:49.5275330+01:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2019-03-28T14:50:49.5481708+01:00  [INF] Using the default authentication scheme "idsrv" for IdentityServer (4a54f457)
+2019-03-28T14:50:50.0348235+01:00  [INF] Starting @angular/cli on port 60766... (1066b507)
+2019-03-28T14:50:51.7691221+01:00 0HLLJGHHKEMLK:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-03-28T14:50:57.1184722+01:00  [INF] > IS_angularUI@0.0.0 start C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\ClientApp
+> ng serve "--port" "60766"
+
+** Angular Live Development Server is listening on localhost:60766, open your browser on http://localhost:60766/ **
+ (70c502ee)
+2019-03-28T14:51:04.0177533+01:00  [INF] i ∩╜ówdm∩╜ú: wait until bundle finished: /
+ (5b9bec14)
+2019-03-28T14:51:09.8351889+01:00  [INF] Date: 2019-03-28T13:51:09.809Z
+Hash: 0639025397b853461aaa
+Time: 12517ms
+chunk {main} main.js, main.js.map (main) 26.4 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 227 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 5.22 kB [entry] [rendered]
+chunk {styles} styles.css, styles.css.map (styles) 130 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.86 MB [initial] [rendered]
+i ∩╜ówdm∩╜ú: Compiled successfully.
+ (2e92aac3)
+2019-03-28T14:51:09.9710344+01:00 0HLLJGHHKEMLN:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   (ca22a1cb)
+2019-03-28T14:51:09.9746553+01:00 0HLLJGHHKEMLL:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   (ca22a1cb)
+2019-03-28T14:51:09.9800748+01:00 0HLLJGHHKEMLM:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   (ca22a1cb)
+2019-03-28T14:51:09.9877183+01:00 0HLLJGHHKEMLO:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/main.js   (ca22a1cb)
+2019-03-28T14:51:10.2808328+01:00 0HLLJGHHKEMLK:00000001 [INF] Request finished in 18513.3438ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:51:10.2877534+01:00 0HLLJGHHKEMLK:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/styles.css   (ca22a1cb)
+2019-03-28T14:51:10.6224990+01:00 0HLLJGHHKEMLO:00000001 [INF] Request finished in 649.7802ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:51:11.2857722+01:00 0HLLJGHHKEMLL:00000001 [INF] Request finished in 1317.7248ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:51:11.3410468+01:00 0HLLJGHHKEMLN:00000001 [INF] Request finished in 1372.4448ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:51:11.3995969+01:00 0HLLJGHHKEMLK:00000002 [INF] Request finished in 1110.305ms 200 text/css; charset=UTF-8 (791a596a)
+2019-03-28T14:51:11.4162462+01:00 0HLLJGHHKEMLM:00000001 [INF] Request finished in 1441.9791ms 200 application/javascript; charset=UTF-8 (791a596a)
+2019-03-28T14:51:11.9885132+01:00 0HLLJGHHKEMLM:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   (ca22a1cb)
+2019-03-28T14:51:11.9992163+01:00 0HLLJGHHKEMLK:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1553781071976   (ca22a1cb)
+2019-03-28T14:51:12.0591984+01:00 0HLLJGHHKEMLK:00000003 [INF] Request finished in 64.2026ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:51:12.0725815+01:00 0HLLJGHHKEMLP:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/753/xnww2bw5/websocket   (ca22a1cb)
+2019-03-28T14:51:12.0802592+01:00 0HLLJGHHKEMLM:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"C:\Users\vlatko.zmejkoski\Source\Repos\ristovskae\ip\Sensor\IS-angularUI\wwwroot\favicon.ico"' (27b0a520)
+2019-03-28T14:51:12.0862323+01:00 0HLLJGHHKEMLM:00000002 [INF] Request finished in 105.3539ms 200 image/x-icon (791a596a)
+2019-03-28T14:51:12.8347206+01:00 0HLLJGHHKEMLM:00000003 [INF] Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/753/3qtwqz0d/xhr_streaming?t=1553781072827  0 (ca22a1cb)
+2019-03-28T14:51:19.1773643+01:00 0HLLJGHHKEMLQ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/.well-known/openid-configuration   (ca22a1cb)
+2019-03-28T14:51:19.1970686+01:00 0HLLJGHHKEMLQ:00000001 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2019-03-28T14:51:19.3542163+01:00 0HLLJGHHKEMLQ:00000001 [INF] Request finished in 179.0035ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:51:19.5211049+01:00 0HLLJGHHKEMLQ:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/.well-known/openid-configuration/jwks   (ca22a1cb)
+2019-03-28T14:51:19.5434226+01:00 0HLLJGHHKEMLQ:00000002 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2019-03-28T14:51:19.6111714+01:00 0HLLJGHHKEMLQ:00000002 [INF] Request finished in 89.8019ms 200 application/jwk-set+json; charset=UTF-8 (791a596a)
+2019-03-28T14:51:19.7107188+01:00 0HLLJGHHKEMLK:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/connect/authorize?client_id=oid%20client&redirect_uri=https%3A%2F%2Flocalhost%3A44352%2Fsignin-oidc&response_type=id_token%20token&scope=openid%20profile%20role%20sensorsapi&response_mode=form_post&nonce=636893778796338629.ZmYxN2I5ZTgtYjdhYy00NTkxLThkMzktNzE2MjA2MGE0YTQyOTI2MjAxNDgtNzQ0Ni00NjNjLTg4OTMtN2JiZmMzZjNmNzM3&state=CfDJ8FLcvaAou9FHvs9V4gEWB14U2XKrFRqbUZBuRl-peRbH92SRdIwKHhzy-s1uJAwf7m4rIO4w468msflly27xzv0SxULKGcWmbE8rCBwcqm3tc9VdKA1lIYhooZr2x5oasECyEi1l3S7R-Q_PQ7CCHQrcqE9dEtVy4N2UaFqYQys2f74Bd2Yo584d7yKw-WiAeCihruCYbxG7u_h5sa9m0cgrUBl_jp-HWN-FYh-DkHXcxifKY89E23H99BsO1l_X99Od7whCn9M9M987ogc1zEEyn005yVR4nAvth4SL0fDD4IGPG5JnF_RchvYxyJ0FloRaOdPPDBV-oLFFlkPgy9c&x-client-SKU=ID_NETSTANDARD2_0&x-client-ver=5.3.0.0   (ca22a1cb)
+2019-03-28T14:51:19.7410642+01:00 0HLLJGHHKEMLK:00000004 [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.AuthorizeEndpoint" for "/connect/authorize" (f7642de5)
+2019-03-28T14:51:19.9090806+01:00 0HLLJGHHKEMLK:00000004 [INF] ValidatedAuthorizeRequest
+AuthorizeRequestValidationLog { ClientId: "oid client", ClientName: "OpenID Client", RedirectUri: "https://localhost:44352/signin-oidc", AllowedRedirectUris: ["https://localhost:44352/signin-oidc"], SubjectId: "anonymous", ResponseType: "id_token token", ResponseMode: "form_post", GrantType: "implicit", RequestedScopes: "openid profile role sensorsapi", State: "CfDJ8FLcvaAou9FHvs9V4gEWB14U2XKrFRqbUZBuRl-peRbH92SRdIwKHhzy-s1uJAwf7m4rIO4w468msflly27xzv0SxULKGcWmbE8rCBwcqm3tc9VdKA1lIYhooZr2x5oasECyEi1l3S7R-Q_PQ7CCHQrcqE9dEtVy4N2UaFqYQys2f74Bd2Yo584d7yKw-WiAeCihruCYbxG7u_h5sa9m0cgrUBl_jp-HWN-FYh-DkHXcxifKY89E23H99BsO1l_X99Od7whCn9M9M987ogc1zEEyn005yVR4nAvth4SL0fDD4IGPG5JnF_RchvYxyJ0FloRaOdPPDBV-oLFFlkPgy9c", UiLocales: null, Nonce: "636893778796338629.ZmYxN2I5ZTgtYjdhYy00NTkxLThkMzktNzE2MjA2MGE0YTQyOTI2MjAxNDgtNzQ0Ni00NjNjLTg4OTMtN2JiZmMzZjNmNzM3", AuthenticationContextReferenceClasses: null, DisplayMode: null, PromptMode: null, MaxAge: null, LoginHint: null, SessionId: null, Raw: [("client_id": "oid client"), ("redirect_uri": "https://localhost:44352/signin-oidc"), ("response_type": "id_token token"), ("scope": "openid profile role sensorsapi"), ("response_mode": "form_post"), ("nonce": "636893778796338629.ZmYxN2I5ZTgtYjdhYy00NTkxLThkMzktNzE2MjA2MGE0YTQyOTI2MjAxNDgtNzQ0Ni00NjNjLTg4OTMtN2JiZmMzZjNmNzM3"), ("state": "CfDJ8FLcvaAou9FHvs9V4gEWB14U2XKrFRqbUZBuRl-peRbH92SRdIwKHhzy-s1uJAwf7m4rIO4w468msflly27xzv0SxULKGcWmbE8rCBwcqm3tc9VdKA1lIYhooZr2x5oasECyEi1l3S7R-Q_PQ7CCHQrcqE9dEtVy4N2UaFqYQys2f74Bd2Yo584d7yKw-WiAeCihruCYbxG7u_h5sa9m0cgrUBl_jp-HWN-FYh-DkHXcxifKY89E23H99BsO1l_X99Od7whCn9M9M987ogc1zEEyn005yVR4nAvth4SL0fDD4IGPG5JnF_RchvYxyJ0FloRaOdPPDBV-oLFFlkPgy9c"), ("x-client-SKU": "ID_NETSTANDARD2_0"), ("x-client-ver": "5.3.0.0")] } (7fffff14)
+2019-03-28T14:51:19.9306967+01:00 0HLLJGHHKEMLK:00000004 [INF] Showing login: User is not authenticated (4b8d50b2)
+2019-03-28T14:51:19.9457629+01:00 0HLLJGHHKEMLK:00000004 [INF] Request finished in 239.807ms 302  (791a596a)
+2019-03-28T14:51:19.9541030+01:00 0HLLJGHHKEMLK:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Doid%2520client%26redirect_uri%3Dhttps%253A%252F%252Flocalhost%253A44352%252Fsignin-oidc%26response_type%3Did_token%2520token%26scope%3Dopenid%2520profile%2520role%2520sensorsapi%26response_mode%3Dform_post%26nonce%3D636893778796338629.ZmYxN2I5ZTgtYjdhYy00NTkxLThkMzktNzE2MjA2MGE0YTQyOTI2MjAxNDgtNzQ0Ni00NjNjLTg4OTMtN2JiZmMzZjNmNzM3%26state%3DCfDJ8FLcvaAou9FHvs9V4gEWB14U2XKrFRqbUZBuRl-peRbH92SRdIwKHhzy-s1uJAwf7m4rIO4w468msflly27xzv0SxULKGcWmbE8rCBwcqm3tc9VdKA1lIYhooZr2x5oasECyEi1l3S7R-Q_PQ7CCHQrcqE9dEtVy4N2UaFqYQys2f74Bd2Yo584d7yKw-WiAeCihruCYbxG7u_h5sa9m0cgrUBl_jp-HWN-FYh-DkHXcxifKY89E23H99BsO1l_X99Od7whCn9M9M987ogc1zEEyn005yVR4nAvth4SL0fDD4IGPG5JnF_RchvYxyJ0FloRaOdPPDBV-oLFFlkPgy9c%26x-client-SKU%3DID_NETSTANDARD2_0%26x-client-ver%3D5.3.0.0   (ca22a1cb)
+2019-03-28T14:51:21.0498839+01:00 0HLLJGHHKEMLK:00000005 [INF] Request finished in 1096.2996ms 200 text/html; charset=UTF-8 (791a596a)
+2019-03-28T14:51:21.0646291+01:00 0HLLJGHHKEMLK:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/styles.css   (ca22a1cb)
+2019-03-28T14:51:21.0701793+01:00 0HLLJGHHKEMLO:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/vendor.js   (ca22a1cb)
+2019-03-28T14:51:21.0760876+01:00 0HLLJGHHKEMLN:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/runtime.js   (ca22a1cb)
+2019-03-28T14:51:21.0796399+01:00 0HLLJGHHKEMLL:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/polyfills.js   (ca22a1cb)
+2019-03-28T14:51:21.1971446+01:00 0HLLJGHHKEMLR:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/main.js   (ca22a1cb)
+2019-03-28T14:51:21.2862243+01:00 0HLLJGHHKEMLN:00000002 [INF] Request finished in 220.802ms 304  (791a596a)
+2019-03-28T14:51:21.2903257+01:00 0HLLJGHHKEMLO:00000002 [INF] Request finished in 220.5408ms 304  (791a596a)
+2019-03-28T14:51:22.2266640+01:00 0HLLJGHHKEMLL:00000002 [INF] Request finished in 1156.6555ms 304  (791a596a)
+2019-03-28T14:51:22.2977907+01:00 0HLLJGHHKEMLK:00000006 [INF] Request finished in 1234.5691ms 304  (791a596a)
+2019-03-28T14:51:22.3313261+01:00 0HLLJGHHKEMLR:00000001 [INF] Request finished in 1134.9221ms 304  (791a596a)
+2019-03-28T14:51:23.0146462+01:00 0HLLJGHHKEMLR:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/info?t=1553781082993   (ca22a1cb)
+2019-03-28T14:51:23.0920472+01:00 0HLLJGHHKEMLR:00000002 [INF] Request finished in 86.5343ms 200 application/json; charset=UTF-8 (791a596a)
+2019-03-28T14:51:23.1082608+01:00 0HLLJGHHKEMLS:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/sockjs-node/878/ljbjdry4/websocket   (ca22a1cb)
+2019-03-28T14:51:23.8957857+01:00 0HLLJGHHKEMLR:00000003 [INF] Request starting HTTP/1.1 POST https://localhost:5001/sockjs-node/878/doiuzetz/xhr_streaming?t=1553781083890  0 (ca22a1cb)
