@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace IdServerNgUi.Quickstart.Home
+namespace IdServerNgUi.Controllers.Home
 {
     [SecurityHeaders]
     public class HomeController : Controller

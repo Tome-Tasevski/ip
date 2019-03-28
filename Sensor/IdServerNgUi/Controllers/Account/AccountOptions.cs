@@ -4,7 +4,7 @@
 
 using System;
 
-namespace IdServerNgUi.Quickstart.Account
+namespace IdServerNgUi.Controllers.Account
 {
     public class AccountOptions
     {

@@ -2,9 +2,11 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace IdServerNgUi.Quickstart.Account
+
+namespace IdServerNgUi.Controllers.Account
 {
     public class LoginInputModel
     {
@@ -13,6 +15,5 @@ namespace IdServerNgUi.Quickstart.Account
         [Required]
         public string Password { get; set; }
         public bool RememberLogin { get; set; }
-        public string ReturnUrl { get; set; }
     }
 }

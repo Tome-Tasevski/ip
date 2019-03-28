@@ -2,10 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-namespace IdServerNgUi.Quickstart.Account
+using IdentityServer4.Models;
+
+namespace IdServerNgUi.Controllers.Home
 {
-    public class LogoutViewModel : LogoutInputModel
+    public class ErrorViewModel
     {
-        public bool ShowLogoutPrompt { get; set; }
+        public ErrorMessage Error { get; set; }
     }
 }

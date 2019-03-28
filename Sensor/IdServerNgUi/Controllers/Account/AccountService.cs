@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Http;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IdServerNgUi.Quickstart.Account
+namespace IdServerNgUi.Controllers.Account
 {
     public class AccountService
     {
@@ -41,7 +41,6 @@ namespace IdServerNgUi.Quickstart.Account
                 return new LoginViewModel
                 {
                     EnableLocalLogin = false,
-                    ReturnUrl = returnUrl,
                     Username = context?.LoginHint,
                     ExternalProviders = new ExternalProvider[] {new ExternalProvider { AuthenticationScheme = context.IdP } }
                 };
@@ -77,15 +76,14 @@ namespace IdServerNgUi.Quickstart.Account
             {
                 AllowRememberLogin = AccountOptions.AllowRememberLogin,
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
-                ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
                 ExternalProviders = providers.ToArray()
             };
         }
 
-        public async Task<LoginViewModel> BuildLoginViewModelAsync(LoginInputModel model)
+        public async Task<LoginViewModel> BuildLoginViewModelAsync(LoginInputModel model, string returnUrl)
         {
-            var vm = await BuildLoginViewModelAsync(model.ReturnUrl);
+            var vm = await BuildLoginViewModelAsync(returnUrl);
             vm.Username = model.Username;
             vm.RememberLogin = model.RememberLogin;
             return vm;

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
-namespace IdServerNgUi.Quickstart.Consent
+namespace IdServerNgUi.Controllers.Consent
 {
     /// <summary>
     /// This controller processes the consent UI

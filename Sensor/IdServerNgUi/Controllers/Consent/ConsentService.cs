@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IdServerNgUi.Quickstart.Consent
+namespace IdServerNgUi.Controllers.Consent
 {
     public class ConsentService
     {

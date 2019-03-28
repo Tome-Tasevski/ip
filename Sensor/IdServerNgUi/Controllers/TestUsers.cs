@@ -7,7 +7,7 @@ using IdentityServer4.Test;
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace IdServerNgUi.Quickstart
+namespace IdServerNgUi.Controllers
 {
     public class TestUsers
     {

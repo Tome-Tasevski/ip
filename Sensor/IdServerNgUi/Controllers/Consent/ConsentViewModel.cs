@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 
-namespace IdServerNgUi.Quickstart.Consent
+namespace IdServerNgUi.Controllers.Consent
 {
     public class ConsentViewModel : ConsentInputModel
     {

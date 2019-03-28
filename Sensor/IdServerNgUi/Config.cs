@@ -7,7 +7,7 @@ using IdentityServer4.Models;
 using IdentityServer4.Saml;
 using IdentityServer4.Saml.Models;
 using IdentityServer4.Test;
-using IdServerNgUi.Quickstart;
+using IdServerNgUi.Controllers;
 
 namespace IdServerNgUi
 {

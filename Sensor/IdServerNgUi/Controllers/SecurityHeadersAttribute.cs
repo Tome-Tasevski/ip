@@ -5,7 +5,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace IdServerNgUi.Quickstart
+namespace IdServerNgUi.Controllers
 {
     public class SecurityHeadersAttribute : ActionFilterAttribute
     {

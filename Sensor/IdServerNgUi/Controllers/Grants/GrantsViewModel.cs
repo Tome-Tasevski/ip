@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace IdServerNgUi.Quickstart.Grants
+namespace IdServerNgUi.Controllers.Grants
 {
     public class GrantsViewModel
     {
