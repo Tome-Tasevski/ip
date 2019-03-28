@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LoginComponent },
+      { path: '', component: LoginComponent },
     ])
   ],
   providers: [],
