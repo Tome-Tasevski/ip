@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client-Saml", "Client-Saml\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenIdClient", "OpenIdClient\OpenIdClient.csproj", "{A883EF41-1D79-4ADE-9DB5-0E40B0BD7740}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaaSMultiTenancy", "..\..\..\..\..\Documents\Visual Studio 2017\Projects\SaaSMultiTenancy\SaaSMultiTenancy\SaaSMultiTenancy.csproj", "{BD84E4F9-967C-4D1C-A5EA-137B760EC364}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A883EF41-1D79-4ADE-9DB5-0E40B0BD7740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A883EF41-1D79-4ADE-9DB5-0E40B0BD7740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A883EF41-1D79-4ADE-9DB5-0E40B0BD7740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD84E4F9-967C-4D1C-A5EA-137B760EC364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD84E4F9-967C-4D1C-A5EA-137B760EC364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD84E4F9-967C-4D1C-A5EA-137B760EC364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD84E4F9-967C-4D1C-A5EA-137B760EC364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
