@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client-Saml", "Client-Saml\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenIdClient", "OpenIdClient\OpenIdClient.csproj", "{A883EF41-1D79-4ADE-9DB5-0E40B0BD7740}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaaSMultiTenancy", "SaaSMultiTenancy\SaaSMultiTenancy.csproj", "{A5EDA032-F51E-409D-A992-A3FFFAEF983F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaaSMultiTenancy", "SaaSMultiTenancy\SaaSMultiTenancy.csproj", "{A5EDA032-F51E-409D-A992-A3FFFAEF983F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinbuckleMultitenancy", "FinbuckleMultitenancy\FinbuckleMultitenancy.csproj", "{8AC794D0-92EF-4A5E-9B08-7C5A3B32FA84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A5EDA032-F51E-409D-A992-A3FFFAEF983F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5EDA032-F51E-409D-A992-A3FFFAEF983F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5EDA032-F51E-409D-A992-A3FFFAEF983F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC794D0-92EF-4A5E-9B08-7C5A3B32FA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC794D0-92EF-4A5E-9B08-7C5A3B32FA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC794D0-92EF-4A5E-9B08-7C5A3B32FA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC794D0-92EF-4A5E-9B08-7C5A3B32FA84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

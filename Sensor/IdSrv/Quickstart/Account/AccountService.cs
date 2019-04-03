@@ -64,7 +64,8 @@ namespace IdentityServer4.Quickstart.UI
                 var client = await _clientStore.FindEnabledClientByIdAsync(context.ClientId);
                 if (client != null)
                 {
-                    allowLocal = client.EnableLocalLogin;
+                    var tenant = context.Tenant.Split(".").First();
+                    allowLocal = tenant.Equals("test1") ? true : false;
 
                     if (client.IdentityProviderRestrictions != null && client.IdentityProviderRestrictions.Any())
                     {

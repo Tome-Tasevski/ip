@@ -68,13 +68,10 @@ namespace IdSrv
                         "sensorsapi",
                         "role"
                     },
-                    IdentityProviderRestrictions =
-                    {
-                        "AAD"
-                    }
+                    IdentityProviderRestrictions = new List<string>() { }
                     ,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
                                                 //ovie podatoci na aplikacijata (vo nashiot slucha Client)
-                    ,EnableLocalLogin = false,
+                    ,EnableLocalLogin = true,
                     AllowAccessTokensViaBrowser = true,
                     AlwaysIncludeUserClaimsInIdToken = true
                 },
@@ -86,12 +83,12 @@ namespace IdSrv
                 },
                 new Client
                 {
-                    ClientId = "oid client",
-                    ClientName = "OpenID Client",
+                    ClientId = "tenantApp",
+                    ClientName = "tenant Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    RedirectUris = { "https://localhost:44352/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://localhost:44352/signout-callback-oidc" },
+                    RedirectUris = { "https://test1.localhost:44367/signin-oidc", "https://test2.localhost:44367/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://test1.localhost:44367/signout-callback-oidc", "https://test2.localhost:44367/signout-callback-oidc" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
