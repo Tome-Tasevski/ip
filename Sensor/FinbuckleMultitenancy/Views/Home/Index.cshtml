@@ -1,8 +1,41 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Http.Features
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@{
+    var result = await Context.AuthenticateAsync("Cookies");
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+<div class="row">
+    <div class="col-xs-12">
+        @if (result.Succeeded)
+        {
+            <h2>Authenticated</h2>
+            <ul>
+                @foreach (var claim in result.Principal.Claims)
+                {
+                    <li><strong>@claim.Type:</strong> @claim.Value</li>
+                }
+            </ul>
+
+            <div class="col-xs-12">
+                <a asp-action="Logout" class="btn btn-default">Logout</a>
+            </div>
+        }
+        else
+        {
+
+            <div class="col-xs-12">
+                <h2>Unauthenticated</h2>
+                <a asp-action="ChallengeScheme" asp-route-scheme="saml2p" class="btn btn-default">Login</a>
+            </div>
+        }
+    </div>
+
+
 </div>
+<script>
+    (function () {
+        document.cookie = cookieString;
+    })();
+</script>

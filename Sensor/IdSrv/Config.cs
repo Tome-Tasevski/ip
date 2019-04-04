@@ -76,8 +76,8 @@ namespace IdSrv
                     AlwaysIncludeUserClaimsInIdToken = true
                 },
                 new Client {
-                      ClientId = "http://localhost:60390/saml",
-                      ClientName = "RSK SAML2P Test Client",
+                      ClientId = "http://test1.localhost:49585/saml",
+                      ClientName = "tenant Client",
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                       AllowedScopes = { "openid", "profile", "role"}
                 },
@@ -87,8 +87,8 @@ namespace IdSrv
                     ClientName = "tenant Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    RedirectUris = { "https://test1.localhost:44367/signin-oidc", "https://test2.localhost:44367/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://test1.localhost:44367/signout-callback-oidc", "https://test2.localhost:44367/signout-callback-oidc" },
+                    RedirectUris = { "http://test1.localhost:49585/signin-oidc", "http://test2.localhost:49585/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://test1.localhost:49585/signout-callback-oidc", "http://test2.localhost:49585/signout-callback-oidc" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -97,7 +97,8 @@ namespace IdSrv
                         "role"
                     },
                     AllowAccessTokensViaBrowser = true,
-                    AlwaysIncludeUserClaimsInIdToken = true
+                    AlwaysIncludeUserClaimsInIdToken = true,
+                   // ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                 }
             };
         }
@@ -107,9 +108,9 @@ namespace IdSrv
             return new List<ServiceProvider>
             {
                 new ServiceProvider {
-                      EntityId = "http://localhost:60390/saml",
+                      EntityId = "http://test1.localhost:49585/saml",
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:60390/signin-saml") },
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://test1.localhost:49585/signin-saml") },
   
                 }
         };
