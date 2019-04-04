@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -60,13 +61,15 @@ namespace FinbuckleMultitenancy
                         return Task.FromResult(c);
                     }
                 };
+                o.GetClaimsFromUserInfoEndpoint = true;
             });
 
             services.AddMultiTenant()
                 .WithHostStrategy().WithInMemoryStore(Configuration.GetSection("InMemoryStoreConfig"))
                 .WithRemoteAuthentication()
-                .WithPerTenantOptions<OpenIdConnectOptions>((o, tenantInfo) =>
+                .WithPerTenantOptions<CookieAuthenticationOptions>((o, tenantInfo) =>
                 {
+                    o.Cookie.Name += tenantInfo.Id;
                 });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

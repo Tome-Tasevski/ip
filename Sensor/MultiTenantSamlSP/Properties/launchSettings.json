@@ -1,32 +1,27 @@
-{
+﻿{
   "iisSettings": {
-    "windowsAuthentication": false,
+    "windowsAuthentication": false, 
     "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "https://test1.dev.local",
-      "sslPort": 0
-    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:49585",
-      "sslPort": 44367
+      "applicationUrl": "http://localhost:51915",
+      "sslPort": 44379
     }
   },
   "profiles": {
     "IIS Express": {
-      "commandName": "IIS",
+      "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "https://test1.dev.local",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "FinbuckleMultitenancy": {
+    "MultiTenantSamlSP": {
       "commandName": "Project",
       "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      }
     }
   }
 }

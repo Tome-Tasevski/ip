@@ -58,6 +58,7 @@ namespace IdentityServer4.Quickstart.UI
             // build a model so we know what to show on the login page
             var vm = await _account.BuildLoginViewModelAsync(returnUrl);
 
+
             if (vm.IsExternalLoginOnly)
             {
                 // we only have one option for logging in and it's an external provider
