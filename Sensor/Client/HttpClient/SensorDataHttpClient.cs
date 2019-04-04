@@ -25,9 +25,6 @@ namespace Client.Services
             string accessToken = await GetValidAccessToken();
             if (!string.IsNullOrEmpty(accessToken))
             {
-
-                //konfiguriranje na headeri na http requesti
-                //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 _httpClient.SetBearerToken(accessToken);
             }
 

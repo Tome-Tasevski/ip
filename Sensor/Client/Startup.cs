@@ -44,20 +44,14 @@ namespace Client
                 .AddCookie("Cookies", options => options.AccessDeniedPath = "/Authorization/AccessDenied")
                 .AddOpenIdConnect("oidc", options =>
                 {
-                    //treba da se sovpagja so konfiguracijata napravena na Identity serverot
-                    options.Authority = "http://localhost:33123/";//da se navede na koj openId conecct provider treba da se "veruva" (osnovnata adresa na identity serverot)
+                    options.Authority = "http://localhost:33123/";
                     options.RequireHttpsMetadata = false;
                     options.ClientId = "sensorclient";
                     options.Scope.Add("openid");
                     options.Scope.Add("profile");
                     options.Scope.Add("sensorsapi");
                     options.Scope.Add("role");
-                    /*shto treba da ni vrati token serverot; 
-                     id_token - identification token;
-                     code ne e access token, toj se isporachuva na preku serevr side (front chanal??) na app (vo nashiot sluchaj Client)
-                     i app koristi back chanal i razmena na code za acces token*/
                     options.ResponseType = "code id_token";
-                    //it_token kje se zachuva vo cookie-to
                     options.SaveTokens = true;
                     options.ClientSecret = "secret";
                     options.GetClaimsFromUserInfoEndpoint = true;
