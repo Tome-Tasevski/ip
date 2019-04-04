@@ -13,7 +13,6 @@ namespace Client.Controllers
 
         public async Task Logout()
         {
-            //brishenje na Cookie-ata vo koi se chuvaa informaiite za userot
             await HttpContext.SignOutAsync("Cookies");
             await HttpContext.SignOutAsync("oidc");
         }

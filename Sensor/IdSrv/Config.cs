@@ -19,14 +19,13 @@ namespace IdSrv
         }
 
 
-        /*se definiraat resursite shto gi chuva Identity serverot*/
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new List<IdentityResource>
             {
-                new IdentityResources.OpenId(),//sopstvenoto unique userId, i kje bide istata vrednost koga i da se najavi uesrot na aplikacijata
-                new IdentityResources.Profile(),// nekolku properia za userot: firstName, lastName, displayName, url....
-                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role })//a mozat da se definiraat i svoi IdentityResources
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile(),
+                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role })
             };
         }
 
@@ -46,15 +45,10 @@ namespace IdSrv
                 {
                     ClientName = "Sensor Dashboard",
                     ClientId = "sensorclient",
-                    /*protokolite (vo ovoj sluchaj openId) imaat flow. Toa flow go opishuva tipot na aplikacijata i nachinot na
-                     komunikacija pomekju aplikacijata i token serverot (IS4)
-                     Implicit znachi deka komunikacijata kje se odviva samo preku browser (t.e samo preku avtorizirani edn pointi)*/
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     ClientSecrets = { new Secret("secret".Sha256()) },
                     RedirectUris =
                     {
-                        /*url na app kade shto se dobivaat rezultatite i toa ne bilo kade tuku na komponenta od app shto kje komunicira so ovoj protokol
-                         u ovoj sluchaj toa e openId connect middleware od microsoft, signin-oidc*/
                         "http://localhost:33117/signin-oidc"
                     },
                     PostLogoutRedirectUris =
@@ -69,8 +63,7 @@ namespace IdSrv
                         "role"
                     },
                     IdentityProviderRestrictions = new List<string>() { }
-                    ,RequireConsent = false // ako ne sakame da se prikazuva skreenot so "vie imate permisii na ..", so ova potvrduvame deka sme ok token serverot da gi dostavi 
-                                                //ovie podatoci na aplikacijata (vo nashiot slucha Client)
+                    ,RequireConsent = false
                     ,EnableLocalLogin = true,
                     AllowAccessTokensViaBrowser = true,
                     AlwaysIncludeUserClaimsInIdToken = true
