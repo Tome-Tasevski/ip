@@ -77,7 +77,7 @@ namespace FinbuckleMultitenancy
                   };
                   options.ServiceProviderOptions = new SpOptions
                   {
-                      EntityId = "http://test1.localhost:49585/saml",
+                      EntityId = "https://test1.dev.local/saml",
                       MetadataPath = "/saml/metadata",
                       SignAuthenticationRequests = true,
                       SigningCertificate = new X509Certificate2("testclient.pfx", "test")
@@ -103,6 +103,11 @@ namespace FinbuckleMultitenancy
                 .WithPerTenantOptions<CookieAuthenticationOptions>((o, tenantInfo) =>
                 {
                     o.Cookie.Name += tenantInfo.Id;
+                    
+                }).WithPerTenantOptions<AuthenticationOptions>((o, tenantInfo) =>
+                {
+                    o.DefaultChallengeScheme = tenantInfo.Items["Scheme"].ToString();
+                    Console.WriteLine(o.DefaultChallengeScheme);
                 });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
