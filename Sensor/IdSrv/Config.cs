@@ -49,11 +49,11 @@ namespace IdSrv
                     ClientSecrets = { new Secret("secret".Sha256()) },
                     RedirectUris =
                     {
-                        "http://localhost:33117/signin-oidc"
+                        "http://test3.localhost:56995/signin-oidc"
                     },
                     PostLogoutRedirectUris =
                     {
-                        "http://localhost:33117/signout-callback-oidc"
+                        "http://test3.localhost:56995/signout-callback-oidc"
                     },
                     AllowedScopes =
                     {
@@ -80,8 +80,11 @@ namespace IdSrv
                     ClientName = "tenant Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    RedirectUris = {  "http://test2.localhost:56995/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://test1.localhost:56995/signout-callback-oidc", "http://test2.localhost:56995/signout-callback-oidc" },
+                    RedirectUris = {  "http://test2.localhost:56995/signin-oidc","http://test3.localhost:56995/signin-oidc" },
+                    PostLogoutRedirectUris = {
+                        "http://test1.localhost:56995/signout-callback-oidc",
+                        "http://test2.localhost:56995/signout-callback-oidc",
+                        "http://test3.localhost:56995/signout-callback-oidc" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
