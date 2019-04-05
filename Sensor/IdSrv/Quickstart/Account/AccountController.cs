@@ -74,10 +74,10 @@ namespace IdentityServer4.Quickstart.UI
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginInputModel model, string button)
         {
+            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
             if (button != "login")
             {
                 // the user clicked the "cancel" button
-                var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
                 if (context != null)
                 {
                     // if the user cancels, send a result back into IdentityServer as if they 
@@ -103,7 +103,7 @@ namespace IdentityServer4.Quickstart.UI
                 {
                     var user = _users.FindByUsername(model.Username);
                     await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.SubjectId, user.Username));
-
+                    user.Claims.Add(new Claim("tenant", context.Tenant.Split(".").First()));
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
                     AuthenticationProperties props = null;
@@ -117,7 +117,7 @@ namespace IdentityServer4.Quickstart.UI
                     };
 
                     // issue authentication cookie with subject ID and username
-                    await HttpContext.SignInAsync(user.SubjectId, user.Username, props);
+                    await HttpContext.SignInAsync(user.SubjectId, user.Username, props, new Claim[] { new Claim("tenant", context.Tenant.Split(".").First())});
 
                     // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
@@ -205,6 +205,8 @@ namespace IdentityServer4.Quickstart.UI
         {
             // read external identity from the temporary cookie
             var result = await HttpContext.AuthenticateAsync(IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme);
+            var returnUrl = result.Properties.Items["returnUrl"];
+            var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
             if (result?.Succeeded != true)
             {
                 throw new Exception("External authentication error");
@@ -256,9 +258,10 @@ namespace IdentityServer4.Quickstart.UI
             // remove 'name' claim issued by idsrv
             user.Claims.Remove(user.Claims
                 .SingleOrDefault(c => c.Type.Equals("name") && c.Issuer.Equals("LOCAL AUTHORITY")));
-
+            user.Claims.Add(new Claim("tenant", context.Tenant.Split(".").First()));
             var additionalClaims = new List<Claim>();
             additionalClaims.Add(new Claim(JwtClaimTypes.Role, "Admin"));
+            additionalClaims.Add(new Claim("tenant", context.Tenant.Split(".").First()));
 
             // if the external system sent a session id claim, copy it over
             // so we can use it for single sign-out
@@ -285,7 +288,6 @@ namespace IdentityServer4.Quickstart.UI
             await HttpContext.SignOutAsync(IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme);
 
             // validate return URL and redirect back to authorization endpoint or a local page
-            var returnUrl = result.Properties.Items["returnUrl"];
             if (_interaction.IsValidReturnUrl(returnUrl) || Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);

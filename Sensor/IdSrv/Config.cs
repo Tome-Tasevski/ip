@@ -25,7 +25,8 @@ namespace IdSrv
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role })
+                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role }),
+                new IdentityResource("tenant", new List<string> { "tenant" })
             };
         }
 
@@ -90,7 +91,8 @@ namespace IdSrv
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "sensorsapi",
-                        "role"
+                        "role",
+                        "tenant"
                     },
                     AllowAccessTokensViaBrowser = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
