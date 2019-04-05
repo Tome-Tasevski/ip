@@ -72,6 +72,14 @@ namespace IdSrv
                 new Client {
                       ClientId = "http://test1.localhost:56995/saml",
                       ClientName = "RSK SAML2P Test Client",
+                  
+                      ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
+                      AllowedScopes = { "openid", "profile", "role"}
+                },
+                     new Client {
+                      ClientId = "http://test5.localhost:56995/saml",
+                      ClientName = "RSK SAML2P Test Client",
+                    
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                       AllowedScopes = { "openid", "profile", "role"}
                 },
@@ -110,11 +118,11 @@ namespace IdSrv
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
                       AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://test1.localhost:56995/signin-saml") },
                 },
-                new ServiceProvider {
-                      EntityId = "http://localhost:56995/saml",
+                      new ServiceProvider {
+                      EntityId = "http://test5.localhost:56995/saml",
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:56995/signin-saml") },
-                }
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://test5.localhost:56995/signin-saml") },
+                },
         };
         }
     }

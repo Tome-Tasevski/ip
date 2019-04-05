@@ -101,6 +101,18 @@ namespace FinbuckleMultitenancy
                 {
                     o.DefaultChallengeScheme = tenantInfo.Items["Scheme"].ToString();
                     Console.WriteLine(o.DefaultChallengeScheme);
+                })
+                .WithPerTenantOptions<Saml2pAuthenticationOptions>((o, tenantInfo) =>
+                {
+
+                    o.ServiceProviderOptions = new SpOptions
+                    {
+                        EntityId = $"http://{tenantInfo.Identifier}.localhost:56995/saml",
+                        MetadataPath = "/saml/metadata",
+                        SignAuthenticationRequests = true,
+                        SigningCertificate = new X509Certificate2("testclient.pfx", "test")
+                    };
+
                 });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
