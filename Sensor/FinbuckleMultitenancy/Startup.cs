@@ -77,7 +77,7 @@ namespace FinbuckleMultitenancy
                   };
                   options.ServiceProviderOptions = new SpOptions
                   {
-                      EntityId = "https://test1.dev.local/saml",
+                      EntityId = "http://test1.localhost:56995/saml",
                       MetadataPath = "/saml/metadata",
                       SignAuthenticationRequests = true,
                       SigningCertificate = new X509Certificate2("testclient.pfx", "test")

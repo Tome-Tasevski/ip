@@ -69,7 +69,7 @@ namespace IdSrv
                     AlwaysIncludeUserClaimsInIdToken = true
                 },
                 new Client {
-                      ClientId = "https://test1.dev.local/saml",
+                      ClientId = "http://test1.localhost:56995/saml",
                       ClientName = "RSK SAML2P Test Client",
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                       AllowedScopes = { "openid", "profile", "role"}
@@ -80,8 +80,8 @@ namespace IdSrv
                     ClientName = "tenant Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    RedirectUris = { "https://test1.dev.local/signin-oidc", "https://test2.dev.local/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://test1.dev.local/signout-callback-oidc", "https://test2.dev.local/signout-callback-oidc" },
+                    RedirectUris = {  "http://test2.localhost:56995/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://test1.localhost:56995/signout-callback-oidc", "http://test2.localhost:56995/signout-callback-oidc" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -101,14 +101,14 @@ namespace IdSrv
             return new List<ServiceProvider>
             {
                 new ServiceProvider {
-                      EntityId = "https://test1.dev.local/saml",
+                      EntityId = "http://test1.localhost:56995/saml",
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "https://test1.dev.local/signin-saml") },
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://test1.localhost:56995/signin-saml") },
                 },
                 new ServiceProvider {
-                      EntityId = "https://test2.dev.local/saml",
+                      EntityId = "http://localhost:56995/saml",
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "https://test1.dev.local/signin-saml") },
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:56995/signin-saml") },
                 }
         };
         }
