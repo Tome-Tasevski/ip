@@ -19,7 +19,7 @@ namespace IdSrv
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddHttpContextAccessor();
             services
                 .AddIdentityServer()
                 .AddTestUsers(Config.GetUsers())
@@ -34,7 +34,7 @@ namespace IdSrv
                 })
                 
                 .AddInMemoryServiceProviders(Config.GetServiceProviders());
-
+            
             services.AddAuthentication()
                 .AddOpenIdConnect("AAD", "Azure Active Directory", options =>
                 {
@@ -48,13 +48,13 @@ namespace IdSrv
                     options.Scope.Add("profile");
                     options.Scope.Add("sensorsapi");
                     options.Scope.Add("role");
+                    options.Scope.Add("tenant");
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = false
                     };
                     options.GetClaimsFromUserInfoEndpoint = true;
                 });
-        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

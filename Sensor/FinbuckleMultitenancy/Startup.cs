@@ -51,6 +51,7 @@ namespace FinbuckleMultitenancy
                 o.Scope.Add("profile");
                 o.Scope.Add("role");
                 o.Scope.Add("sensorsapi");
+                o.Scope.Add("tenant");
                 o.ResponseType = "id_token token";
                 o.ClientSecret = "secret";
                 o.ClaimActions.MapJsonKey("role", "role");
@@ -86,15 +87,7 @@ namespace FinbuckleMultitenancy
                   options.NameIdClaimType = "sub";
                   options.CallbackPath = "/signin-saml";
                   options.SignInScheme = "Cookies";
-                  options.Events = new OpenIdConnectEvents
-                  {
-                      OnRedirectToIdentityProvider = c =>
-                      {
-                          var tenant = c.Request.Host.Host;
-                          c.ProtocolMessage.AcrValues = $"tenant:{tenant}";
-                          return Task.FromResult(c);
-                      }
-                  };
+                  
               });
 
             services.AddMultiTenant()
@@ -108,6 +101,18 @@ namespace FinbuckleMultitenancy
                 {
                     o.DefaultChallengeScheme = tenantInfo.Items["Scheme"].ToString();
                     Console.WriteLine(o.DefaultChallengeScheme);
+                })
+                .WithPerTenantOptions<Saml2pAuthenticationOptions>((o, tenantInfo) =>
+                {
+
+                    o.ServiceProviderOptions = new SpOptions
+                    {
+                        EntityId = $"http://{tenantInfo.Identifier}.localhost:56995/saml",
+                        MetadataPath = "/saml/metadata",
+                        SignAuthenticationRequests = true,
+                        SigningCertificate = new X509Certificate2("testclient.pfx", "test")
+                    };
+
                 });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
