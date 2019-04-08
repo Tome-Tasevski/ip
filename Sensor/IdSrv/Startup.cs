@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Rsk.AspNetCore.Authentication.Saml2p;
 
 namespace IdSrv
 {
@@ -34,7 +35,7 @@ namespace IdSrv
                 })
                 
                 .AddInMemoryServiceProviders(Config.GetServiceProviders());
-            
+
             services.AddAuthentication()
                 .AddOpenIdConnect("AAD", "Azure Active Directory", options =>
                 {

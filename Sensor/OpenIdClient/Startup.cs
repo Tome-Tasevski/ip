@@ -103,15 +103,7 @@ namespace ServiceProviderMultiTenant
                 options.NameIdClaimType = "sub";
                 options.CallbackPath = "/signin-saml";
                 options.SignInScheme = "Cookies";
-                options.Events = new OpenIdConnectEvents
-                {
-                    OnRedirectToIdentityProvider = c =>
-                    {
-                        var tenant = c.Request.Host.Host;
-                        c.ProtocolMessage.AcrValues = $"tenant:{tenant}";
-                        return Task.FromResult(c);
-                    }
-                };
+                
             });
             services.AddMultiTenant()
                .WithHostStrategy().WithInMemoryStore(Configuration.GetSection("InMemoryStoreConfig"))
