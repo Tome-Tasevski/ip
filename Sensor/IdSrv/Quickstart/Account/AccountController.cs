@@ -101,6 +101,10 @@ namespace IdentityServer4.Quickstart.UI
                 // validate username/password against in-memory store
                 if (_users.ValidateCredentials(model.Username, model.Password))
                 {
+                    if (context.ClientId.Contains("saml"))
+                    {
+                        context.Tenant = context.ClientId;
+                    }
                     var user = _users.FindByUsername(model.Username);
                     await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.SubjectId, user.Username));
                     user.Claims.Add(new Claim("tenant", context.Tenant.Split(".").First()));
