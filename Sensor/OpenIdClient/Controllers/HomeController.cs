@@ -11,10 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Model;
 using Newtonsoft.Json;
-using OpenIdClient.Models;
-using OpenIdClient.Services;
+using ServiceProviderMultiTenant.Models;
+using ServiceProviderMultiTenant.Services;
 
-namespace WebApplication1.Controllers
+namespace ServiceProviderMultiTenant.Controllers
 {
     [Authorize]
     public class HomeController : Controller

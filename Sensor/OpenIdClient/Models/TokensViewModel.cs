@@ -1,4 +1,4 @@
-﻿namespace OpenIdClient.Models
+﻿namespace ServiceProviderMultiTenant.Models
 {
     public class TokensViewModel
     {

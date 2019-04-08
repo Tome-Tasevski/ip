@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdSrv", "IdSrv\IdSrv.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client-Saml", "Client-Saml\Client-Saml.csproj", "{DECA8324-7102-4180-8990-23E80695E79C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenIdClient", "OpenIdClient\OpenIdClient.csproj", "{A883EF41-1D79-4ADE-9DB5-0E40B0BD7740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceProviderMultiTenant", "OpenIdClient\ServiceProviderMultiTenant.csproj", "{A883EF41-1D79-4ADE-9DB5-0E40B0BD7740}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaaSMultiTenancy", "SaaSMultiTenancy\SaaSMultiTenancy.csproj", "{A5EDA032-F51E-409D-A992-A3FFFAEF983F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinbuckleMultitenancy", "FinbuckleMultitenancy\FinbuckleMultitenancy.csproj", "{8AC794D0-92EF-4A5E-9B08-7C5A3B32FA84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenantSamlSP", "MultiTenantSamlSP\MultiTenantSamlSP.csproj", "{F572BDBB-C361-426C-A7DA-1C190F4A7D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiTenantSamlSP", "MultiTenantSamlSP\MultiTenantSamlSP.csproj", "{F572BDBB-C361-426C-A7DA-1C190F4A7D8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceProviderMultiTennant", "ServiceProviderMultiTennant\ServiceProviderMultiTennant.csproj", "{585FC628-D0BF-4D68-A0A9-B5979BCA9BF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F572BDBB-C361-426C-A7DA-1C190F4A7D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F572BDBB-C361-426C-A7DA-1C190F4A7D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F572BDBB-C361-426C-A7DA-1C190F4A7D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{585FC628-D0BF-4D68-A0A9-B5979BCA9BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585FC628-D0BF-4D68-A0A9-B5979BCA9BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585FC628-D0BF-4D68-A0A9-B5979BCA9BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585FC628-D0BF-4D68-A0A9-B5979BCA9BF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace OpenIdClient.Services
+namespace ServiceProviderMultiTenant.Services
 {
     public interface ISensorDataHttpClient
     {
