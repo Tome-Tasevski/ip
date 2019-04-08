@@ -33,7 +33,7 @@ namespace IdSrv
         {
             return new List<ApiResource> {
                 new ApiResource("sensorsapi", JwtClaimTypes.Role)
-                
+
             };
         }
 
@@ -69,6 +69,12 @@ namespace IdSrv
                     AlwaysIncludeUserClaimsInIdToken = true
                 },
                 new Client {
+                      ClientId = "http://test1.localhost:63982/saml",
+                      ClientName = "RSK SAML2P Test Client",
+                      ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
+                      AllowedScopes = { "openid", "profile", "role"}
+                },
+                new Client {
                       ClientId = "http://test1.localhost:56995/saml",
                       ClientName = "RSK SAML2P Test Client",
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
@@ -80,8 +86,14 @@ namespace IdSrv
                     ClientName = "tenant Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    RedirectUris = {  "http://test2.localhost:56995/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://test1.localhost:56995/signout-callback-oidc", "http://test2.localhost:56995/signout-callback-oidc" },
+                    RedirectUris =
+                    {  "http://test1.localhost:56995/signin-oidc" ,
+                       "http://test2.localhost:56995/signin-oidc" ,
+                    },
+                    PostLogoutRedirectUris =
+                    { "http://test1.localhost:56995/signout-callback-oidc",
+                      "http://test2.localhost:56995/signout-callback-oidc",
+                    },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -92,6 +104,28 @@ namespace IdSrv
                     AllowAccessTokensViaBrowser = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                    // ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
+                },
+                new Client
+                {
+                    ClientId = "SpTenant",
+                    ClientName = "SP Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    ClientSecrets = { new Secret("secret".Sha256()) },
+                    RedirectUris =
+                    {
+                      "http://test2.localhost:63982/signin-oidc" ,
+                    },
+                    PostLogoutRedirectUris = { "https://test1.localhost:51832/signout-callback-oidc", "http://test2.localhost:51832/signout-callback-oidc" },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "sensorsapi",
+                        "role"
+                    },
+                    AllowAccessTokensViaBrowser = true,
+                    AlwaysIncludeUserClaimsInIdToken = true,
+
                 }
             };
         }
@@ -106,9 +140,9 @@ namespace IdSrv
                       AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://test1.localhost:56995/signin-saml") },
                 },
                 new ServiceProvider {
-                      EntityId = "http://localhost:56995/saml",
+                      EntityId ="http://test1.localhost:63982/saml",
                       SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://localhost:56995/signin-saml") },
+                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://test1.localhost:63982/signin-saml") },
                 }
         };
         }
