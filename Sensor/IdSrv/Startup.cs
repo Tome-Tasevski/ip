@@ -45,11 +45,11 @@ namespace IdSrv
                     options.ClientId = "f6a6b204-ff96-4013-8adb-7b1ef0bdda2a";
                     //options.ClientId = "sensorclient"; //primer koga api-to ne e registrirano na azure
                     //options.ClientId = "oid client";
-                    options.Scope.Add("openid");
-                    options.Scope.Add("profile");
-                    options.Scope.Add("sensorsapi");
-                    options.Scope.Add("role");
-                    options.Scope.Add("tenant");
+                    //options.Scope.Add("openid");
+                    //options.Scope.Add("profile");
+                    //options.Scope.Add("sensorsapi");
+                    //options.Scope.Add("role");
+                    //options.Scope.Add("tenant");
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = false

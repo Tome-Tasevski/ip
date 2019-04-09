@@ -4,20 +4,20 @@
     "anonymousAuthentication": true,
     "iisExpress": {
         "applicationUrl": "http://localhost:33123/",
-        "sslPort": 0
+        "sslPort": 44374
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "IdSrv": {
         "commandName": "Project",
-        "launchBrowser": false,
+        "launchBrowser": true,
         "applicationUrl": "http://localhost:33124/",
         "environmentVariables": {
             "ASPNETCORE_ENVIRONMENT": "Development"

@@ -46,7 +46,7 @@ namespace FinbuckleMultitenancy
                 o.SignInScheme = "Cookies";
                 o.ClientId = "tenantApp";
                 o.RequireHttpsMetadata = false;
-                o.Authority = "http://localhost:33123";
+                o.Authority = "https://localhost:44374";
                 o.Scope.Add("openid");
                 o.Scope.Add("profile");
                 o.Scope.Add("role");
@@ -72,15 +72,15 @@ namespace FinbuckleMultitenancy
 
                   options.IdentityProviderOptions = new IdpOptions
                   {
-                      EntityId = "http://localhost:33123",
+                      EntityId = "http://localhost:44374",
                       SigningCertificate = new X509Certificate2("idsrv3test.cer"),
-                      SingleSignOnEndpoint = new SamlEndpoint("http://localhost:33123/saml/sso", SamlBindingTypes.HttpRedirect),
-                      SingleLogoutEndpoint = new SamlEndpoint("http://localhost:33123/saml/slo", SamlBindingTypes.HttpRedirect),
+                      SingleSignOnEndpoint = new SamlEndpoint("http://localhost:44374/saml/sso", SamlBindingTypes.HttpRedirect),
+                      SingleLogoutEndpoint = new SamlEndpoint("http://localhost:44374/saml/slo", SamlBindingTypes.HttpRedirect),
                   };
 
                   options.ServiceProviderOptions = new SpOptions
                   {
-                      EntityId = "http://test1.localhost:56995/saml",
+                      EntityId = "http://test1.localhost:56996/saml",
                       MetadataPath = "/saml/metadata",
                       SignAuthenticationRequests = true,
                       SigningCertificate = new X509Certificate2("testclient.pfx", "test")
