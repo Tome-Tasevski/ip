@@ -19,6 +19,7 @@ namespace FinbuckleMultitenancy.Controllers
             return View();
         }
 
+        [Authorize(Roles = "SP1.Admin")]
         public IActionResult Privacy()
         {
             return View();
