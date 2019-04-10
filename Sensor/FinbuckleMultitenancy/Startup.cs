@@ -56,7 +56,7 @@ namespace FinbuckleMultitenancy
                 o.Scope.Add("tenant");
                 o.ResponseType = "id_token token";
                 o.ClientSecret = "secret";
-                o.ClaimActions.MapJsonKey("role", "role");
+                o.ClaimActions.MapJsonKey("role","role","role");
                 o.Events = new OpenIdConnectEvents
                 {
                     OnRedirectToIdentityProvider = c =>
@@ -80,7 +80,10 @@ namespace FinbuckleMultitenancy
                     o.Cookie.Name += tenantInfo.Id;
 
                 });
-
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("User", p => p.RequireClaim("role"));
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

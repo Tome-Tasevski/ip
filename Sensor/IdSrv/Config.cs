@@ -25,7 +25,7 @@ namespace IdSrv
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role }),
+                new IdentityResource("role","Role", new List<string> { ClaimTypes.Role }),
                 new IdentityResource("tenant", new List<string> { "tenant" })
             };
         }
@@ -33,7 +33,7 @@ namespace IdSrv
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource> {
-                new ApiResource("sensorsapi", JwtClaimTypes.Role)
+                new ApiResource("sensorsapi",  new List<string> {"role"})
 
             };
         }
