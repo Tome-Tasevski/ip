@@ -245,7 +245,7 @@ namespace IdentityServer4.Quickstart.UI
             // 
             // check if the external user is already provisioned
             var user = _users.FindByExternalProvider(provider, userId);
-
+            claims.AddRange(user.Claims.ToList());
             if (user == null)
             {
                 if (userId == "2VmJDh20iV6ogfedY_5GPwVySh4T1ZU47AqqnXEqX4E")//elena
@@ -257,18 +257,16 @@ namespace IdentityServer4.Quickstart.UI
                     claims.Add(new Claim(JwtClaimTypes.Role, "User"));
                 }
             }
-                // remove 'name' claim issued by idsrv
-               
-            user.Claims.Add(new Claim("tenant", context.Tenant.Split(".").First()));
-            var additionalClaims = new List<Claim>();
-            additionalClaims.Add(new Claim("tenant", context.Tenant.Split(".").First()));
+           
+            var tenant = new Claim("tenant", context.Tenant.Split(".").First());
+            claims.Add(tenant);
 
             // if the external system sent a session id claim, copy it over
             // so we can use it for single sign-out
             var sid = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.SessionId);
             if (sid != null)
             {
-                additionalClaims.Add(new Claim(JwtClaimTypes.SessionId, sid.Value));
+                claims.Add(new Claim(JwtClaimTypes.SessionId, sid.Value));
             }
 
             // if the external provider issued an id_token, we'll keep it for signout
@@ -279,10 +277,9 @@ namespace IdentityServer4.Quickstart.UI
                 props = new AuthenticationProperties();
                 props.StoreTokens(new[] { new AuthenticationToken { Name = "id_token", Value = id_token } });
             }
-            var claimsToAdd = user.Claims.ToArray();
             // issue authentication cookie for user
             await _events.RaiseAsync(new UserLoginSuccessEvent(provider, userId, user.SubjectId, user.Username));
-            await HttpContext.SignInAsync(user.SubjectId, user.Username, provider, props,claimsToAdd);
+            await HttpContext.SignInAsync(user.SubjectId, user.Username, provider, props,claims.ToArray());
 
             // delete temporary cookie used during external authentication
             await HttpContext.SignOutAsync(IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme);
