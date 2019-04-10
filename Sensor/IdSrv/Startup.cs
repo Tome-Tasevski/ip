@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
 using IdentityServer4;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Mappers;
+using System.Linq;
 using Rsk.AspNetCore.Authentication.Saml2p;
 
 namespace IdSrv
@@ -20,15 +19,35 @@ namespace IdSrv
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            const string connectionString = @"Data Source=.\SQLExpress;database=IdentityServer4.Quickstart.EntityFramework;trusted_connection=yes;";
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+
             services.AddMvc();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services.AddHttpContextAccessor();
             services
                 .AddIdentityServer()
                 .AddTestUsers(Config.GetUsers())
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryApiResources(Config.GetApiResources())
-                .AddInMemoryClients(Config.GetClients())
+                // this adds the config data from DB (clients, resources)
+                .AddConfigurationStore(options =>
+                {
+                    options.ConfigureDbContext = b =>
+                        b.UseSqlServer(connectionString,
+                            sql => sql.MigrationsAssembly(migrationsAssembly));
+                })
+                // this adds the operational data from DB (codes, tokens, consents)
+                .AddOperationalStore(options =>
+                {
+                    options.ConfigureDbContext = b =>
+                        b.UseSqlServer(connectionString,
+                            sql => sql.MigrationsAssembly(migrationsAssembly));
+
+                    // this enables automatic token cleanup. this is optional.
+                    options.EnableTokenCleanup = true;
+                })
+                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
+                //.AddInMemoryApiResources(Config.GetApiResources())
+                //.AddInMemoryClients(Config.GetClients())
                 .AddProfileService<ProfileService>()
                 .AddSigningCredential(new X509Certificate2("idsrv3test.pfx", "idsrv3test"))
                 .AddSamlPlugin(options => {
@@ -83,6 +102,8 @@ namespace IdSrv
             loggerFactory.AddFile("Logs/{Date}-idsrv-log.txt");
             loggerFactory.AddDebug();
 
+            InitializeDatabase(app);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -95,6 +116,51 @@ namespace IdSrv
             app.UseStaticFiles();
 
             app.UseMvcWithDefaultRoute();
+        }
+
+        private void InitializeDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                serviceScope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>().Database.Migrate();
+
+                var context = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
+                context.Database.Migrate();
+
+                //this method will be executed only if we already have config file for IDS4
+                //if not put it in comments
+                PopulateDBWithConfig(context);
+            }
+        }
+
+        private void PopulateDBWithConfig(ConfigurationDbContext context)
+        {
+            if (!context.Clients.Any())
+            {
+                foreach (var client in Config.GetClients())
+                {
+                    context.Clients.Add(client.ToEntity());
+                }
+                context.SaveChanges();
+            }
+
+            if (!context.IdentityResources.Any())
+            {
+                foreach (var resource in Config.GetIdentityResources())
+                {
+                    context.IdentityResources.Add(resource.ToEntity());
+                }
+                context.SaveChanges();
+            }
+
+            if (!context.ApiResources.Any())
+            {
+                foreach (var resource in Config.GetApiResources())
+                {
+                    context.ApiResources.Add(resource.ToEntity());
+                }
+                context.SaveChanges();
+            }
         }
     }
 }

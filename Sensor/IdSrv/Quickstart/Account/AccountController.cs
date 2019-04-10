@@ -247,17 +247,13 @@ namespace IdentityServer4.Quickstart.UI
             // 
             // check if the external user is already provisioned
             var user = _users.FindByExternalProvider(provider, userId);
-            claims.AddRange(user.Claims.ToList());
+            if (user != null)
+            {
+                claims.AddRange(user.Claims.ToList());
+            }
             if (user == null)
             {
-                if (userId == "2VmJDh20iV6ogfedY_5GPwVySh4T1ZU47AqqnXEqX4E")//elena
-                {
-                    claims.Add(new Claim(JwtClaimTypes.Role, "Admin"));
-                }
-                if (userId == "7XUQhp3Ht9Uk_lpuUSEAvFndCRxSeCHkivdykbB1gIM")//sani
-                {
-                    claims.Add(new Claim(JwtClaimTypes.Role, "User"));
-                }
+                claims.Add(new Claim(JwtClaimTypes.Role, "User"));
             }
            
             var tenant = new Claim("tenant", context.Tenant.Split(".").First());
