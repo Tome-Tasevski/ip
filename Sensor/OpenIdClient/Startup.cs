@@ -44,13 +44,7 @@ namespace ServiceProviderMultiTenant
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
-            services.AddAuthorization(opt =>
-            {
-                opt.AddPolicy("User", p => p.RequireClaim("role", "User"));
-                opt.AddPolicy("Admin", p => p.RequireClaim("role", "Admin"));
-            });
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = "Cookies";
@@ -67,9 +61,10 @@ namespace ServiceProviderMultiTenant
                 opt.Scope.Add("profile");
                 opt.Scope.Add("role");
                 opt.Scope.Add("sensorsapi");
+                opt.Scope.Add("tenant");
                 opt.ResponseType = "id_token token";
                 opt.ClientSecret = "secret";
-                opt.ClaimActions.MapJsonKey("role", "role");
+                opt.ClaimActions.MapJsonKey("role", "role","role");
                 opt.Events = new OpenIdConnectEvents
                 {
                     OnRedirectToIdentityProvider = c =>
@@ -117,6 +112,7 @@ namespace ServiceProviderMultiTenant
                    o.DefaultChallengeScheme = tenantInfo.Items["Scheme"].ToString();
                    Console.WriteLine(o.DefaultChallengeScheme);
                });
+            services.AddAuthorization();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

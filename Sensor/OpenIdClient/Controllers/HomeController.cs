@@ -16,7 +16,6 @@ using ServiceProviderMultiTenant.Services;
 
 namespace ServiceProviderMultiTenant.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ISensorDataHttpClient _sensorDataHttpClient;
@@ -25,7 +24,8 @@ namespace ServiceProviderMultiTenant.Controllers
         {
             _sensorDataHttpClient = sensorDataHttpClient;
         }
-        
+
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var idToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
@@ -34,7 +34,7 @@ namespace ServiceProviderMultiTenant.Controllers
             return View(new TokensViewModel { IdToken = idToken, AccessToken = accessToken });
         }
 
-        [Authorize(Policy = "User")]
+
         public async Task<IActionResult> FetchDataUser()
         {
             var client = await _sensorDataHttpClient.GetClientAsync();
@@ -50,7 +50,7 @@ namespace ServiceProviderMultiTenant.Controllers
             });
         }
 
-        [Authorize(Policy = "Admin")]
+
         public async Task<IActionResult> FetchDataAdmin()
         {
             var client = await _sensorDataHttpClient.GetClientAsync();
@@ -65,7 +65,7 @@ namespace ServiceProviderMultiTenant.Controllers
                 return View(sensorData);
             });
         }
-
+        [Authorize(Roles = "SP2.Admin")]
         public IActionResult Privacy()
         {
             return View();

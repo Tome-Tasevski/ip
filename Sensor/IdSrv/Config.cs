@@ -25,7 +25,7 @@ namespace IdSrv
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResource("role", "Role", new List<string> {JwtClaimTypes.Role, ClaimTypes.Role }),
+                new IdentityResource("role","Role", new List<string> { ClaimTypes.Role }),
                 new IdentityResource("tenant", new List<string> { "tenant" })
             };
         }
@@ -33,7 +33,7 @@ namespace IdSrv
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource> {
-                new ApiResource("sensorsapi", JwtClaimTypes.Role)
+                new ApiResource("sensorsapi",  new List<string> {"role"})
 
             };
         }
@@ -46,14 +46,14 @@ namespace IdSrv
                     ClientId = "https://test1.localhost:44372/saml",
                     ClientName = "RSK SAML2P Test Client",
                     RedirectUris = { "https://test1.localhost:44372/signin-saml" },
-                    PostLogoutRedirectUris = { "" },
+                    //PostLogoutRedirectUris = { "" },
                     ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                     AllowedScopes = { "openid", "profile", "role"}
                 },
                 new Client {
                       ClientId = "http://test1.localhost:63982/saml",
                       ClientName = "RSK SAML2P Test Client",
-
+                        
                       ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
                       AllowedScopes = { "openid", "profile", "role"}
                 },
@@ -96,7 +96,8 @@ namespace IdSrv
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "sensorsapi",
-                        "role"
+                        "role",
+                        "tenant"
                     },
                     AllowAccessTokensViaBrowser = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
