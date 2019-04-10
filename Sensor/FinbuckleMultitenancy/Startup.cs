@@ -37,7 +37,6 @@ namespace FinbuckleMultitenancy
                 options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services.AddAuthentication(opt =>
             {
                 opt.DefaultScheme = "Cookies";
@@ -80,10 +79,7 @@ namespace FinbuckleMultitenancy
                     o.Cookie.Name += tenantInfo.Id;
 
                 });
-            services.AddAuthorization(opt =>
-            {
-                opt.AddPolicy("User", p => p.RequireClaim("role"));
-            });
+            services.AddAuthorization();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

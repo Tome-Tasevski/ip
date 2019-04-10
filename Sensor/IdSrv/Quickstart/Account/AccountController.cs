@@ -247,9 +247,14 @@ namespace IdentityServer4.Quickstart.UI
             // 
             // check if the external user is already provisioned
             var user = _users.FindByExternalProvider(provider, userId);
-            claims.AddRange(user.Claims.ToList());
-            if (user == null)
+            if (user != null)
             {
+                claims.AddRange(user.Claims.ToList());
+            }
+            if (user == null) //First login
+            {
+                claims.Add(new Claim(JwtClaimTypes.Role, "User"));
+
                 if (userId == "2VmJDh20iV6ogfedY_5GPwVySh4T1ZU47AqqnXEqX4E")//elena
                 {
                     claims.Add(new Claim(JwtClaimTypes.Role, "Admin"));
