@@ -31,18 +31,15 @@ namespace IdSrv
         {
 
             var features = _httpContextAccessor.HttpContext.Features.Get<IHttpRequestFeature>();
-            var returnUrl = features.RawTarget;
-            var authContext = _interaction.GetAuthorizationContextAsync(returnUrl).Result;
-            if (authContext.ClientId.Contains("saml"))
-            {
-                authContext.Tenant = authContext.ClientId;
-            }
-            var currentRequestTenant = authContext.Tenant.Split(".").First();
+            var returnurl = features.RawTarget;
+            var authcontext = _interaction.GetAuthorizationContextAsync(returnurl).Result;
+            
+            var currentrequesttenant = authcontext.Tenant.Split(".").First();
             var user_tenant = context.Subject.Claims.First(x => x.Type.Equals("tenant")).Value;
-            if (!user_tenant.Equals(currentRequestTenant))
+            if (!user_tenant.Equals(currentrequesttenant))
             {
                 context.IsActive = false;
-                
+
             }
             return Task.FromResult(context);
         }

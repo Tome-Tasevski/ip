@@ -42,31 +42,17 @@ namespace IdSrv
         {
             return new List<Client>
             {
-                new Client {
-                    ClientId = "https://test1.localhost:44372/saml",
-                    ClientName = "RSK SAML2P Test Client",
-                    RedirectUris = { "https://test1.localhost:44372/signin-saml" },
-                    PostLogoutRedirectUris = { "" },
-                    ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
-                    AllowedScopes = { "openid", "profile", "role"}
-                },
-                new Client {
-                      ClientId = "http://test1.localhost:63982/saml",
-                      ClientName = "RSK SAML2P Test Client",
-
-                      ProtocolType = IdentityServerConstants.ProtocolTypes.Saml2p,
-                      AllowedScopes = { "openid", "profile", "role"}
-                },
                 new Client
                 {
                     ClientId = "tenantApp",
                     ClientName = "tenant Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    RedirectUris = {  "https://test2.localhost:44372/signin-oidc","https://test3.localhost:44372/signin-oidc" },
+                    RedirectUris = { "https://test1.localhost:44372/signin-oidc", "https://test2.localhost:44372/signin-oidc","https://test3.localhost:44372/signin-oidc" },
                     PostLogoutRedirectUris = {
                         "https://test2.localhost:44372/signout-callback-oidc",
-                        "https://test3.localhost:44372/signout-callback-oidc" },
+                        "https://test3.localhost:44372/signout-callback-oidc",
+                        "https://test1.localhost:44372/signout-callback-oidc"},
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -87,20 +73,21 @@ namespace IdSrv
                     ClientSecrets = { new Secret("secret".Sha256()) },
                     RedirectUris =
                     {
-                      "http://test2.localhost:63982/signin-oidc" ,
-                      "http://test3.localhost:63982/signin-oidc"
+                        "https://test1.localhost:44334/signin-oidc",
+                        "https://test2.localhost:44334/signin-oidc",
+                        "https://test3.localhost:44334/signin-oidc"
                     },
-                    PostLogoutRedirectUris = { "http://test2.localhost:63982/signout-callback-oidc", "http://test3.localhost:63982/signout-callback-oidc" },
+                    PostLogoutRedirectUris = { "http://test1.localhost:44334/signout-callback-oidc", "http://test2.localhost:44334/signout-callback-oidc", "http://test3.localhost:44334/signout-callback-oidc" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "sensorsapi",
-                        "role"
+                        "role",
+                        "tenant"
                     },
                     AllowAccessTokensViaBrowser = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
-
                 }
             };
         }
@@ -109,17 +96,8 @@ namespace IdSrv
         {
             return new List<ServiceProvider>
             {
-                new ServiceProvider {
-                      EntityId = "https://test1.localhost:44372/saml",
-                      SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "https://test1.localhost:56996/signin-saml") },
-                },
-                new ServiceProvider {
-                      EntityId ="http://test1.localhost:63982/saml",
-                      SigningCertificates = {new X509Certificate2("TestClient.cer")},
-                      AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "http://test1.localhost:63982/signin-saml") },
-                }
-        };
+                
+            };
         }
     }
 }
