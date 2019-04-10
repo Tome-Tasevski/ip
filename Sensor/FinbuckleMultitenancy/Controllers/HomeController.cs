@@ -25,12 +25,9 @@ namespace FinbuckleMultitenancy.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Logout()
+        public IActionResult Logout()
         {
-            await HttpContext.SignOutAsync("Cookies");
-            await HttpContext.SignOutAsync("oidc");
-
-            return View();
+            return SignOut("Cookies", "oidc");
         }
 
         public async Task<IActionResult> ChallengeScheme(string scheme)
