@@ -6,7 +6,7 @@ using IdentityServer4.Events;
 using IdentityServer4.Quickstart.UI;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
-using IDS4Admin.Models;
+using IdentityServer4Admin.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

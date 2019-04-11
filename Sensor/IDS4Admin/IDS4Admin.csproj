@@ -11,9 +11,7 @@
     <PackageReference Include="IdentityServer4" Version="2.3.2" />
     <PackageReference Include="IdentityServer4.EntityFramework" Version="2.3.2" />
     <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.3.0" />
-    <PackageReference Include="RSK.Audit" Version="1.0.0.35" />
-    <PackageReference Include="RSK.Audit.EF" Version="1.0.0.35" />
-    <PackageReference Include="RSK.IdentityServer4.AuditEventSink" Version="1.0.0.19" />
+    <PackageReference Include="Rsk.IdentityServer4.Saml" Version="2.3.6.90" />
     
     <PackageReference Include="Serilog" Version="2.7.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
