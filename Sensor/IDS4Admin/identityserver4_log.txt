@@ -1,0 +1,7 @@
+2019-04-11 13:29:18.567 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 13:29:18.868 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 13:29:18.868 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 13:29:18.869 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 13:29:18.869 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 13:29:18.869 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-04-11 13:29:18.870 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
