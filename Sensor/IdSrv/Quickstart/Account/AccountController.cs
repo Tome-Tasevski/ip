@@ -34,7 +34,6 @@ namespace IdentityServer4.Quickstart.UI
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IEventService _events;
         private readonly AccountService _account;
-        private readonly IConfiguration _configuration;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
@@ -42,14 +41,13 @@ namespace IdentityServer4.Quickstart.UI
             IHttpContextAccessor httpContextAccessor,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
-            IConfiguration configuration,
             TestUserStore users = null)
         {
             // if the TestUserStore is not in DI, then we'll just use the global users collection
             _users = users ?? new TestUserStore(TestUsers.Users);
             _interaction = interaction;
             _events = events;
-            _account = new AccountService(interaction, httpContextAccessor, schemeProvider, clientStore, configuration);
+            _account = new AccountService(interaction, httpContextAccessor, schemeProvider, clientStore);
         }
 
         /// <summary>

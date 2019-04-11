@@ -20,19 +20,17 @@ namespace IdentityServer4.Quickstart.UI
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
-        private readonly IConfiguration _configuration;
 
         public AccountService(
             IIdentityServerInteractionService interaction,
             IHttpContextAccessor httpContextAccessor,
             IAuthenticationSchemeProvider schemeProvider,
-            IClientStore clientStore, IConfiguration configuration)
+            IClientStore clientStore)
         {
             _interaction = interaction;
             _httpContextAccessor = httpContextAccessor;
             _schemeProvider = schemeProvider;
             _clientStore = clientStore;
-            _configuration = configuration;
         }
 
         public async Task<LoginViewModel> BuildLoginViewModelAsync(string returnUrl)
