@@ -5,3 +5,740 @@
 2019-04-11 13:29:18.869 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
 2019-04-11 13:29:18.869 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
 2019-04-11 13:29:18.870 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-04-11 16:01:55.153 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:01:55.450 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:01:55.450 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:01:55.451 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:01:55.451 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:01:55.451 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:01:55.451 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:01:59.228 +02:00 [DBG] Found ["openid","profile","admin_ui_profile","admin_ui_public","admin_api","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:01:59.228 +02:00 [DBG] Found ["openid","profile","admin_ui_profile","admin_ui_public","admin_api","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:01:59.654 +02:00 [DBG] tenantApp found in database: false
+2019-04-11 16:01:59.654 +02:00 [DBG] SpTenant found in database: false
+2019-04-11 16:04:48.203 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:04:48.472 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:04:48.472 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:04:48.472 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:04:48.472 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:04:48.473 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:04:48.473 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:04:51.961 +02:00 [DBG] Found ["openid","profile","admin_ui_profile","admin_ui_public","admin_api","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:04:51.961 +02:00 [DBG] Found ["openid","profile","admin_ui_profile","admin_ui_public","admin_api","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:04:52.388 +02:00 [DBG] tenantApp found in database: false
+2019-04-11 16:04:52.390 +02:00 [DBG] SpTenant found in database: false
+2019-04-11 16:08:09.791 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:08:09.957 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:08:09.957 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:08:09.957 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:08:09.957 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:08:09.957 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:08:09.957 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:08:13.314 +02:00 [DBG] Found ["openid","profile","admin_ui_profile","admin_ui_public","admin_api","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:08:13.314 +02:00 [DBG] Found ["openid","profile","admin_ui_profile","admin_ui_public","admin_api","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:08:13.784 +02:00 [DBG] SpTenant found in database: false
+2019-04-11 16:08:13.785 +02:00 [DBG] tenantApp found in database: false
+2019-04-11 16:10:40.852 +02:00 [DBG] tenantApp found in database: false
+2019-04-11 16:11:16.047 +02:00 [DBG] tenantApp found in database: false
+2019-04-11 16:17:17.159 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:17:17.328 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:17:17.328 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:17:17.328 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:17:17.328 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:17:17.328 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:17:17.329 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:17:47.093 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:17:47.191 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:17:47.191 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:17:47.191 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:17:47.191 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:17:47.191 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:17:47.191 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:17:47.993 +02:00 [FTL] Application startup exception
+System.ArgumentException: Keyword not supported: 'database'.
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.GetIndex(String keyword)
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.set_Item(String keyword, Object value)
+   at System.Data.Common.DbConnectionStringBuilder.set_ConnectionString(String value)
+   at Microsoft.Data.Sqlite.SqliteConnection.set_ConnectionString(String value)
+   at Microsoft.EntityFrameworkCore.Sqlite.Storage.Internal.SqliteRelationalConnection.CreateDbConnection()
+   at Microsoft.EntityFrameworkCore.Internal.LazyRef`1.get_Value()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Sqlite.Storage.Internal.SqliteRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.QueryMethodProvider.GetResult[TResult](IEnumerable`1 valueBuffers, Boolean throwOnNullResult)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at IdentityExpress.Manager.BusinessLogic.Logic.Bootstrap.OpenIdConnectBootstrap.Initialize()
+   at IdentityExpress.Manager.Api.Bootstrap.Initialize()
+   at IdentityExpress.Manager.Api.Startup.ConfigureMigrations(IServiceScope serviceScope)
+   at IdentityExpress.Manager.Api.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   at IdentityServer4.AdminUIExtensions.UseAdminUI(IApplicationBuilder appBuilder)
+   at IDS4Admin.Startup.Configure(IApplicationBuilder app) in C:\Users\aleksandra.koceva\Desktop\ip\Sensor\IDS4Admin\Startup.cs:line 188
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISSetupFilter.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2019-04-11 16:20:42.645 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:20:42.863 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:20:42.863 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:20:42.863 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:20:42.863 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:20:42.864 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:20:42.864 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:21:58.073 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:21:58.177 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:21:58.177 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:21:58.177 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:21:58.177 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:21:58.177 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:21:58.178 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:21:58.950 +02:00 [FTL] Application startup exception
+System.ArgumentException: Keyword not supported: 'database'.
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.GetIndex(String keyword)
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.set_Item(String keyword, Object value)
+   at System.Data.Common.DbConnectionStringBuilder.set_ConnectionString(String value)
+   at Microsoft.Data.Sqlite.SqliteConnection.set_ConnectionString(String value)
+   at Microsoft.EntityFrameworkCore.Sqlite.Storage.Internal.SqliteRelationalConnection.CreateDbConnection()
+   at Microsoft.EntityFrameworkCore.Internal.LazyRef`1.get_Value()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Sqlite.Storage.Internal.SqliteRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.QueryMethodProvider.GetResult[TResult](IEnumerable`1 valueBuffers, Boolean throwOnNullResult)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at IdentityExpress.Manager.BusinessLogic.Logic.Bootstrap.OpenIdConnectBootstrap.Initialize()
+   at IdentityExpress.Manager.Api.Bootstrap.Initialize()
+   at IdentityExpress.Manager.Api.Startup.ConfigureMigrations(IServiceScope serviceScope)
+   at IdentityExpress.Manager.Api.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   at IdentityServer4.AdminUIExtensions.UseAdminUI(IApplicationBuilder appBuilder)
+   at IDS4Admin.Startup.Configure(IApplicationBuilder app) in C:\Users\aleksandra.koceva\Desktop\ip\Sensor\IDS4Admin\Startup.cs:line 188
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISSetupFilter.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2019-04-11 16:21:59.250 +02:00 [ERR] Connection id "0HLLUH47GD9CC", Request id "0HLLUH47GD9CC:00000001": An unhandled exception was thrown by the application.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: values
+   at System.String.Join(String separator, IEnumerable`1 values)
+   at Microsoft.Extensions.RazorViews.BaseView.EndWriteAttribute()
+   at Microsoft.AspNetCore.Hosting.Views.ErrorPage.ExecuteAsync()
+   at Microsoft.Extensions.RazorViews.BaseView.ExecuteAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-04-11 16:21:59.258 +02:00 [WRN] Connection processing ended abnormally.
+Microsoft.AspNetCore.Connections.ConnectionAbortedException: The connection was aborted
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2019-04-11 16:23:09.863 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:23:10.055 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:23:10.055 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:23:10.056 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:23:10.056 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:23:10.056 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:23:10.056 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:24:57.346 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:24:57.440 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:24:57.441 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:24:57.441 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:24:57.441 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:24:57.441 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:24:57.441 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:24:58.270 +02:00 [FTL] Application startup exception
+System.ArgumentException: Keyword not supported: 'database'.
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.GetIndex(String keyword)
+   at Microsoft.Data.Sqlite.SqliteConnectionStringBuilder.set_Item(String keyword, Object value)
+   at System.Data.Common.DbConnectionStringBuilder.set_ConnectionString(String value)
+   at Microsoft.Data.Sqlite.SqliteConnection.set_ConnectionString(String value)
+   at Microsoft.EntityFrameworkCore.Sqlite.Storage.Internal.SqliteRelationalConnection.CreateDbConnection()
+   at Microsoft.EntityFrameworkCore.Internal.LazyRef`1.get_Value()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Sqlite.Storage.Internal.SqliteRelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.QueryMethodProvider.GetResult[TResult](IEnumerable`1 valueBuffers, Boolean throwOnNullResult)
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at IdentityExpress.Manager.BusinessLogic.Logic.Bootstrap.OpenIdConnectBootstrap.Initialize()
+   at IdentityExpress.Manager.Api.Bootstrap.Initialize()
+   at IdentityExpress.Manager.Api.Startup.ConfigureMigrations(IServiceScope serviceScope)
+   at IdentityExpress.Manager.Api.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   at IdentityServer4.AdminUIExtensions.UseAdminUI(IApplicationBuilder appBuilder)
+   at IDS4Admin.Startup.Configure(IApplicationBuilder app) in C:\Users\aleksandra.koceva\Desktop\ip\Sensor\IDS4Admin\Startup.cs:line 188
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISSetupFilter.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2019-04-11 16:24:58.492 +02:00 [ERR] Connection id "0HLLUH5SU7KCC", Request id "0HLLUH5SU7KCC:00000001": An unhandled exception was thrown by the application.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: values
+   at System.String.Join(String separator, IEnumerable`1 values)
+   at Microsoft.Extensions.RazorViews.BaseView.EndWriteAttribute()
+   at Microsoft.AspNetCore.Hosting.Views.ErrorPage.ExecuteAsync()
+   at Microsoft.Extensions.RazorViews.BaseView.ExecuteAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-04-11 16:27:49.168 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:27:49.397 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:27:49.397 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:27:49.397 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:27:49.397 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:27:49.397 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:27:49.397 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:28:55.015 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:28:55.112 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:28:55.112 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:28:55.112 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:28:55.112 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:28:55.112 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:28:55.112 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:28:57.271 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:28:57.271 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:33:05.319 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:33:05.529 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:33:05.529 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:33:05.529 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:33:05.529 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:33:05.529 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:33:05.529 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:33:09.271 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:33:09.271 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:33:09.942 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:33:09.942 +02:00 [DBG] SpTenant found in database: true
+2019-04-11 16:33:09.954 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:33:09.954 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-11 16:33:27.948 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:33:27.949 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:33:28.021 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:28.167 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:33:28.179 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:28.182 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:33:28.238 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:33:28.239 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:33:28.241 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:28.244 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:33:28.246 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:28.249 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:33:28.256 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:33:28.256 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:33:34.583 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:33:34.583 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:33:34.586 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:34.591 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:33:34.593 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:34.596 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:33:42.246 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:33:42.246 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:33:42.250 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:42.254 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:33:42.257 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:33:42.260 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:35:35.763 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:35:36.060 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:35:36.060 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:35:36.060 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:35:36.061 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:35:36.061 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:35:36.061 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:35:39.687 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:35:39.687 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:35:40.505 +02:00 [DBG] SpTenant found in database: true
+2019-04-11 16:35:40.505 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:35:40.515 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-11 16:35:40.515 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:35:45.815 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:35:45.815 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:35:45.868 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:35:45.925 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:35:45.938 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:35:45.942 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:35:45.995 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:35:45.995 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:35:45.997 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:35:46.000 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:35:46.002 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:35:46.006 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:35:46.012 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:35:46.013 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:35:49.846 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:35:49.846 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:35:49.849 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:35:49.853 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:35:49.855 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:35:49.858 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:41:07.230 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:41:07.366 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:41:07.366 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:41:07.366 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:41:07.366 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:41:07.366 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:41:07.366 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:41:12.521 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:41:12.651 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:41:13.083 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:41:13.083 +02:00 [DBG] SpTenant found in database: true
+2019-04-11 16:41:13.091 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-11 16:41:13.091 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:42:08.089 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:42:08.090 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:42:08.154 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:42:08.198 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:42:08.208 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:42:08.211 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:42:08.265 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:42:08.265 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:42:08.267 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:42:08.270 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:42:08.272 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:42:08.275 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:42:08.281 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:42:08.282 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:42:14.759 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:42:14.759 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:42:14.762 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:42:14.766 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:42:14.768 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 16:42:14.771 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 16:46:45.400 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 16:46:45.597 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 16:46:45.597 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 16:46:45.597 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 16:46:45.597 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 16:46:45.598 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 16:46:45.598 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 16:46:49.094 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:46:49.094 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 16:46:49.692 +02:00 [DBG] SpTenant found in database: true
+2019-04-11 16:46:49.692 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 16:46:49.701 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 16:46:49.701 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-11 17:02:38.121 +02:00 [FTL] Application startup exception
+System.AggregateException: One or more errors occurred. (An error occurred while updating the entries. See the inner exception for details.) ---> Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'IdentityServer4.Quickstart.EntityFramework.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.UpdateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.UpdateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddClaimsAsync(TUser user, IEnumerable`1 claims)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at IDS4Admin.SeedData.EnsureSeedData(String connectionString) in C:\Users\aleksandra.koceva\Desktop\ip\Sensor\IDS4Admin\SeedData.cs:line 81
+   at IDS4Admin.Startup.ConfigureServices(IServiceCollection services) in C:\Users\aleksandra.koceva\Desktop\ip\Sensor\IDS4Admin\Startup.cs:line 46
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.ConfigureServices(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.EnsureApplicationServices()
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.Initialize()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+---> (Inner Exception #0) Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'IdentityServer4.Quickstart.EntityFramework.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.UpdateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.UpdateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddClaimsAsync(TUser user, IEnumerable`1 claims)<---
+
+2019-04-11 17:03:22.123 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 17:03:22.200 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 17:03:22.201 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 17:03:22.201 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 17:03:22.201 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 17:03:22.201 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 17:03:22.201 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 17:03:24.789 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 17:03:24.789 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 17:03:25.527 +02:00 [DBG] SpTenant found in database: true
+2019-04-11 17:03:25.527 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:03:25.538 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-11 17:03:25.538 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:03:52.208 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:03:52.208 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:03:52.269 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:03:52.386 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:03:52.396 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:03:52.400 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:03:52.457 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:03:52.457 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:03:52.459 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:03:52.462 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:03:52.464 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:03:52.467 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:03:52.473 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:03:52.473 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:02.103 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:04:02.104 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:02.106 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:02.110 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:02.112 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:02.116 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:06.732 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:04:06.732 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:06.734 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:06.738 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:06.739 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:06.743 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:06.747 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:04:06.747 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:27.190 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:04:27.190 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:27.193 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:27.196 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:27.199 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:27.204 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:30.505 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:04:30.506 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:30.543 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:04:30.543 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:30.545 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:30.549 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:30.550 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:30.553 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:30.558 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:04:30.558 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:04:30.559 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:30.562 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:04:30.564 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:04:30.566 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:05:36.408 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 17:05:36.527 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 17:05:36.527 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 17:05:36.527 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 17:05:36.527 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 17:05:36.528 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 17:05:36.528 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 17:05:39.308 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 17:05:39.308 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 17:05:39.866 +02:00 [DBG] SpTenant found in database: true
+2019-04-11 17:05:39.866 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:05:39.876 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:05:39.876 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-11 17:05:51.059 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:05:51.059 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:05:51.115 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:05:51.167 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:05:51.178 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:05:51.181 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:05:51.236 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:05:51.237 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:05:51.239 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:05:51.242 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:05:51.244 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:05:51.246 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:05:51.253 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:05:51.253 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:05:59.033 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:05:59.033 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:05:59.036 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:05:59.041 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:05:59.043 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:05:59.048 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:03.089 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:03.089 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:03.128 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:03.128 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:03.130 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:03.133 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:03.135 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:03.137 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:03.142 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:03.142 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:03.144 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:03.146 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:03.148 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:03.151 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:03.179 +02:00 [DBG] dQ2Lo77vhbUrOFp+/TymMH5rEPTl5F6qyvxu/TriljQ= found in database: false
+2019-04-11 17:06:03.219 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:03.219 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:03.221 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:03.224 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:03.226 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:03.228 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:03.232 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:03.232 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:03.234 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:03.237 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:06.034 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:06.034 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:06.036 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:06.040 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:06.042 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:06.045 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:06.073 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:06.073 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:06.086 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:06.086 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:06.088 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:06.091 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:06.093 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:06.097 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:06.101 +02:00 [DBG] tenantApp found in database: true
+2019-04-11 17:06:06.102 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-11 17:06:06.103 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:06.107 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:06.109 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-11 17:06:06.112 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-11 17:06:06.113 +02:00 [DBG] dQ2Lo77vhbUrOFp+/TymMH5rEPTl5F6qyvxu/TriljQ= found in database: false
+2019-04-11 17:06:06.143 +02:00 [DBG] dQ2Lo77vhbUrOFp+/TymMH5rEPTl5F6qyvxu/TriljQ= not found in database
+2019-04-11 17:12:45.960 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-11 17:12:46.035 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-11 17:12:46.035 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-11 17:12:46.035 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-11 17:12:46.035 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-11 17:12:46.035 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-11 17:12:46.035 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-11 17:12:48.870 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-11 17:12:49.630 +02:00 [DBG] SpTenant found in database: true
+2019-04-11 17:12:49.638 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-11 17:13:17.165 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 08:46:33.633 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-12 08:46:33.742 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-12 08:46:33.742 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-12 08:46:33.742 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-12 08:46:33.742 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-12 08:46:33.742 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-12 08:46:33.742 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-12 08:46:36.842 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 08:46:36.842 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 08:46:37.579 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:46:37.579 +02:00 [DBG] SpTenant found in database: true
+2019-04-12 08:46:37.588 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:46:37.588 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-12 08:47:13.274 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:47:13.274 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:47:13.332 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:13.503 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:13.517 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:13.520 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:13.575 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:47:13.575 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:47:13.577 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:13.582 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:13.583 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:13.586 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:13.593 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:47:13.593 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:47:44.548 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:47:44.548 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:47:44.557 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:44.640 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:44.642 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:44.644 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:48.084 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:47:48.084 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:47:48.086 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:48.088 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:48.090 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:48.093 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:48.097 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:47:48.097 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:47:55.338 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:47:55.338 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:47:55.343 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:55.347 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:47:55.350 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:47:55.353 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:48:02.570 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:48:02.570 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:48:02.615 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:48:02.615 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:48:02.617 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:48:02.621 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:48:02.623 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:48:02.627 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:48:02.632 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 08:48:02.632 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 08:48:02.634 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:48:02.638 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 08:48:02.640 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 08:48:02.642 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:07:52.021 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-12 09:07:52.136 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-12 09:07:52.136 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-12 09:07:52.136 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-12 09:07:52.136 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-12 09:07:52.136 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-12 09:07:52.136 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-12 09:07:55.355 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 09:07:55.355 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 09:07:55.970 +02:00 [DBG] SpTenant found in database: true
+2019-04-12 09:07:55.970 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:07:55.985 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-12 09:07:55.985 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:20.242 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:08:20.242 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:20.304 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:20.437 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:20.447 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:20.451 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:20.512 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:08:20.513 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:20.516 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:20.521 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:20.523 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:20.526 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:20.534 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:08:20.534 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:25.987 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:08:25.987 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:25.990 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:25.993 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:25.995 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:26.000 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:30.423 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:08:30.424 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:30.468 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:08:30.469 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:30.471 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:30.474 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:30.476 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:30.479 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:30.484 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:08:30.484 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:08:30.486 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:30.489 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:08:30.490 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:08:30.493 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:10:38.671 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-12 09:10:38.773 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-12 09:10:38.773 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-12 09:10:38.773 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-12 09:10:38.773 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-12 09:10:38.773 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-12 09:10:38.773 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-12 09:10:41.359 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 09:10:41.359 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 09:10:41.980 +02:00 [DBG] SpTenant found in database: true
+2019-04-12 09:10:41.980 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:10:41.988 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-12 09:10:41.988 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:10:57.486 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:10:57.486 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:10:57.554 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:10:57.684 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:10:57.697 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:10:57.700 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:10:57.776 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:10:57.777 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:10:57.780 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:10:57.783 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:10:57.784 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:10:57.787 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:10:57.793 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:10:57.794 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:11:07.275 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:11:07.276 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:11:07.278 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:11:07.282 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:11:07.285 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:11:07.288 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:11:11.564 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:11:11.564 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:11:11.610 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:11:11.610 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:11:11.613 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:11:11.617 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:11:11.619 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:11:11.624 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:11:11.629 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:11:11.629 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:11:11.631 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:11:11.634 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:11:11.636 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:11:11.639 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:16:54.217 +02:00 [INF] Starting IdentityServer4 version 2.3.2.0
+2019-04-12 09:16:54.313 +02:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-04-12 09:16:54.313 +02:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-04-12 09:16:54.313 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-04-12 09:16:54.313 +02:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-04-12 09:16:54.313 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for challenge
+2019-04-12 09:16:54.314 +02:00 [DBG] Using adfs as default ASP.NET Core scheme for forbid
+2019-04-12 09:16:57.670 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 09:16:57.670 +02:00 [DBG] Found ["openid","profile","role","tenant","admin_ui_profile","sensorsapi","admin_api","admin_ui_public","admin_ui_webhooks"] as all scopes in database
+2019-04-12 09:16:58.556 +02:00 [DBG] SpTenant found in database: true
+2019-04-12 09:16:58.556 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:16:58.567 +02:00 [DBG] client configuration validation for client SpTenant succeeded.
+2019-04-12 09:16:58.567 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:17:18.933 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:17:18.933 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:17:19.003 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:17:19.148 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:17:19.161 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:17:19.165 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:17:19.242 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:17:19.242 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:17:19.245 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:17:19.249 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:17:19.250 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:17:19.253 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:17:19.259 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:17:19.259 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:17:26.924 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:17:26.925 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:17:26.927 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:17:26.931 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:17:26.933 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:17:26.935 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:18:56.125 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:18:56.125 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:18:56.167 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:18:56.167 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:18:56.174 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:18:56.253 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:18:56.255 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:18:56.258 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:18:56.264 +02:00 [DBG] tenantApp found in database: true
+2019-04-12 09:18:56.264 +02:00 [DBG] client configuration validation for client tenantApp succeeded.
+2019-04-12 09:18:56.266 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:18:56.269 +02:00 [DBG] Found ["sensorsapi"] API scopes in database
+2019-04-12 09:18:56.271 +02:00 [DBG] Found ["openid","profile","role","tenant"] identity scopes in database
+2019-04-12 09:18:56.274 +02:00 [DBG] Found ["sensorsapi"] API scopes in database

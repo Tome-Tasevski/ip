@@ -1,6 +1,6 @@
 var ENV = {
-    ApiUrl: 'http://localhost:5000',
-    UiUrl: 'http://localhost:5000',
-    AuthorityUrl: 'http://localhost:5000',
+    ApiUrl: 'https://localhost:44374',
+    UiUrl: 'https://localhost:44374',
+    AuthorityUrl: 'https://localhost:44374',
     AddUserPassword:true,
 };
