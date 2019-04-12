@@ -81,6 +81,8 @@ namespace IdSrv.Quickstart
                     SingleLogoutEndpoint = new SamlEndpoint(samlConfig.SingleLogoutEndpoint, SamlBindingTypes.HttpRedirect),
                     SigningCertificate = new X509Certificate2(samlConfig.IdpSigningCertificate),
                 };
+
+                samlOptions = BuildSamlOptions(samlConfig, saml2SpOptions, saml2IdpOptions);
             }
             
             if (await _schemeProvider.GetSchemeAsync(scheme) == null)
@@ -100,15 +102,13 @@ namespace IdSrv.Quickstart
                 _openIdOptions.TryAdd(scheme, oidOptions);
             }else
             {
-                _samlSpOptions.TryAdd(scheme, saml2SpOptions);
-                _samlIdpOptions.TryAdd(scheme, saml2IdpOptions);
                 _saml2pOptions.TryAdd(scheme, samlOptions);
             }
         }
 
         public async Task LoadAllSchemes()
         {
-            var tenants = _repo.GetAllTenants().Where(t => t.LoginType.Equals("external") && t.Protocol.Equals("oidc"));
+            var tenants = _repo.GetAllTenants().Where(t => t.LoginType.Equals("external"));
             foreach (var tenant in tenants.ToList())
             {
                 await AddOrUpdate(tenant.TenantId);

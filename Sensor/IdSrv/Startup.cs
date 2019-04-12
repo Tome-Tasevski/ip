@@ -28,7 +28,7 @@ namespace IdSrv
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            const string connectionString = @"Data Source=.\SQLExpress;database=IdentityServer4.Quickstart.EntityFramework;trusted_connection=yes;";
+            const string connectionString = @"Data Source=.\SQLExpress;database=IdsDatabase;trusted_connection=yes;";
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddMvc();
@@ -41,27 +41,20 @@ namespace IdSrv
 
             services
                 .AddIdentityServer()
-                .AddTestUsers(Config.GetUsers())
-                // this adds the config data from DB (clients, resources)
                 .AddConfigurationStore(options =>
                 {
                     options.ConfigureDbContext = b =>
                         b.UseSqlServer(connectionString,
                             sql => sql.MigrationsAssembly(migrationsAssembly));
                 })
-                // this adds the operational data from DB (codes, tokens, consents)
                 .AddOperationalStore(options =>
                 {
                     options.ConfigureDbContext = b =>
                         b.UseSqlServer(connectionString,
                             sql => sql.MigrationsAssembly(migrationsAssembly));
 
-                    // this enables automatic token cleanup. this is optional.
                     options.EnableTokenCleanup = true;
                 })
-                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
-                //.AddInMemoryApiResources(Config.GetApiResources())
-                //.AddInMemoryClients(Config.GetClients())
                 .AddProfileService<ProfileService>()
                 .AddSigningCredential(new X509Certificate2("idsrv3test.pfx", "idsrv3test"))
                 .AddSamlPlugin(options => {
@@ -78,27 +71,16 @@ namespace IdSrv
             services.AddTransient<AuthSchemeProvider>();
             
             services.AddAuthentication(opt => opt.DefaultChallengeScheme = "oidc")
-                /*.AddOpenIdConnect("AAD", "Azure Active Directory", options =>
-                {
-                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                    options.SignOutScheme = IdentityServerConstants.SignoutScheme;
-                    options.Authority = "https://login.microsoftonline.com/common";
-                    options.ClientId = "f6a6b204-ff96-4013-8adb-7b1ef0bdda2a";
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = false
-                    };
-                    options.GetClaimsFromUserInfoEndpoint = true;
-                }).AddSaml2p("adfs", "AD authentication", options =>
+                .AddSaml2p("default", "default", options =>
                 {
                     options.Licensee = "Demo";
                     options.LicenseKey = "eyJTb2xkRm9yIjowLjAsIktleVByZXNldCI6NiwiU2F2ZUtleSI6ZmFsc2UsIkxlZ2FjeUtleSI6ZmFsc2UsImF1dGgiOiJERU1PIiwiZXhwIjoiMjAxOS0wNS0xMVQwMTowMDowMC45Njc1MTI5KzAxOjAwIiwiaWF0IjoiMjAxOS0wNC0xMVQwMDowMDowMC4wMDA1MTI5Iiwib3JnIjoiREVNTyIsImF1ZCI6Mn0=.PKaOIARp3KB5GYWCoBXkJHOSqpGg2BcPpQX9/N/4SJ9rFyI3CLGILF/qrQzWBBUdTTKxMGU4LaPToCQE3XAF1M4Ikh8QCYNMsS2o5OlfO2+sqmVvI6Y8ucjMgwPnEigFW+q1+mZbWHlqPto0OsHhSjX8PgZb+g8nsWbGb5MLSAaM+8bLgcghizj3xZctr6QyOI0a9p9VThzPSNi4hKEyPBZ/EOjt7Qxh2R4TVsY9TnbeTIRT+P9yGXGQoJqmIIqVhlMu7v6Qe0hV1orgLKonJpqQVRsYUK/rl9ygyMV7lfB3KQ4k3EwqsUFF9OclMF+DZBNa1YOfqBmYnVebQWmpvkqxh/RiEiRrh+ERoGDNrOBgPbPlNj80dxy37rkqZSFyNg6su3F7v3ZyjFyS9kVha0HsnhkvN8Kz14myzokxwiBe2BVDy7ErzXajhP3q8a04SP6qL22mO9uBwAppHPD7UOU88+CC3GHVD5NmSjzMwN2sNzgExjOQ4dFDjvfcz9byilMUPCW1o3vRcIVA7CJx7F28ZYQFw/LuBlTPcZ9LlkWq1LptZR1KeusKX5vcz5QvWj7F+uO1fA2uwrUSdghGGkHbfLrh6OJmUFUD8HGm0N83ydLQKaEMMJgeA4T3ox19zycws7RdrZ6uLX2hTySCZ5xjf6eUu97QDxxd/LEnQvU=";
                     options.IdentityProviderOptions = new IdpOptions
                     {
-                        EntityId = "https://adfs.it-labs.io/adfs/services/trust",
+                        EntityId = "https://test.example.com",
                         SigningCertificate = new X509Certificate2("adfs-signing.cer"),
-                        SingleSignOnEndpoint = new SamlEndpoint("https://adfs.it-labs.io/adfs/ls/", SamlBindingTypes.HttpRedirect),
-                        SingleLogoutEndpoint = new SamlEndpoint("https://adfs.it-labs.io/adfs/ls/", SamlBindingTypes.HttpRedirect),
+                        SingleSignOnEndpoint = new SamlEndpoint("https://test.example.com", SamlBindingTypes.HttpRedirect),
+                        SingleLogoutEndpoint = new SamlEndpoint("https://test.example.com", SamlBindingTypes.HttpRedirect),
                     };
                     options.ServiceProviderOptions = new SpOptions
                     {
@@ -113,7 +95,7 @@ namespace IdSrv
                     options.CallbackPath = "/signin-saml";
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
                     options.TimeComparisonTolerance = 15;
-                })*/;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -150,10 +132,14 @@ namespace IdSrv
 
                 var authSchemeProvider = serviceScope.ServiceProvider.GetRequiredService<AuthSchemeProvider>();
 
-                //GetAllSchemes(userDbContext, authSchemeProvider).GetAwaiter().GetResult();
                 //this method will be executed only if we already have config file for IDS4
                 //if not put it in comments
                 PopulateDBWithConfig(configurationContext);
+
+                //----------------------***************--------------------------
+                //Uncomment after migrating IDS4DbContext
+                //GetAllSchemes(authSchemeProvider).GetAwaiter().GetResult();
+                //----------------------***************--------------------------
             }
 
         }
