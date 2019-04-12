@@ -46,14 +46,14 @@ namespace IDS4Admin
             var currentrequesttenant = authcontext.Tenant.Split(".").First();
           //  var identity = (ClaimsIdentity)User.Identity;
               //  First(x => x.Type.Equals("tenant")).Value;
-           IEnumerable<Claim> claims = identity.Claims;
+           //IEnumerable<Claim> claims = identity.Claims;
 
-            var user_tenant = identity.FindFirst(x => x.Type.Equals("tenant")).Value;
-            if (!user_tenant.Equals(currentrequesttenant))
-            {
-                context.IsActive = false;
+           // var user_tenant = identity.FindFirst(x => x.Type.Equals("tenant")).Value;
+           // if (!user_tenant.Equals(currentrequesttenant))
+           // {
+           //     context.IsActive = false;
 
-            }
+           // }
             return Task.FromResult(context);
         }
     }
