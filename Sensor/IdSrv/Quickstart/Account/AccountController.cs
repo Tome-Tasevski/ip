@@ -19,6 +19,8 @@ using IdentityServer4.Events;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
 using Microsoft.Extensions.Configuration;
+using IdSrv.Data;
+using IdSrv.Data.Models;
 
 namespace IdentityServer4.Quickstart.UI
 {
@@ -30,7 +32,7 @@ namespace IdentityServer4.Quickstart.UI
     [SecurityHeaders]
     public class AccountController : Controller
     {
-        private readonly TestUserStore _users;
+        private readonly Repository _repo;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IEventService _events;
         private readonly AccountService _account;
@@ -41,13 +43,13 @@ namespace IdentityServer4.Quickstart.UI
             IHttpContextAccessor httpContextAccessor,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
-            TestUserStore users = null)
+            Repository repo)
         {
             // if the TestUserStore is not in DI, then we'll just use the global users collection
-            _users = users ?? new TestUserStore(TestUsers.Users);
+            _repo = repo;
             _interaction = interaction;
             _events = events;
-            _account = new AccountService(interaction, httpContextAccessor, schemeProvider, clientStore);
+            _account = new AccountService(interaction, httpContextAccessor, schemeProvider, clientStore, repo);
         }
 
         /// <summary>
@@ -99,15 +101,18 @@ namespace IdentityServer4.Quickstart.UI
             if (ModelState.IsValid)
             {
                 // validate username/password against in-memory store
-                if (_users.ValidateCredentials(model.Username, model.Password))
+                if (_repo.ValidateCredentials(model.Username, model.Password))
                 {
-                    if (context.ClientId.Contains("saml"))
-                    {
-                        context.Tenant = context.ClientId;
-                    }
-                    var user = _users.FindByUsername(model.Username);
-                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.SubjectId, user.Username));
-                    user.Claims.Add(new Claim("tenant", context.Tenant.Split(".").First()));
+                    var user = _repo.FindByUsername(model.Username);
+                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.UserId, user.Username));
+
+                    user.Claims.AddRange(new Claim[] {
+                        new Claim(JwtClaimTypes.Name, model.Username),
+                        new Claim(JwtClaimTypes.Email, "vlatko.zmejkoski@it-labs.com"),
+                        new Claim(JwtClaimTypes.Role, "SP1.Admin"),
+                        new Claim(JwtClaimTypes.Role, "SP2.Admin"),
+                        new Claim("tenant", context.Tenant.Split(".").First())
+                    });
                     
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
@@ -122,7 +127,7 @@ namespace IdentityServer4.Quickstart.UI
                     };
                     var claims = user.Claims.ToArray();
                     // issue authentication cookie with subject ID and username
-                    await HttpContext.SignInAsync(user.SubjectId, user.Username, props, claims);
+                    await HttpContext.SignInAsync(user.UserId, user.Username, props, claims);
 
                     // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
@@ -170,15 +175,15 @@ namespace IdentityServer4.Quickstart.UI
                     props.Items.Add("scheme", AccountOptions.WindowsAuthenticationSchemeName);
 
                     var id = new ClaimsIdentity(provider);
-                    id.AddClaim(new Claim(JwtClaimTypes.Subject, wp.Identity.Name));
-                    id.AddClaim(new Claim(JwtClaimTypes.Name, wp.Identity.Name));
+                    id.AddClaim(new System.Security.Claims.Claim(JwtClaimTypes.Subject, wp.Identity.Name));
+                    id.AddClaim(new System.Security.Claims.Claim(JwtClaimTypes.Name, wp.Identity.Name));
 
                     // add the groups as claims -- be careful if the number of groups is too large
                     if (AccountOptions.IncludeWindowsGroups)
                     {
                         var wi = wp.Identity as WindowsIdentity;
                         var groups = wi.Groups.Translate(typeof(NTAccount));
-                        var roles = groups.Select(x => new Claim(JwtClaimTypes.Role, x.Value));
+                        var roles = groups.Select(x => new System.Security.Claims.Claim(JwtClaimTypes.Role, x.Value));
                         id.AddClaims(roles);
                     }
 
@@ -244,13 +249,21 @@ namespace IdentityServer4.Quickstart.UI
             // external provider's authentication result, and provision the user as you see fit.
             // 
             // check if the external user is already provisioned
-            var user = _users.FindByExternalProvider(provider, userId);
+            var user = _repo.FindByExternalProvider(provider, userId);
             if (user != null)
             {
                 claims.AddRange(user.Claims.ToList());
             }
             if (user == null)
             {
+                user = new IS4User()
+                {
+                    ExternalUserId = userId,
+                    IsExternalUser = true,
+                    Tenant = _repo.GetTenant(context.Tenant.Split(".").First()),
+                    Provider = provider,
+                };
+                _repo.RegisterUser(user);
                 claims.Add(new Claim(JwtClaimTypes.Role, "User"));
             }
            
@@ -262,7 +275,7 @@ namespace IdentityServer4.Quickstart.UI
             var sid = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.SessionId);
             if (sid != null)
             {
-                claims.Add(new Claim(JwtClaimTypes.SessionId, sid.Value));
+                claims.Add(new System.Security.Claims.Claim(JwtClaimTypes.SessionId, sid.Value));
             }
 
             // if the external provider issued an id_token, we'll keep it for signout
@@ -274,8 +287,8 @@ namespace IdentityServer4.Quickstart.UI
                 props.StoreTokens(new[] { new AuthenticationToken { Name = "id_token", Value = id_token } });
             }
             // issue authentication cookie for user
-            await _events.RaiseAsync(new UserLoginSuccessEvent(provider, userId, user.SubjectId, user.Username));
-            await HttpContext.SignInAsync(user.SubjectId, user.Username, provider, props,claims.ToArray());
+            await _events.RaiseAsync(new UserLoginSuccessEvent(provider, userId, user.UserId, user.Username));
+            await HttpContext.SignInAsync(userId, user.Username, provider, props,claims.ToArray());
 
             // delete temporary cookie used during external authentication
             await HttpContext.SignOutAsync(IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme);

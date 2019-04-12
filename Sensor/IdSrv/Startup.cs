@@ -14,6 +14,13 @@ using System.Linq;
 using Rsk.AspNetCore.Authentication.Saml2p;
 using IdSrv.Data.Context;
 using IdSrv.Data;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using IdSrv.Quickstart;
+using Rsk.AspNetCore.Authentication.Saml2p.Factories;
+using IdentityServer4.Saml.Configuration;
+using IdSrv.Data.Models;
+using System.Threading.Tasks;
+using IdentityServer4.Saml.Generators.Interfaces;
 
 namespace IdSrv
 {
@@ -64,9 +71,14 @@ namespace IdSrv
                 .AddInMemoryServiceProviders(Config.GetServiceProviders());
 
             services.AddTransient<Repository>();
-
-            services.AddAuthentication(opt => opt.DefaultChallengeScheme = "adfs")
-                .AddOpenIdConnect("AAD", "Azure Active Directory", options =>
+            services.AddTransient<SpOptions>();
+            services.AddTransient<IdpOptions>();
+            services.AddTransient<OpenIdConnectPostConfigureOptions>();
+            services.AddTransient<TenantResolver>();
+            services.AddTransient<AuthSchemeProvider>();
+            
+            services.AddAuthentication(opt => opt.DefaultChallengeScheme = "oidc")
+                /*.AddOpenIdConnect("AAD", "Azure Active Directory", options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
                     options.SignOutScheme = IdentityServerConstants.SignoutScheme;
@@ -101,7 +113,7 @@ namespace IdSrv
                     options.CallbackPath = "/signin-saml";
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
                     options.TimeComparisonTolerance = 15;
-                });
+                })*/;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -133,13 +145,22 @@ namespace IdSrv
             {
                 serviceScope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>().Database.Migrate();
 
-                var context = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
-                context.Database.Migrate();
+                var configurationContext = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
+                configurationContext.Database.Migrate();
 
+                var authSchemeProvider = serviceScope.ServiceProvider.GetRequiredService<AuthSchemeProvider>();
+
+                //GetAllSchemes(userDbContext, authSchemeProvider).GetAwaiter().GetResult();
                 //this method will be executed only if we already have config file for IDS4
                 //if not put it in comments
-                PopulateDBWithConfig(context);
+                PopulateDBWithConfig(configurationContext);
             }
+
+        }
+
+        private async Task GetAllSchemes(AuthSchemeProvider authSchemeProvider)
+        {
+            await authSchemeProvider.LoadAllSchemes();
         }
 
         private void PopulateDBWithConfig(ConfigurationDbContext context)

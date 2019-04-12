@@ -6,6 +6,7 @@ using IdentityModel;
 using IdentityServer4.Extensions;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
+using IdSrv.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -20,17 +21,20 @@ namespace IdentityServer4.Quickstart.UI
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
+        private readonly Repository _repo;
 
         public AccountService(
             IIdentityServerInteractionService interaction,
             IHttpContextAccessor httpContextAccessor,
             IAuthenticationSchemeProvider schemeProvider,
-            IClientStore clientStore)
+            IClientStore clientStore,
+            Repository repo)
         {
             _interaction = interaction;
             _httpContextAccessor = httpContextAccessor;
             _schemeProvider = schemeProvider;
             _clientStore = clientStore;
+            _repo = repo;
         }
 
         public async Task<LoginViewModel> BuildLoginViewModelAsync(string returnUrl)
@@ -67,7 +71,7 @@ namespace IdentityServer4.Quickstart.UI
                 if (client != null)
                 {
                     tenant = context.Tenant.Split(".").First();
-                    allowLocal = tenant.Equals("test1") ? false : tenant.Equals("test2") ? true : false;
+                    allowLocal = _repo.GetTenant(tenant).LoginType.Equals("local");
                     if (client.IdentityProviderRestrictions != null && client.IdentityProviderRestrictions.Any())
                     {
                         providers = providers.Where(provider => client.IdentityProviderRestrictions.Contains(provider.AuthenticationScheme)).ToList();
@@ -82,7 +86,7 @@ namespace IdentityServer4.Quickstart.UI
                 ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
                 ExternalProviders = providers.ToArray(),
-                ExternalLoginScheme = tenant.Equals("test1") ? "adfs" : "AAD"
+                ExternalLoginScheme = _repo.GetTenant(tenant).TenantId + "-scheme"
             };
         }
 

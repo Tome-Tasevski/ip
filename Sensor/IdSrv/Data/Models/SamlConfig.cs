@@ -1,6 +1,8 @@
-﻿using System;
+﻿using IdentityServer4.Saml.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +11,7 @@ namespace IdSrv.Data.Models
     public class SamlConfig
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string SamlId { get; set; }
         public string Licensee { get; set; }
         public string LicenseKey { get; set; }

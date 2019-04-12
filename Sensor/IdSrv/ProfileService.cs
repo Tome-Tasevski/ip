@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
+using IdSrv.Quickstart;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 
@@ -12,13 +13,11 @@ namespace IdSrv
 {
     public class ProfileService : IProfileService
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IIdentityServerInteractionService _interaction;
+        private readonly TenantResolver _tenantResolver;
 
-        public ProfileService(IHttpContextAccessor httpContextAccessor, IIdentityServerInteractionService interaction)
+        public ProfileService(TenantResolver tenantResolver)
         {
-            _httpContextAccessor = httpContextAccessor;
-            _interaction = interaction;
+            _tenantResolver = tenantResolver;
         }
 
         public Task GetProfileDataAsync(ProfileDataRequestContext context)
@@ -30,16 +29,12 @@ namespace IdSrv
         public Task IsActiveAsync(IsActiveContext context)
         {
 
-            var features = _httpContextAccessor.HttpContext.Features.Get<IHttpRequestFeature>();
-            var returnurl = features.RawTarget;
-            var authcontext = _interaction.GetAuthorizationContextAsync(returnurl).Result;
-            
-            var currentrequesttenant = authcontext.Tenant.Split(".").First();
+            var currentRequestTenant = _tenantResolver.GetTenant();
+
             var user_tenant = context.Subject.Claims.First(x => x.Type.Equals("tenant")).Value;
-            if (!user_tenant.Equals(currentrequesttenant))
+            if (!user_tenant.Equals(currentRequestTenant))
             {
                 context.IsActive = false;
-
             }
             return Task.FromResult(context);
         }
