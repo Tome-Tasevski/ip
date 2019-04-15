@@ -18,6 +18,18 @@ namespace IdSrv.Data.Migrations.IS4UsersMigrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("IdSrv.Data.Models.Claims", b =>
+                {
+                    b.Property<string>("ClaimId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("ClaimId");
+
+                    b.ToTable("Claims");
+                });
+
             modelBuilder.Entity("IdSrv.Data.Models.IS4Tenant", b =>
                 {
                     b.Property<string>("TenantId")
@@ -136,6 +148,26 @@ namespace IdSrv.Data.Migrations.IS4UsersMigrations
                     b.ToTable("SamlConfigs");
                 });
 
+            modelBuilder.Entity("IdSrv.Data.Models.UserClaims", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClaimId");
+
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClaimId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserClaims");
+                });
+
             modelBuilder.Entity("IdSrv.Data.Models.UserRole", b =>
                 {
                     b.Property<string>("UserRoleId")
@@ -173,6 +205,17 @@ namespace IdSrv.Data.Migrations.IS4UsersMigrations
                     b.HasOne("IdSrv.Data.Models.IS4Tenant", "Tenant")
                         .WithMany()
                         .HasForeignKey("TenantId");
+                });
+
+            modelBuilder.Entity("IdSrv.Data.Models.UserClaims", b =>
+                {
+                    b.HasOne("IdSrv.Data.Models.Claims", "Claims")
+                        .WithMany("UserClaims")
+                        .HasForeignKey("ClaimId");
+
+                    b.HasOne("IdSrv.Data.Models.IS4User", "User")
+                        .WithMany("Claims")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("IdSrv.Data.Models.UserRole", b =>

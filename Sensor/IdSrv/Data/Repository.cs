@@ -1,10 +1,10 @@
 ﻿using IdSrv.Data.Context;
 using IdSrv.Data.Models;
-using IdSrv.Quickstart.DTOs;
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using IdSrv.Quickstart.DTOs;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace IdSrv.Data
 {
@@ -20,11 +20,6 @@ namespace IdSrv.Data
         public IS4Tenant GetTenant(string name)
         {
             return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.Name.Equals(name));
-        }
-
-        public IS4Tenant GetTenantById(string tenantId)
-        {
-            return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.TenantId.Equals(tenantId));
         }
 
         public IQueryable<IS4Tenant> GetAllTenants()
@@ -54,13 +49,32 @@ namespace IdSrv.Data
 
         public IS4User FindByUsername(string username)
         {
-            return _dbContext.Set<IS4User>().FirstOrDefault(u => u.Username.Equals(username));
+             var query=_dbContext.Set<IS4User>().AsQueryable();
+            query = query.Include("Tenant").Where(u => u.Username == username);
+
+            return query.FirstOrDefault();
         }
 
-        public void AddClient(IS4Tenant tenant)
+        public List<Role> GetRoles(string userId,bool isExternal)
         {
-            _dbContext.Add(tenant);
-            _dbContext.SaveChanges();
+            var roles = new List<Role>();
+            var query = _dbContext.Set<UserRole>().AsQueryable();
+
+            if (isExternal)
+            {
+                query = query.Include("User").Include("Role").Where(u => u.User.ExternalUserId == userId);
+            }
+            else
+            {
+                query = query.Include("User").Include("Role").Where(u => u.User.UserId == userId);
+            }
+
+            foreach ( var r in query)
+            {
+                roles.Add(r.Role);
+            }
+
+            return roles;
         }
 
         public void RegisterUser(IS4User user)
@@ -74,10 +88,27 @@ namespace IdSrv.Data
             return _dbContext.Set<UserRole>().FirstOrDefault(x => x.UserId.Equals(userId)).Role;
         }
 
+        public List<Claims> GetClaims()
+        {
+            return _dbContext.Set<Claims>().ToList();
+        }
+
         public void AddOIDConfig(OpenIDConfig cfg)
         {
             _dbContext.Add(cfg);
             _dbContext.SaveChanges();
         }
+
+        public void AddClient(IS4Tenant tenant)
+        {
+            _dbContext.Add(tenant);
+            _dbContext.SaveChanges();
+        }
+
+        public IS4Tenant GetTenantById(string tenantId)
+        {
+            return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.TenantId.Equals(tenantId));
+        }
+
     }
 }

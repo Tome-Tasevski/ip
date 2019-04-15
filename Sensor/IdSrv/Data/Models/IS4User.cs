@@ -19,11 +19,10 @@ namespace IdSrv.Data.Models
         public string Provider { get; set; }
         public string ExternalUserId { get; set; }
 
-        [NotMapped]
-        public List<Claim> Claims { get; set; }
+        public ICollection<UserClaims> Claims { get; set; }
 
         public string TenantId { get; set; }
         public IS4Tenant Tenant { get; set; }
-        public ICollection<UserRole> Roles { get; set; }
+        public ICollection<UserRole> UserRoles { get; set; }
     }
 }
