@@ -83,12 +83,17 @@ namespace IdSrv.Data
 
         public Role GetUserRole(string userId)
         {
-            return _dbContext.Set<UserRole>().FirstOrDefault(x => x.UserId.Equals(userId)).Role;
+            return _dbContext.Set<UserRole>().FirstOrDefault(x => x.User.UserId.Equals(userId)).Role;
         }
 
         public List<Claims> GetClaims()
         {
             return _dbContext.Set<Claims>().ToList();
+        }
+
+        public List<UserClaims> GetUserClaims( string userId)
+        {
+            return _dbContext.Set<UserClaims>().Include("Claims").Where(x=>x.UserId.Equals(userId)).ToList();
         }
     }
 }

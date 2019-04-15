@@ -116,8 +116,6 @@ namespace IdentityServer4.Quickstart.UI
                         claims.Add(new Claim(JwtClaimTypes.Role, role.Name));
                     }
 
-
-                   
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
                     AuthenticationProperties props = null;
@@ -129,10 +127,7 @@ namespace IdentityServer4.Quickstart.UI
                             ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.RememberMeLoginDuration)
                         };
                     };
-                    var claims = new Claim[]
-                    {
-                        new Claim(JwtClaimTypes.Name, model.Username),
-                    };
+
                     // issue authentication cookie with subject ID and username
                     await HttpContext.SignInAsync(user.UserId, user.Username, props, claims.ToArray());
 
@@ -258,15 +253,11 @@ namespace IdentityServer4.Quickstart.UI
             // check if the external user is already provisioned
             var user = _repo.FindByExternalProvider(provider, userId);
 
-            var roles = new List<Role>();
-
-            roles.AddRange(_repo.GetRoles(user.ExternalUserId, user.IsExternalUser));
-
-	if (user != null)
+	        if (user != null)
             {
-                foreach (var role in roles)
+                foreach (var claim in _repo.GetUserClaims(user.UserId))
                 {
-                    claims.Add(new Claim(JwtClaimTypes.Role, role.Name));
+                    claims.Add(new Claim(claim.Claims.Type, claim.Value));
                 }
             }
 
@@ -291,6 +282,12 @@ namespace IdentityServer4.Quickstart.UI
                     }
                    
                 });
+                userClaims.Add(new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "20",
+                    Value = "User"
+                });
                 user = new IS4User()
                 {
                     ExternalUserId = userId,
@@ -300,7 +297,6 @@ namespace IdentityServer4.Quickstart.UI
                     Claims = userClaims
                 };
                 _repo.RegisterUser(user);
-                claims.Add(new Claim(JwtClaimTypes.Role, "User"));
             }
 
             var tenant = new Claim("tenant", context.Tenant.Split(".").First());
