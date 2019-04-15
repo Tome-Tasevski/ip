@@ -38,6 +38,7 @@ namespace IdentityServer4.Quickstart.UI
         }
 
         public async Task<LoginViewModel> BuildLoginViewModelAsync(string returnUrl)
+
         {
             var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
             if (context?.IdP != null)
@@ -86,7 +87,7 @@ namespace IdentityServer4.Quickstart.UI
                 ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
                 ExternalProviders = providers.ToArray(),
-                ExternalLoginScheme = _repo.GetTenant(tenant).TenantId + "-scheme"
+                ExternalLoginScheme = "test"//_repo.GetTenant(tenant).TenantId + "-scheme"
             };
         }
 

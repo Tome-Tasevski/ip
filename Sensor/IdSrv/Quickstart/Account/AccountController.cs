@@ -105,15 +105,7 @@ namespace IdentityServer4.Quickstart.UI
                 {
                     var user = _repo.FindByUsername(model.Username);
                     await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.UserId, user.Username));
-
-                    user.Claims.AddRange(new Claim[] {
-                        new Claim(JwtClaimTypes.Name, model.Username),
-                        new Claim(JwtClaimTypes.Email, "vlatko.zmejkoski@it-labs.com"),
-                        new Claim(JwtClaimTypes.Role, "SP1.Admin"),
-                        new Claim(JwtClaimTypes.Role, "SP2.Admin"),
-                        new Claim("tenant", context.Tenant.Split(".").First())
-                    });
-                    
+                    var userRole = _repo.GetUserRole(user.UserId);
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
                     AuthenticationProperties props = null;
@@ -125,7 +117,10 @@ namespace IdentityServer4.Quickstart.UI
                             ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.RememberMeLoginDuration)
                         };
                     };
-                    var claims = user.Claims.ToArray();
+                    var claims = new Claim[]
+                    {
+                        new Claim(JwtClaimTypes.Name, model.Username),
+                    };
                     // issue authentication cookie with subject ID and username
                     await HttpContext.SignInAsync(user.UserId, user.Username, props, claims);
 

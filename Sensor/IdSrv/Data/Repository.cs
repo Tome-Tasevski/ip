@@ -56,5 +56,10 @@ namespace IdSrv.Data
             _dbContext.Add(user);
             _dbContext.SaveChanges();
         }
+
+        public Role GetUserRole(string userId)
+        {
+            return _dbContext.Set<UserRole>().FirstOrDefault(x => x.UserId.Equals(userId)).Role;
+        }
     }
 }
