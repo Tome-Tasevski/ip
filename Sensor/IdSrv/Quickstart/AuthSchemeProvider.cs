@@ -131,11 +131,12 @@ namespace IdSrv.Quickstart
                 GetClaimsFromUserInfoEndpoint = true,
                 TokenValidationParameters = new TokenValidationParameters
                 {
+                    ValidateIssuer = true,
                     NameClaimType = JwtClaimTypes.Subject,
                     RoleClaimType = JwtClaimTypes.Role,
                 },
                 SaveTokens = true,
-                CallbackPath = "/signin-oidc",
+                CallbackPath = $"/signin-oidc-{config.TenantId}"
             };
         }
 
@@ -154,7 +155,6 @@ namespace IdSrv.Quickstart
                 SignInScheme = config.SignInScheme,
                 ClaimsIssuer = idpOptions.EntityId,
 
-                
                 //TimeComparisonTolerance = config.TimeComparisonTolerance
             };
         }

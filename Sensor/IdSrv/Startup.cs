@@ -45,7 +45,6 @@ namespace IdSrv
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            services.AddTransient<AuthSchemeProvider>();
 
             services.AddSwaggerGen(c =>
             {
@@ -83,6 +82,7 @@ namespace IdSrv
             services.AddTransient<Repository>();
             services.AddTransient<OpenIdConnectPostConfigureOptions>();
             services.AddTransient<TenantResolver>();
+            services.AddTransient<AuthSchemeProvider>();
 
             var builder = services.AddAuthentication(opt => opt.DefaultChallengeScheme = "oidc")
                 .AddOpenIdConnect("test", "test", opt => 

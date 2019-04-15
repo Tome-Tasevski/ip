@@ -76,7 +76,9 @@ namespace FinbuckleMultitenancy
                 .WithRemoteAuthentication()
                 .WithPerTenantOptions<CookieAuthenticationOptions>((o, tenantInfo) =>
                 {
-
+                }).WithPerTenantOptions<OpenIdConnectOptions>((o, tenantInfo) =>
+                {
+                    o.CallbackPath = $"/signin-oidc-{tenantInfo.Id}";
                 });
             services.AddAuthorization();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
