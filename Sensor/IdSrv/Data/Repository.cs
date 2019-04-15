@@ -1,9 +1,8 @@
 ﻿using IdSrv.Data.Context;
 using IdSrv.Data.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace IdSrv.Data
 {
@@ -48,7 +47,32 @@ namespace IdSrv.Data
 
         public IS4User FindByUsername(string username)
         {
-            return _dbContext.Set<IS4User>().FirstOrDefault(u => u.Username.Equals(username));
+             var query=_dbContext.Set<IS4User>().AsQueryable();
+            query = query.Include("Tenant").Where(u => u.Username == username);
+
+            return query.FirstOrDefault();
+        }
+
+        public List<Role> GetRoles(string userId,bool isExternal)
+        {
+            var roles = new List<Role>();
+            var query = _dbContext.Set<UserRole>().AsQueryable();
+
+            if (isExternal)
+            {
+                query = query.Include("User").Include("Role").Where(u => u.User.ExternalUserId == userId);
+            }
+            else
+            {
+                query = query.Include("User").Include("Role").Where(u => u.User.UserId == userId);
+            }
+
+            foreach ( var r in query)
+            {
+                roles.Add(r.Role);
+            }
+
+            return roles;
         }
 
         public void RegisterUser(IS4User user)

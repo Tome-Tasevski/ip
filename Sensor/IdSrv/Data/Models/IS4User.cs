@@ -23,8 +23,6 @@ namespace IdSrv.Data.Models
 
         public string TenantId { get; set; }
         public IS4Tenant Tenant { get; set; }
-        public ICollection<UserRole> Roles { get; set; }
-
-
+        public ICollection<UserRole> UserRoles { get; set; }
     }
 }

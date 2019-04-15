@@ -27,7 +27,7 @@ namespace ServiceProviderMultiTenant.Controllers
 
         [Authorize]
         public async Task<IActionResult> Index()
-        {
+        {   
             var idToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
             var accessToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
 
