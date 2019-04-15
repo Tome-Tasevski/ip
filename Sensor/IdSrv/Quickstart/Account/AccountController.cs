@@ -154,7 +154,6 @@ namespace IdentityServer4.Quickstart.UI
         /// </summary>
         [HttpGet]
         public async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
-
         {
             var props = new AuthenticationProperties()
             {

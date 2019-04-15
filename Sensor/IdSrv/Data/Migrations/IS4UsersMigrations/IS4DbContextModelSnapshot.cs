@@ -225,7 +225,7 @@ namespace IdSrv.Data.Migrations.IS4UsersMigrations
                         .HasForeignKey("RoleId");
 
                     b.HasOne("IdSrv.Data.Models.IS4User", "User")
-                        .WithMany("Roles")
+                        .WithMany("UserRoles")
                         .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
