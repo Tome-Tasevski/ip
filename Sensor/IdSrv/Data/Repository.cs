@@ -85,7 +85,7 @@ namespace IdSrv.Data
 
         public Role GetUserRole(string userId)
         {
-            return _dbContext.Set<UserRole>().FirstOrDefault(x => x.UserId.Equals(userId)).Role;
+            return _dbContext.Set<UserRole>().FirstOrDefault(x => x.User.UserId.Equals(userId)).Role;
         }
 
         public List<Claims> GetClaims()
