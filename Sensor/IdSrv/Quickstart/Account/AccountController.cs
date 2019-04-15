@@ -245,18 +245,34 @@ namespace IdentityServer4.Quickstart.UI
             // 
             // check if the external user is already provisioned
             var user = _repo.FindByExternalProvider(provider, userId);
-            if (user != null)
-            {
-                //claims.AddRange(user.Claims);
-            }
+            
             if (user == null)
             {
+                List<UserClaims> userClaims = new List<UserClaims>();
+                List<Claims> dbClaims = _repo.GetClaims();
+               
+                claims.ForEach(claim =>
+                {
+                    var c = dbClaims.Where(x => x.Type.Equals(claim.Type)).FirstOrDefault();
+                    if ( c != null)
+                    {
+                        var id = c.ClaimId;
+                        userClaims.Add(new UserClaims
+                        {
+                            UserId = userId,
+                            ClaimId = id,
+                            Value = claim.Value
+                        });
+                    }
+                   
+                });
                 user = new IS4User()
                 {
                     ExternalUserId = userId,
                     IsExternalUser = true,
                     Tenant = _repo.GetTenant(context.Tenant.Split(".").First()),
                     Provider = provider,
+                    Claims = userClaims
                 };
                 _repo.RegisterUser(user);
                 claims.Add(new Claim(JwtClaimTypes.Role, "User"));

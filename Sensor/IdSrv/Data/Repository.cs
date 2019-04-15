@@ -61,5 +61,10 @@ namespace IdSrv.Data
         {
             return _dbContext.Set<UserRole>().FirstOrDefault(x => x.UserId.Equals(userId)).Role;
         }
+
+        public List<Claims> GetClaims()
+        {
+            return _dbContext.Set<Claims>().ToList();
+        }
     }
 }
