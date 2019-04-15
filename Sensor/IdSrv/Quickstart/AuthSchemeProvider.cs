@@ -1,4 +1,6 @@
-﻿using IdentityServer4.Saml.Configuration;
+﻿using IdentityModel;
+using IdentityModel.Client;
+using IdentityServer4.Saml.Configuration;
 using IdentityServer4.Services;
 using IdSrv.Data;
 using IdSrv.Data.Models;
@@ -12,6 +14,7 @@ using Rsk.AspNetCore.Authentication.Saml2p.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
@@ -118,18 +121,28 @@ namespace IdSrv.Quickstart
 
         private OpenIdConnectOptions BuildOidOptions(OpenIDConfig config)
         {
+            var client = new HttpClient()
+            {
+                BaseAddress = new Uri(config.Authority)
+            };
+            DiscoveryResponse disco = client.GetDiscoveryDocumentAsync().Result;
             return new OpenIdConnectOptions
             {
                 SignInScheme = config.SignInScheme,
                 SignOutScheme = config.SignOutScheme,
-                RequireHttpsMetadata = false,
+                RequireHttpsMetadata = true,
                 Authority = config.Authority,
                 ClientId = config.ClientId,
                 GetClaimsFromUserInfoEndpoint = true,
                 TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = false
-                }
+                    ValidIssuer = config.Authority,
+                    NameClaimType = JwtClaimTypes.Subject,
+                    RoleClaimType = JwtClaimTypes.Role,
+                },
+                ClaimsIssuer = config.Authority,
+                SaveTokens = true,
+                CallbackPath = "/signin-oidc",
             };
         }
 
@@ -146,7 +159,10 @@ namespace IdSrv.Quickstart
                 NameIdClaimType = "sub",
                 CallbackPath = "/signin-saml",
                 SignInScheme = config.SignInScheme,
-                TimeComparisonTolerance = config.TimeComparisonTolerance
+                ClaimsIssuer = idpOptions.EntityId,
+
+                
+                //TimeComparisonTolerance = config.TimeComparisonTolerance
             };
         }
 
