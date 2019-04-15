@@ -120,26 +120,19 @@ namespace IdSrv.Quickstart
 
         private OpenIdConnectOptions BuildOidOptions(OpenIDConfig config)
         {
-            var client = new HttpClient()
-            {
-                BaseAddress = new Uri(config.Authority)
-            };
-            DiscoveryResponse disco = client.GetDiscoveryDocumentAsync().Result;
             return new OpenIdConnectOptions
             {
                 SignInScheme = config.SignInScheme,
                 SignOutScheme = config.SignOutScheme,
-                RequireHttpsMetadata = true,
+                RequireHttpsMetadata = false,
                 Authority = config.Authority,
                 ClientId = config.ClientId,
                 GetClaimsFromUserInfoEndpoint = true,
                 TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidIssuer = config.Authority,
                     NameClaimType = JwtClaimTypes.Subject,
                     RoleClaimType = JwtClaimTypes.Role,
                 },
-                ClaimsIssuer = config.Authority,
                 SaveTokens = true,
                 CallbackPath = "/signin-oidc",
             };

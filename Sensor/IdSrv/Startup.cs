@@ -31,6 +31,7 @@ using IdentityServer4.Saml.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.IdentityModel.Logging;
 using IdentityModel;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace IdSrv
 {
@@ -44,6 +45,12 @@ namespace IdSrv
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services.AddTransient<AuthSchemeProvider>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
 
             services.AddDbContext<IS4DbContext>(opt => opt.UseSqlServer(connectionString));
 
@@ -76,7 +83,6 @@ namespace IdSrv
             services.AddTransient<Repository>();
             services.AddTransient<OpenIdConnectPostConfigureOptions>();
             services.AddTransient<TenantResolver>();
-            services.AddTransient<AuthSchemeProvider>();
 
             var builder = services.AddAuthentication(opt => opt.DefaultChallengeScheme = "oidc")
                 .AddOpenIdConnect("test", "test", opt => 
@@ -110,6 +116,12 @@ namespace IdSrv
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseIdentityServer()
                 .UseIdentityServerSamlPlugin();

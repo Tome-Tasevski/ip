@@ -76,7 +76,6 @@ namespace FinbuckleMultitenancy
                 .WithRemoteAuthentication()
                 .WithPerTenantOptions<CookieAuthenticationOptions>((o, tenantInfo) =>
                 {
-                    o.Cookie.Name += tenantInfo.Id;
 
                 });
             services.AddAuthorization();

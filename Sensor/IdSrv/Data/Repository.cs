@@ -1,5 +1,6 @@
 ﻿using IdSrv.Data.Context;
 using IdSrv.Data.Models;
+using IdSrv.Quickstart.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace IdSrv.Data
         public IS4Tenant GetTenant(string name)
         {
             return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.Name.Equals(name));
+        }
+
+        public IS4Tenant GetTenantById(string tenantId)
+        {
+            return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.TenantId.Equals(tenantId));
         }
 
         public IQueryable<IS4Tenant> GetAllTenants()
@@ -51,6 +57,12 @@ namespace IdSrv.Data
             return _dbContext.Set<IS4User>().FirstOrDefault(u => u.Username.Equals(username));
         }
 
+        public void AddClient(IS4Tenant tenant)
+        {
+            _dbContext.Add(tenant);
+            _dbContext.SaveChanges();
+        }
+
         public void RegisterUser(IS4User user)
         {
             _dbContext.Add(user);
@@ -60,6 +72,12 @@ namespace IdSrv.Data
         public Role GetUserRole(string userId)
         {
             return _dbContext.Set<UserRole>().FirstOrDefault(x => x.UserId.Equals(userId)).Role;
+        }
+
+        public void AddOIDConfig(OpenIDConfig cfg)
+        {
+            _dbContext.Add(cfg);
+            _dbContext.SaveChanges();
         }
     }
 }
