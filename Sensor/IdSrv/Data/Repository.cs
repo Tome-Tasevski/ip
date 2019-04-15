@@ -2,6 +2,8 @@
 using IdSrv.Data.Models;
 using System.Collections.Generic;
 using System.Linq;
+using IdSrv.Quickstart.DTOs;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace IdSrv.Data
@@ -95,5 +97,23 @@ namespace IdSrv.Data
         {
             return _dbContext.Set<UserClaims>().Include("Claims").Where(x=>x.UserId.Equals(userId)).ToList();
         }
+
+        public void AddOIDConfig(OpenIDConfig cfg)
+        {
+            _dbContext.Add(cfg);
+            _dbContext.SaveChanges();
+        }
+
+        public void AddClient(IS4Tenant tenant)
+        {
+            _dbContext.Add(tenant);
+            _dbContext.SaveChanges();
+        }
+
+        public IS4Tenant GetTenantById(string tenantId)
+        {
+            return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.TenantId.Equals(tenantId));
+        }
+
     }
 }

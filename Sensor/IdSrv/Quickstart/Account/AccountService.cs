@@ -87,7 +87,7 @@ namespace IdentityServer4.Quickstart.UI
                 ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
                 ExternalProviders = providers.ToArray(),
-                ExternalLoginScheme = "test"//_repo.GetTenant(tenant).TenantId + "-scheme"
+                ExternalLoginScheme = _repo.GetTenant(tenant).TenantId + "-scheme"
             };
         }
 
