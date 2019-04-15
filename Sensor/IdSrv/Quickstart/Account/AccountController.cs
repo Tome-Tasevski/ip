@@ -247,7 +247,7 @@ namespace IdentityServer4.Quickstart.UI
             var user = _repo.FindByExternalProvider(provider, userId);
             if (user != null)
             {
-                claims.AddRange(user.Claims.ToList());
+                //claims.AddRange(user.Claims);
             }
             if (user == null)
             {
