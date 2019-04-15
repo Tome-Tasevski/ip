@@ -104,18 +104,16 @@ namespace IdentityServer4.Quickstart.UI
                 if (_repo.ValidateCredentials(model.Username, model.Password))
                 {
                     var user = _repo.FindByUsername(model.Username);
-                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.UserId, user.Username));
                     var claims = new List<Claim>();
-                    claims.Add(new Claim("tenant", user.Tenant.Name));
-                    var roles = new List<Role>();
-
-                    roles.AddRange(_repo.GetRoles(user.UserId, user.IsExternalUser));
-
-                    foreach (var role in roles)
+                    if (user != null)
                     {
-                        claims.Add(new Claim(JwtClaimTypes.Role, role.Name));
+                        await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.UserId, user.Username));
+                        foreach (var claim in _repo.GetUserClaims(user.UserId))
+                        {
+                            claims.Add(new Claim(claim.Claims.Type, claim.Value));
+                        }
                     }
-
+                    
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
                     AuthenticationProperties props = null;
@@ -260,10 +258,9 @@ namespace IdentityServer4.Quickstart.UI
                 }
             }
 
-
+            List<UserClaims> userClaims = new List<UserClaims>();
             if (user == null)
             {
-                List<UserClaims> userClaims = new List<UserClaims>();
                 List<Claims> dbClaims = _repo.GetClaims();
                
                 claims.ForEach(claim =>
@@ -287,6 +284,7 @@ namespace IdentityServer4.Quickstart.UI
                     ClaimId = "20",
                     Value = "User"
                 });
+                claims.Add(new Claim(JwtClaimTypes.Role, "User"));
                 user = new IS4User()
                 {
                     ExternalUserId = userId,
@@ -299,6 +297,12 @@ namespace IdentityServer4.Quickstart.UI
             }
 
             var tenant = new Claim("tenant", context.Tenant.Split(".").First());
+            userClaims.Add(new UserClaims
+            {
+                UserId = userId,
+                ClaimId = "17",
+                Value = context.Tenant.Split(".").First()
+            });
             claims.Add(tenant);
 
             // if the external system sent a session id claim, copy it over
