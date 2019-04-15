@@ -86,6 +86,7 @@ namespace IdSrv.Quickstart
             }
             
             if (await _schemeProvider.GetSchemeAsync(scheme) == null)
+
             {
                 _schemeProvider.AddScheme(new AuthenticationScheme(scheme, scheme, oidcProtocol ? typeof(OpenIdConnectHandler) : typeof(Saml2pAuthenticationHandler)));
             }

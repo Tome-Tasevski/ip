@@ -86,7 +86,7 @@ namespace IdentityServer4.Quickstart.UI
                     // denied the consent (even if this client does not require consent).
                     // this will send back an access denied OIDC error response to the client.
                     await _interaction.GrantConsentAsync(context, ConsentResponse.Denied);
-                    
+
                     // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
                     return Redirect(model.ReturnUrl);
                 }
@@ -105,15 +105,19 @@ namespace IdentityServer4.Quickstart.UI
                 {
                     var user = _repo.FindByUsername(model.Username);
                     await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.UserId, user.Username));
+                    var claims = new List<Claim>();
+                    claims.Add(new Claim("tenant", user.Tenant.Name));
+                    var roles = new List<Role>();
 
-                    user.Claims.AddRange(new Claim[] {
-                        new Claim(JwtClaimTypes.Name, model.Username),
-                        new Claim(JwtClaimTypes.Email, "vlatko.zmejkoski@it-labs.com"),
-                        new Claim(JwtClaimTypes.Role, "SP1.Admin"),
-                        new Claim(JwtClaimTypes.Role, "SP2.Admin"),
-                        new Claim("tenant", context.Tenant.Split(".").First())
-                    });
-                    
+                    roles.AddRange(_repo.GetRoles(user.UserId, user.IsExternalUser));
+
+                    foreach (var role in roles)
+                    {
+                        claims.Add(new Claim(JwtClaimTypes.Role, role.Name));
+                    }
+
+
+                   
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
                     AuthenticationProperties props = null;
@@ -125,9 +129,8 @@ namespace IdentityServer4.Quickstart.UI
                             ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.RememberMeLoginDuration)
                         };
                     };
-                    var claims = user.Claims.ToArray();
                     // issue authentication cookie with subject ID and username
-                    await HttpContext.SignInAsync(user.UserId, user.Username, props, claims);
+                    await HttpContext.SignInAsync(user.UserId, user.Username, props, claims.ToArray());
 
                     // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
@@ -250,10 +253,19 @@ namespace IdentityServer4.Quickstart.UI
             // 
             // check if the external user is already provisioned
             var user = _repo.FindByExternalProvider(provider, userId);
+
+            var roles = new List<Role>();
+
+            roles.AddRange(_repo.GetRoles(user.ExternalUserId, user.IsExternalUser));
+
             if (user != null)
             {
-                claims.AddRange(user.Claims.ToList());
+                foreach (var role in roles)
+                {
+                    claims.Add(new Claim(JwtClaimTypes.Role, role.Name));
+                }
             }
+
             if (user == null)
             {
                 user = new IS4User()
@@ -266,7 +278,7 @@ namespace IdentityServer4.Quickstart.UI
                 _repo.RegisterUser(user);
                 claims.Add(new Claim(JwtClaimTypes.Role, "User"));
             }
-           
+
             var tenant = new Claim("tenant", context.Tenant.Split(".").First());
             claims.Add(tenant);
 
@@ -288,7 +300,7 @@ namespace IdentityServer4.Quickstart.UI
             }
             // issue authentication cookie for user
             await _events.RaiseAsync(new UserLoginSuccessEvent(provider, userId, user.UserId, user.Username));
-            await HttpContext.SignInAsync(userId, user.Username, provider, props,claims.ToArray());
+            await HttpContext.SignInAsync(userId, user.Username, provider, props, claims.ToArray());
 
             // delete temporary cookie used during external authentication
             await HttpContext.SignOutAsync(IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme);

@@ -138,7 +138,7 @@ namespace IdSrv
 
                 //----------------------***************--------------------------
                 //Uncomment after migrating IDS4DbContext
-                //GetAllSchemes(authSchemeProvider).GetAwaiter().GetResult();
+                GetAllSchemes(authSchemeProvider).GetAwaiter().GetResult();
                 //----------------------***************--------------------------
             }
 
