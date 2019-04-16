@@ -45,7 +45,6 @@ namespace IdentityServer4.Quickstart.UI
             IEventService events,
             Repository repo)
         {
-            // if the TestUserStore is not in DI, then we'll just use the global users collection
             _repo = repo;
             _interaction = interaction;
             _events = events;
@@ -100,7 +99,6 @@ namespace IdentityServer4.Quickstart.UI
 
             if (ModelState.IsValid)
             {
-                // validate username/password against in-memory store
                 if (_repo.ValidateCredentials(model.Username, model.Password))
                 {
                     var user = _repo.FindByUsername(model.Username);

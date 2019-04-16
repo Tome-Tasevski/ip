@@ -12,11 +12,8 @@ namespace IdSrv.Data.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string OpenId { get; set; }
-        public string SignInScheme { get; set; }
-        public string SignOutScheme { get; set; }
         public string Authority { get; set; }
         public string ClientId { get; set; }
-        public string GetClaimsFromUserInfoEndpoint { get; set; }
 
         public string TenantId { get; set; }
         public IS4Tenant Tenant { get; set; }

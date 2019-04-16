@@ -46,7 +46,7 @@ namespace IdSrv.Quickstart.Configuration
         }
 
         [HttpPost("addconfing")]
-        public IActionResult AddTenantConfig(AADConfig cfg, string tenantId)
+        public IActionResult AddOpenIDConfig(OIDConfig cfg, string tenantId)
         {
             var tenant = _repo.GetTenantById(tenantId);
             if(tenant.Protocol.Equals("oidc"))
@@ -54,21 +54,47 @@ namespace IdSrv.Quickstart.Configuration
                 var oidConfig = new OpenIDConfig
                 {
                     OpenId = "2",
-                    SignInScheme = cfg.SignInScheme,
-                    SignOutScheme = cfg.SignOutScheme,
-                    Authority = $"{cfg.Authority}/{cfg.DirectoryId}",
+                    Authority = cfg.DirectoryId == null ? cfg.Authority : $"{cfg.Authority}/{cfg.DirectoryId}/",
                     ClientId = cfg.ClientId,
                     Tenant = tenant,
                 };
+                UpdateClientConfig(tenant);
                 _repo.AddOIDConfig(oidConfig);
-                foreach(var client in _configurationDbContext.Clients.AsQueryable().Include("RedirectUris"))
-                {
-                    client.RedirectUris.Add(new ClientRedirectUri() { Client = client, RedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signin-oidc" });
-                    _configurationDbContext.Clients.Attach(client).State = EntityState.Modified;
-                }
-                _configurationDbContext.SaveChanges();
             }
             return Ok();
+        }
+
+        
+        public IActionResult AddSamlConfig(SMLConfig cfg, string tenantId)
+        {
+            var tenant = _repo.GetTenantById(tenantId);
+            if(tenant.Protocol.Equals("saml"))
+            {
+                var samlcfg = new SamlConfig
+                {
+                    SamlId = "2",
+                    IdpEntityId = cfg.IdpEntityId,
+                    IdpSigningCertificate = cfg.IdpSigningCertificate,
+                    SingleLogoutEndpoint = cfg.SLOEndpoint,
+                    SingleSignOnEndpoint = cfg.SSOEndpoint,
+                    Tenant = tenant
+                };
+
+                UpdateClientConfig(tenant);
+                _repo.AddSamlConfig(samlcfg);
+            }
+            return Ok();
+        }
+
+        public void UpdateClientConfig(IS4Tenant tenant)
+        {
+            foreach (var client in _configurationDbContext.Clients.AsQueryable().Include("RedirectUris").Include("PostLogoutRedirectUris"))
+            {
+                client.RedirectUris.Add(new ClientRedirectUri() { Client = client, RedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signin-oidc-{tenant.TenantId}" });
+                client.PostLogoutRedirectUris.Add(new ClientPostLogoutRedirectUri() { Client = client, PostLogoutRedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signout-callback-oidc-{tenant.TenantId}" });
+                _configurationDbContext.Clients.Attach(client).State = EntityState.Modified;
+            }
+            _configurationDbContext.SaveChanges();
         }
     }
 }

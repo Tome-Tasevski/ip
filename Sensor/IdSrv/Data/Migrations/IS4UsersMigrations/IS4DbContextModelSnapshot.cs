@@ -115,31 +115,11 @@ namespace IdSrv.Data.Migrations.IS4UsersMigrations
 
                     b.Property<string>("IdpSigningCertificate");
 
-                    b.Property<string>("LicenseKey");
-
-                    b.Property<string>("Licensee");
-
-                    b.Property<string>("MetadataPath");
-
-                    b.Property<string>("NameIdClaimType");
-
-                    b.Property<bool>("SaveTokens");
-
-                    b.Property<string>("SignAuthenticationRequests");
-
-                    b.Property<string>("SignInScheme");
-
                     b.Property<string>("SingleLogoutEndpoint");
 
                     b.Property<string>("SingleSignOnEndpoint");
 
-                    b.Property<string>("SpEntityId");
-
-                    b.Property<string>("SpSigningCertificate");
-
                     b.Property<string>("TenantId");
-
-                    b.Property<int>("TimeComparisonTolerance");
 
                     b.HasKey("SamlId");
 
