@@ -82,6 +82,9 @@ namespace ServiceProviderMultiTenant
                .WithPerTenantOptions<CookieAuthenticationOptions>((o, tenantInfo) =>
                {
                    o.Cookie.Name += tenantInfo.Id;
+               }).WithPerTenantOptions<OpenIdConnectOptions>((o, tenantInfo) =>
+               {
+                   o.CallbackPath = $"/signin-oidc-{tenantInfo.Id}";
                });
             services.AddAuthorization();
         }

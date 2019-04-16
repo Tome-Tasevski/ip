@@ -228,21 +228,21 @@ namespace IdentityServer4.Quickstart.UI
             // try to determine the unique id of the external user (issued by the provider)
             // the most common claim type for that are the sub claim and the NameIdentifier
             // depending on the external provider, some other claim type might be used
-            var userIdClaim = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Subject);
-            if (userIdClaim == null)
+            var upn = claims.FirstOrDefault(x => x.Type.Equals("upn"));
+            if (upn == null)
             {
-                userIdClaim = claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+                upn = claims.FirstOrDefault(x => x.Type.Equals("userPrincipalName"));
             }
-            if (userIdClaim == null)
+            if (upn == null)
             {
                 throw new Exception("Unknown userid");
             }
 
             // remove the user id claim from the claims collection and move to the userId property
             // also set the name of the external authentication provider
-            claims.Remove(userIdClaim);
+            claims.Remove(upn);
             var provider = result.Properties.Items["scheme"];
-            var userId = userIdClaim.Value;
+            var userId = upn.Value;
 
             // this is where custom logic would most likely be needed to match your users from the
             // external provider's authentication result, and provision the user as you see fit.
