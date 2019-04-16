@@ -48,6 +48,108 @@ namespace IdSrv.Quickstart.Admin
             }
         }
 
+        [HttpPost("new-User")]
+        public async Task<IActionResult> AddUserAsync(User user, string tenantId)
+        {
+            var tenant = _repo.GetTenantById(tenantId);
+            var newUser = new IS4User
+            {
+                Username = user.Username,
+                Password = user.Password,
+                IsExternalUser = user.IsExternalUser,
+                Provider = user.Provider,
+                ExternalUserId = user.ExternalUserId,
+                Tenant = tenant
+            };
+            try
+            {
+                await _repo.AddUser(newUser);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost("new-User-Claim")]
+        public async Task<IActionResult> AddUserClaimAsync(UClaims userClaims, string userId)
+        {
+            var user = _repo.FindById(userId);
+            List<UserClaims> usrClaims = new List<UserClaims>();
+            if (String.IsNullOrEmpty(userClaims.Name))
+            {
+                var userClaimName = new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "15",
+                    Value = userClaims.Name
+                };
+                usrClaims.Add(userClaimName);
+            }
+            if (String.IsNullOrEmpty(userClaims.GivenName))
+            {
+                var userClaimGivenName = new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "13",
+                    Value = userClaims.GivenName
+                };
+                usrClaims.Add(userClaimGivenName);
+            }
+            if (String.IsNullOrEmpty(userClaims.FamilyName))
+            {
+                var userClaimFamilyName = new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "14",
+                    Value = userClaims.FamilyName
+                };
+                usrClaims.Add(userClaimFamilyName);
+            }
+            if (String.IsNullOrEmpty(userClaims.Email))
+            {
+                var userClaimEmail = new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "18",
+                    Value = userClaims.Email
+                };
+                usrClaims.Add(userClaimEmail);
+            }
+
+            if (String.IsNullOrEmpty(userClaims.Role))
+            {
+                var userClaimRole = new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "20",
+                    Value = userClaims.Role
+                };
+                usrClaims.Add(userClaimRole);
+            }
+            if (String.IsNullOrEmpty(userClaims.Tenant))
+            {
+                var userClaimTenant = new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "17",
+                    Value = userClaims.Tenant
+                };
+                usrClaims.Add(userClaimTenant);
+            }
+            user.Claims = usrClaims;
+            try
+            {
+                await _repo.UpdateUser(user);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return BadRequest();
+            }
+        }
+
         [ApiExplorerSettings(IgnoreApi = true)]
         private void UpdateClientConfig(IS4Tenant tenant)
         {

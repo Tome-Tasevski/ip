@@ -47,7 +47,7 @@ namespace IdSrv.Quickstart.Configuration
         public IActionResult AddOpenIDConfig(OIDConfig cfg, string tenantId)
         {
             var tenant = _repo.GetTenantById(tenantId);
-            if(tenant.Protocol.Equals("oidc"))
+            if (tenant.Protocol.Equals("oidc"))
             {
                 var oidConfig = new OpenIDConfig
                 {
@@ -66,7 +66,7 @@ namespace IdSrv.Quickstart.Configuration
         public IActionResult AddSamlConfig(SMLConfig cfg, string tenantId)
         {
             var tenant = _repo.GetTenantById(tenantId);
-            if(tenant.Protocol.Equals("saml"))
+            if (tenant.Protocol.Equals("saml"))
             {
                 var samlcfg = new SamlConfig
                 {
@@ -81,7 +81,6 @@ namespace IdSrv.Quickstart.Configuration
             }
             return Ok();
         }
-
         
     }
 }
