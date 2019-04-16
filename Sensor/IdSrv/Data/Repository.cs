@@ -5,6 +5,7 @@ using System.Linq;
 using IdSrv.Quickstart.DTOs;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace IdSrv.Data
 {
@@ -98,6 +99,16 @@ namespace IdSrv.Data
             return _dbContext.Set<UserClaims>().Include("Claims").Where(x=>x.UserId.Equals(userId)).ToList();
         }
 
+        internal void AddSamlConfig(SamlConfig samlcfg)
+        {
+            _dbContext.Add(samlcfg);
+            _dbContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// Adds openidconfig in DB, needed for dynamic setup of oid schemes
+        /// </summary>
+        /// <param name="cfg"></param>
         public void AddOIDConfig(OpenIDConfig cfg)
         {
             _dbContext.Add(cfg);
