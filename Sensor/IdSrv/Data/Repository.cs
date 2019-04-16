@@ -115,10 +115,10 @@ namespace IdSrv.Data
             _dbContext.SaveChanges();
         }
 
-        public void AddClient(IS4Tenant tenant)
+        public async Task AddClient(IS4Tenant tenant)
         {
             _dbContext.Add(tenant);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
         public IS4Tenant GetTenantById(string tenantId)

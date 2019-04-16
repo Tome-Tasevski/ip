@@ -28,13 +28,11 @@ namespace IdSrv.Quickstart.Configuration
         private readonly AuthSchemeProvider _authSchemeProvider;
         private readonly IClientStore _clientStore;
         private readonly Repository _repo;
-        private readonly IConfigurationDbContext _configurationDbContext;
 
-        public ConfigurationController(AuthSchemeProvider authSchemeProvider, Repository repo, IConfigurationDbContext configurationDbContext, IClientStore clientStore)
+        public ConfigurationController(AuthSchemeProvider authSchemeProvider, Repository repo, IClientStore clientStore)
         {
             _authSchemeProvider = authSchemeProvider;
             _repo = repo;
-            _configurationDbContext = configurationDbContext;
             _clientStore = clientStore;
         }
 
@@ -45,7 +43,7 @@ namespace IdSrv.Quickstart.Configuration
             return Redirect("/");
         }
 
-        [HttpPost("addconfing")]
+        [HttpPost("newOidConfig")]
         public IActionResult AddOpenIDConfig(OIDConfig cfg, string tenantId)
         {
             var tenant = _repo.GetTenantById(tenantId);
@@ -53,18 +51,17 @@ namespace IdSrv.Quickstart.Configuration
             {
                 var oidConfig = new OpenIDConfig
                 {
-                    OpenId = "2",
                     Authority = cfg.DirectoryId == null ? cfg.Authority : $"{cfg.Authority}/{cfg.DirectoryId}/",
                     ClientId = cfg.ClientId,
                     Tenant = tenant,
                 };
-                UpdateClientConfig(tenant);
+
                 _repo.AddOIDConfig(oidConfig);
             }
             return Ok();
         }
 
-        
+        [HttpPost("newSamlConfig")]
         public IActionResult AddSamlConfig(SMLConfig cfg, string tenantId)
         {
             var tenant = _repo.GetTenantById(tenantId);
@@ -72,7 +69,6 @@ namespace IdSrv.Quickstart.Configuration
             {
                 var samlcfg = new SamlConfig
                 {
-                    SamlId = "2",
                     IdpEntityId = cfg.IdpEntityId,
                     IdpSigningCertificate = cfg.IdpSigningCertificate,
                     SingleLogoutEndpoint = cfg.SLOEndpoint,
@@ -80,21 +76,11 @@ namespace IdSrv.Quickstart.Configuration
                     Tenant = tenant
                 };
 
-                UpdateClientConfig(tenant);
                 _repo.AddSamlConfig(samlcfg);
             }
             return Ok();
         }
 
-        public void UpdateClientConfig(IS4Tenant tenant)
-        {
-            foreach (var client in _configurationDbContext.Clients.AsQueryable().Include("RedirectUris").Include("PostLogoutRedirectUris"))
-            {
-                client.RedirectUris.Add(new ClientRedirectUri() { Client = client, RedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signin-oidc-{tenant.TenantId}" });
-                client.PostLogoutRedirectUris.Add(new ClientPostLogoutRedirectUri() { Client = client, PostLogoutRedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signout-callback-oidc-{tenant.TenantId}" });
-                _configurationDbContext.Clients.Attach(client).State = EntityState.Modified;
-            }
-            _configurationDbContext.SaveChanges();
-        }
+        
     }
 }

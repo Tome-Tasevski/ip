@@ -145,7 +145,7 @@ namespace IdSrv
 
                 //this method will be executed only if we already have config file for IDS4
                 //if not put it in comments
-                //PopulateDBWithConfig(configurationContext);
+                PopulateDBWithConfig(configurationContext);
 
                 //----------------------***************--------------------------
                 //Uncomment after migrating IDS4DbContext

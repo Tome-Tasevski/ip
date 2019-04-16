@@ -113,9 +113,12 @@ namespace IdSrv.Quickstart
         public async Task LoadAllSchemes()
         {
             var tenants = _repo.GetAllTenants().Where(t => t.LoginType.Equals("external"));
-            foreach (var tenant in tenants.ToList())
+            if(tenants != null)
             {
-                await AddOrUpdate(tenant.TenantId);
+                foreach (var tenant in tenants.ToList())
+                {
+                    await AddOrUpdate(tenant.TenantId);
+                }
             }
         }
 
