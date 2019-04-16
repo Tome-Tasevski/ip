@@ -56,6 +56,12 @@ namespace IdSrv.Data
             return query.FirstOrDefault();
         }
 
+        public IS4User FindById(string userId)
+        {
+            return _dbContext.Set<IS4User>().Where(u => u.UserId == userId).FirstOrDefault();
+
+        }
+
         public List<Role> GetRoles(string userId,bool isExternal)
         {
             var roles = new List<Role>();
@@ -124,6 +130,16 @@ namespace IdSrv.Data
         public IS4Tenant GetTenantById(string tenantId)
         {
             return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.TenantId.Equals(tenantId));
+        }
+        public async Task AddUser(IS4User user)
+        {
+            _dbContext.Add(user);
+            await _dbContext.SaveChangesAsync();
+        }
+        public async Task UpdateUser(IS4User user)
+        {
+            _dbContext.Attach(user).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
         }
 
     }
