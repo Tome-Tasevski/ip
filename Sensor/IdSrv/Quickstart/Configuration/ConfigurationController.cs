@@ -53,6 +53,7 @@ namespace IdSrv.Quickstart.Configuration
                 {
                     Authority = cfg.DirectoryId == null ? cfg.Authority : $"{cfg.Authority}/{cfg.DirectoryId}/",
                     ClientId = cfg.ClientId,
+                    ClientSecret = cfg.ClientSecret ?? "",
                     Tenant = tenant,
                 };
 
