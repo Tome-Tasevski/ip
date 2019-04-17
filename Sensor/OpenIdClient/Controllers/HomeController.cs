@@ -18,12 +18,12 @@ namespace ServiceProviderMultiTenant.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ISensorDataHttpClient _sensorDataHttpClient;
+        //private readonly ISensorDataHttpClient _sensorDataHttpClient;
 
-        public HomeController(ISensorDataHttpClient sensorDataHttpClient)
-        {
-            _sensorDataHttpClient = sensorDataHttpClient;
-        }
+        //public HomeController(ISensorDataHttpClient sensorDataHttpClient)
+        //{
+        //    _sensorDataHttpClient = sensorDataHttpClient;
+        //}
 
         [Authorize]
         public async Task<IActionResult> Index()
@@ -35,40 +35,40 @@ namespace ServiceProviderMultiTenant.Controllers
         }
 
 
-        public async Task<IActionResult> FetchDataUser()
-        {
-            var client = await _sensorDataHttpClient.GetClientAsync();
-            var response = await client.GetAsync("/api/sensors/user");
+        //public async Task<IActionResult> FetchDataUser()
+        //{
+        //    var client = await _sensorDataHttpClient.GetClientAsync();
+        //    var response = await client.GetAsync("/api/sensors/user");
 
-            return await HandleApiResponse(response, async () =>
-            {
-                var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
-                    .ToList();
+        //    return await HandleApiResponse(response, async () =>
+        //    {
+        //        var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        //        var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
+        //            .ToList();
 
-                return View(sensorData);
-            });
-        }
+        //        return View(sensorData);
+        //    });
+        //}
 
         public IActionResult Logout()
         {
             return SignOut("Cookies", "oidc");
         }
 
-        public async Task<IActionResult> FetchDataAdmin()
-        {
-            var client = await _sensorDataHttpClient.GetClientAsync();
-            var response = await client.GetAsync("/api/sensors/admin");
+        //public async Task<IActionResult> FetchDataAdmin()
+        //{
+        //    var client = await _sensorDataHttpClient.GetClientAsync();
+        //    var response = await client.GetAsync("/api/sensors/admin");
 
-            return await HandleApiResponse(response, async () =>
-            {
-                var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
-                    .ToList();
+        //    return await HandleApiResponse(response, async () =>
+        //    {
+        //        var jsonContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        //        var sensorData = JsonConvert.DeserializeObject<IEnumerable<SensorData>>(jsonContent)
+        //            .ToList();
 
-                return View(sensorData);
-            });
-        }
+        //        return View(sensorData);
+        //    });
+        //}
         [Authorize(Roles = "SP2.Admin")]
         public IActionResult Privacy()
         {

@@ -16,6 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ServiceProviderMultiTenant.Services;
 using Rsk.AspNetCore.Authentication.Saml2p;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ServiceProviderMultiTenant
 {
@@ -32,8 +33,6 @@ namespace ServiceProviderMultiTenant
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddScoped<ISensorDataHttpClient, SensorDataHttpClient>();
-            services.AddHttpContextAccessor();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -42,7 +41,6 @@ namespace ServiceProviderMultiTenant
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 
             services.AddAuthentication(options =>
@@ -53,10 +51,10 @@ namespace ServiceProviderMultiTenant
             .AddOpenIdConnect("oidc", opt =>
             {
                 opt.SignInScheme = "Cookies";
-                opt.Authority = "https://localhost:44374/";
-                opt.RequireHttpsMetadata = false;
-                opt.SaveTokens = true;
                 opt.ClientId = "SpTenant";
+                opt.RequireHttpsMetadata = false;
+                opt.Authority = "https://localhost:44374/";
+                //opt.SaveTokens = true;
                 opt.Scope.Add("openid");
                 opt.Scope.Add("profile");
                 opt.Scope.Add("role");
@@ -74,6 +72,10 @@ namespace ServiceProviderMultiTenant
                         return Task.FromResult(c);
                     }
                 };
+                opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    NameClaimType = "sub"
+                };
             });
 
             services.AddMultiTenant()
@@ -89,6 +91,8 @@ namespace ServiceProviderMultiTenant
                    o.SignedOutRedirectUri = $"https://{tenantInfo.Name}.localhost:44334";
                });
             services.AddAuthorization();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -104,10 +108,11 @@ namespace ServiceProviderMultiTenant
                 app.UseHsts();
             }
 
-            app.UseMultiTenant();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseMultiTenant();
+
             app.UseAuthentication();
             app.UseMvc(routes =>
             {
