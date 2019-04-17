@@ -16,7 +16,7 @@ namespace IdentityServer4.Quickstart.UI
         public IEnumerable<ExternalProvider> ExternalProviders { get; set; }
         public IEnumerable<ExternalProvider> VisibleExternalProviders => ExternalProviders.Where(x => !String.IsNullOrWhiteSpace(x.DisplayName));
 
-        public bool IsExternalLoginOnly => EnableLocalLogin == false && ExternalProviders?.Count() > 1;
+        public bool IsExternalLoginOnly => EnableLocalLogin == false && ExternalProviders?.Count() > 0;
         public string ExternalLoginScheme { get; set; }
     }
 }

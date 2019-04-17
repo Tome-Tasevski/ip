@@ -1,23 +1,32 @@
 ﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var result = await Context.AuthenticateAsync("Cookies");
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+<div class="row">
+    <div class="col-xs-12">
+        @if (result.Succeeded)
+        {
+            <h2>Authenticated</h2>
+            <ul>
+                @foreach (var claim in result.Principal.Claims)
+                {
+                    <li><strong>@claim.Type:</strong> @claim.Value</li>
+                }
+            </ul>
+
+            <div class="col-xs-12">
+                <a asp-action="Logout" class="btn btn-default">Logout</a>
+            </div>
+        }
 
 
-
-<h2>Claims</h2>
-
-<dl>
-    @foreach (var claim in User.Claims)
-    {
-        <dt>@claim.Type</dt>
-        <dd>@claim.Value</dd>
-    }
-</dl>
-
-<h2>Properties</h2>
-
-<dl>
-    @foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items)
-    {
-        <dt>@prop.Key</dt>
-        <dd>@prop.Value</dd>
-    }
-</dl>
+</div>
+<script>
+    (function () {
+        document.cookie = cookieString;
+    })();
+</script>

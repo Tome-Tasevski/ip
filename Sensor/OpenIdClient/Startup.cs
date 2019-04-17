@@ -81,10 +81,12 @@ namespace ServiceProviderMultiTenant
                .WithRemoteAuthentication()
                .WithPerTenantOptions<CookieAuthenticationOptions>((o, tenantInfo) =>
                {
-                   o.Cookie.Name += tenantInfo.Id;
+                   o.Cookie.Name += tenantInfo.Identifier;
                }).WithPerTenantOptions<OpenIdConnectOptions>((o, tenantInfo) =>
                {
                    o.CallbackPath = $"/signin-oidc-{tenantInfo.Id}";
+                   o.SignedOutCallbackPath = $"/signout-callback-oidc-{tenantInfo.Id}";
+                   o.SignedOutRedirectUri = $"https://{tenantInfo.Name}.localhost:44334";
                });
             services.AddAuthorization();
         }

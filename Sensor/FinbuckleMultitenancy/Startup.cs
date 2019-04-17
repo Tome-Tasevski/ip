@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Finbuckle.MultiTenant;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -70,7 +71,8 @@ namespace FinbuckleMultitenancy
             });
 
             services.AddMultiTenant()
-                .WithHostStrategy().WithInMemoryStore(Configuration.GetSection("InMemoryStoreConfig"))
+                .WithHostStrategy()
+                .WithInMemoryStore(Configuration.GetSection("InMemoryStoreConfig"))
                 .WithRemoteAuthentication()
                 .WithPerTenantOptions<CookieAuthenticationOptions>((o, tenantInfo) =>
                 {
@@ -109,6 +111,17 @@ namespace FinbuckleMultitenancy
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            SetupStore(app.ApplicationServices);
+        }
+
+        private void SetupStore(IServiceProvider sp)
+        {
+            var scopeServices = sp.CreateScope().ServiceProvider;
+            var store = scopeServices.GetRequiredService<IMultiTenantStore>();
+
+            store.TryAddAsync(new TenantInfo("1", "1", "test1", "finbuckle_conn_string", null)).Wait();
+            store.TryAddAsync(new TenantInfo("tenant-initech-341ojadsfa", "initech", "Initech LLC", "initech_conn_string", null)).Wait();
         }
     }
 }
