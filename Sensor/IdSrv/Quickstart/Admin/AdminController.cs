@@ -77,7 +77,7 @@ namespace IdSrv.Quickstart.Admin
         {
             var user = _repo.FindById(userId);
             List<UserClaims> usrClaims = new List<UserClaims>();
-            if (String.IsNullOrEmpty(userClaims.Name))
+            if (!String.IsNullOrEmpty(userClaims.Name))
             {
                 var userClaimName = new UserClaims
                 {
@@ -87,7 +87,7 @@ namespace IdSrv.Quickstart.Admin
                 };
                 usrClaims.Add(userClaimName);
             }
-            if (String.IsNullOrEmpty(userClaims.GivenName))
+            if (!String.IsNullOrEmpty(userClaims.GivenName))
             {
                 var userClaimGivenName = new UserClaims
                 {
@@ -97,7 +97,7 @@ namespace IdSrv.Quickstart.Admin
                 };
                 usrClaims.Add(userClaimGivenName);
             }
-            if (String.IsNullOrEmpty(userClaims.FamilyName))
+            if (!String.IsNullOrEmpty(userClaims.FamilyName))
             {
                 var userClaimFamilyName = new UserClaims
                 {
@@ -107,7 +107,7 @@ namespace IdSrv.Quickstart.Admin
                 };
                 usrClaims.Add(userClaimFamilyName);
             }
-            if (String.IsNullOrEmpty(userClaims.Email))
+            if (!String.IsNullOrEmpty(userClaims.Email))
             {
                 var userClaimEmail = new UserClaims
                 {
@@ -118,7 +118,7 @@ namespace IdSrv.Quickstart.Admin
                 usrClaims.Add(userClaimEmail);
             }
 
-            if (String.IsNullOrEmpty(userClaims.Role))
+            if (!String.IsNullOrEmpty(userClaims.Role))
             {
                 var userClaimRole = new UserClaims
                 {
@@ -128,7 +128,7 @@ namespace IdSrv.Quickstart.Admin
                 };
                 usrClaims.Add(userClaimRole);
             }
-            if (String.IsNullOrEmpty(userClaims.Tenant))
+            if (!String.IsNullOrEmpty(userClaims.Tenant))
             {
                 var userClaimTenant = new UserClaims
                 {

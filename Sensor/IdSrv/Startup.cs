@@ -85,7 +85,6 @@ namespace IdSrv
             services.AddTransient<AuthSchemeProvider>();
 
             var builder = services.AddAuthentication(opt => opt.DefaultChallengeScheme = "oidc");
-              
 
             LoadSamlDependencies(builder);
         }

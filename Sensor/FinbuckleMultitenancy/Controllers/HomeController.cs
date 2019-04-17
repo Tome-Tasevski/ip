@@ -30,15 +30,6 @@ namespace FinbuckleMultitenancy.Controllers
             return SignOut("Cookies", "oidc");
         }
 
-        public async Task<IActionResult> ChallengeScheme(string scheme)
-        {
-            scheme = "saml2p";
-            var result = await HttpContext.AuthenticateAsync(scheme);
-            if (result.Succeeded && result.Principal != null) return RedirectToAction("Index");
-
-            return Challenge(scheme);
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

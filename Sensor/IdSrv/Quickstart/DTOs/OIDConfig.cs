@@ -10,6 +10,7 @@ namespace IdSrv.Quickstart.DTOs
     {
         public string Authority { get; set; }
         public string ClientId { get; set; }
+        public string ClientSecret {get; set;}
         public string DirectoryId { get; set; }
     }
 }

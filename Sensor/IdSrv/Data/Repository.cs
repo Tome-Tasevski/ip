@@ -45,12 +45,12 @@ namespace IdSrv.Data
 
         public IS4User FindByExternalProvider(string provider, string userId)
         {
-            return _dbContext.Set<IS4User>().FirstOrDefault(u => u.Provider.Equals(provider) && u.ExternalUserId.Equals(userId));
+            return _dbContext.Set<IS4User>().Include("Claims").Include("Claims").FirstOrDefault(u => u.Provider.Equals(provider) && u.ExternalUserId.Equals(userId));
         }
 
         public IS4User FindByUsername(string username)
         {
-             var query=_dbContext.Set<IS4User>().AsQueryable();
+            var query = _dbContext.Set<IS4User>().AsQueryable();
             query = query.Include("Tenant").Where(u => u.Username == username);
 
             return query.FirstOrDefault();
@@ -62,7 +62,7 @@ namespace IdSrv.Data
 
         }
 
-        public List<Role> GetRoles(string userId,bool isExternal)
+        public List<Role> GetRoles(string userId, bool isExternal)
         {
             var roles = new List<Role>();
             var query = _dbContext.Set<UserRole>().AsQueryable();
@@ -76,7 +76,7 @@ namespace IdSrv.Data
                 query = query.Include("User").Include("Role").Where(u => u.User.UserId == userId);
             }
 
-            foreach ( var r in query)
+            foreach (var r in query)
             {
                 roles.Add(r.Role);
             }
@@ -100,9 +100,9 @@ namespace IdSrv.Data
             return _dbContext.Set<Claims>().ToList();
         }
 
-        public List<UserClaims> GetUserClaims( string userId)
+        public List<UserClaims> GetUserClaims(string userId, bool isExternal)
         {
-            return _dbContext.Set<UserClaims>().Include("Claims").Where(x=>x.UserId.Equals(userId)).ToList();
+            return _dbContext.Set<UserClaims>().Include("Claims").Where(x => !isExternal ? x.UserId.Equals(userId) : x.User.ExternalUserId.Equals(userId)).ToList();
         }
 
         internal void AddSamlConfig(SamlConfig samlcfg)

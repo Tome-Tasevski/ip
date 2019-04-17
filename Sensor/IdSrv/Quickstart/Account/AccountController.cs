@@ -5,7 +5,6 @@
 using IdentityModel;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
-using IdentityServer4.Test;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,7 +17,6 @@ using Microsoft.AspNetCore.Authentication;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
-using Microsoft.Extensions.Configuration;
 using IdSrv.Data;
 using IdSrv.Data.Models;
 
@@ -106,7 +104,7 @@ namespace IdentityServer4.Quickstart.UI
                     if (user != null)
                     {
                         await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.UserId, user.Username));
-                        foreach (var claim in _repo.GetUserClaims(user.UserId))
+                        foreach (var claim in _repo.GetUserClaims(user.UserId, false))
                         {
                             claims.Add(new Claim(claim.Claims.Type, claim.Value));
                         }
@@ -239,6 +237,8 @@ namespace IdentityServer4.Quickstart.UI
             // remove the user id claim from the claims collection and move to the userId property
             // also set the name of the external authentication provider
             claims.Remove(upn);
+            claims.Remove(claims.FirstOrDefault(x => x.Type.Equals("sub")));
+            claims.Add(new Claim("sub", upn.Value));
             var provider = result.Properties.Items["scheme"];
             var userId = upn.Value;
 
@@ -248,19 +248,11 @@ namespace IdentityServer4.Quickstart.UI
             // check if the external user is already provisioned
             var user = _repo.FindByExternalProvider(provider, userId);
 
-	        if (user != null)
-            {
-                foreach (var claim in _repo.GetUserClaims(user.UserId))
-                {
-                    claims.Add(new Claim(claim.Claims.Type, claim.Value));
-                }
-            }
-
             List<UserClaims> userClaims = new List<UserClaims>();
             if (user == null)
             {
                 List<Claims> dbClaims = _repo.GetClaims();
-               
+                var claimsToRemove = new List<Claim>();
                 claims.ForEach(claim =>
                 {
                     var c = dbClaims.Where(x => x.Type.Equals(claim.Type)).FirstOrDefault();
@@ -273,9 +265,13 @@ namespace IdentityServer4.Quickstart.UI
                             ClaimId = id,
                             Value = claim.Value
                         });
+                    }else
+                    {
+                        claimsToRemove.Add(claim);
                     }
-                   
                 });
+                claimsToRemove.ForEach(c => claims.Remove(c));
+
                 userClaims.Add(new UserClaims
                 {
                     UserId = userId,
@@ -283,6 +279,14 @@ namespace IdentityServer4.Quickstart.UI
                     Value = "User"
                 });
                 claims.Add(new Claim(JwtClaimTypes.Role, "User"));
+                var tenant = new Claim("tenant", context.Tenant.Split(".").First());
+                claims.Add(tenant);
+                userClaims.Add(new UserClaims
+                {
+                    UserId = userId,
+                    ClaimId = "17",
+                    Value = context.Tenant.Split(".").First()
+                });
                 user = new IS4User()
                 {
                     ExternalUserId = userId,
@@ -292,16 +296,14 @@ namespace IdentityServer4.Quickstart.UI
                     Claims = userClaims
                 };
                 _repo.RegisterUser(user);
+            }else
+            {
+                claims.RemoveRange(0, claims.Count());
+                var listOfClaims = _repo.GetUserClaims(userId, true).Select(x => new Claim(x.Claims.Type, x.Value)).ToList();
+                claims.AddRange(listOfClaims);
             }
 
-            var tenant = new Claim("tenant", context.Tenant.Split(".").First());
-            userClaims.Add(new UserClaims
-            {
-                UserId = userId,
-                ClaimId = "17",
-                Value = context.Tenant.Split(".").First()
-            });
-            claims.Add(tenant);
+            
 
             // if the external system sent a session id claim, copy it over
             // so we can use it for single sign-out
