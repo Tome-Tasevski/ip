@@ -84,21 +84,7 @@ namespace IdSrv
             services.AddTransient<TenantResolver>();
             services.AddTransient<AuthSchemeProvider>();
 
-            var builder = services.AddAuthentication(opt => opt.DefaultChallengeScheme = "oidc")
-                .AddOpenIdConnect("test", "test", opt => 
-                {
-                    opt.Authority = "https://login.microsoftonline.com/9a433611-0c81-4f7b-abae-891364ddda17/";
-                    opt.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                    opt.SignOutScheme = IdentityServerConstants.SignoutScheme;
-                    opt.ClientId = "a0760163-2bac-445b-9052-f34de309bb64";
-                    opt.RequireHttpsMetadata = false;
-                    opt.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        NameClaimType = JwtClaimTypes.Subject,
-                        RoleClaimType = JwtClaimTypes.Role,
-                    };
-                    
-                });
+            var builder = services.AddAuthentication(opt => opt.DefaultChallengeScheme = "oidc");
 
             LoadSamlDependencies(builder);
         }

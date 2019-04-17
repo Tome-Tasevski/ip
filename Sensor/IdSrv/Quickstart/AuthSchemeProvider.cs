@@ -132,7 +132,6 @@ namespace IdSrv.Quickstart
                 Authority = config.Authority,
                 ClientId = config.ClientId,
                 ClientSecret = config.ClientSecret ?? "",
-                GetClaimsFromUserInfoEndpoint = true,
                 TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,

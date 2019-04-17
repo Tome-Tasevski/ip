@@ -13,7 +13,7 @@ namespace IdentityServer4.Quickstart.UI
         public static TimeSpan RememberMeLoginDuration = TimeSpan.FromDays(30);
 
         public static bool ShowLogoutPrompt = false;
-        public static bool AutomaticRedirectAfterSignOut = false;//ako e true posle Logout i brishenje na cookies-ta redirektira na Home url-to 
+        public static bool AutomaticRedirectAfterSignOut = true;//ako e true posle Logout i brishenje na cookies-ta redirektira na Home url-to 
 
         // to enable windows authentication, the host (IIS or IIS Express) also must have 
         // windows auth enabled.
