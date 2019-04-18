@@ -80,8 +80,8 @@ namespace IdSrv.Quickstart
                 saml2IdpOptions = new IdpOptions()
                 {
                     EntityId = samlConfig.IdpEntityId,
-                    SingleSignOnEndpoint = new SamlEndpoint(samlConfig.SingleSignOnEndpoint, SamlBindingTypes.HttpRedirect),
-                    SingleLogoutEndpoint = new SamlEndpoint(samlConfig.SingleLogoutEndpoint, SamlBindingTypes.HttpRedirect),
+                    SingleSignOnEndpoint = new SamlEndpoint(samlConfig.SingleSignOnEndpoint, SamlBindingTypes.HttpPost),
+                    SingleLogoutEndpoint = new SamlEndpoint(samlConfig.SingleLogoutEndpoint, SamlBindingTypes.HttpPost),
                     SigningCertificate = new X509Certificate2(samlConfig.IdpSigningCertificate), //file name
                 };
 
@@ -152,7 +152,7 @@ namespace IdSrv.Quickstart
                 IdentityProviderOptions = idpOptions,
                 ServiceProviderOptions = spOptions,
 
-                SaveTokens = true,
+                //SaveTokens = true,
                 NameIdClaimType = "sub",
                 CallbackPath = $"/signin-saml-{config.TenantId}",
                 SignInScheme = "idsrv.external",
