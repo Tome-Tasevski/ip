@@ -18,5 +18,9 @@ namespace IdentityServerAspNetIdentity.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        DbSet<IS4Tenant> Tenants { get; set; }
+        DbSet<OpenIDConfig> OpenIDConfigs { get; set; }
+        DbSet<SamlConfig> SamlConfigs { get; set; }
     }
 }
