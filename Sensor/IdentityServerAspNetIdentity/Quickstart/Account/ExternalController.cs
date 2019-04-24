@@ -1,9 +1,10 @@
 using IdentityModel;
 using IdentityServer4.Events;
+using IdentityServer4.Models;
 using IdentityServer4.Quickstart.UI;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
-using IdentityServerAspNetIdentity.Models;
+using IdentityServerAspNetIdentity.Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -56,12 +57,6 @@ namespace Host.Quickstart.Account
                 // user might have clicked on a malicious link - should be logged
                 throw new Exception("invalid return URL");
             }
-
-            if (AccountOptions.WindowsAuthenticationSchemeName == provider)
-            {
-                // windows authentication needs special handling
-                return await ProcessWindowsLoginAsync(returnUrl);
-            }
             else
             {
                 // start challenge and roundtrip the return URL and scheme 
@@ -87,6 +82,10 @@ namespace Host.Quickstart.Account
         {
             // read external identity from the temporary cookie
             var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
+
+            var returnUrl = result.Properties.Items["returnUrl"];
+            var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
+
             if (result?.Succeeded != true)
             {
                 throw new Exception("External authentication error");
@@ -99,7 +98,7 @@ namespace Host.Quickstart.Account
                 // this might be where you might initiate a custom workflow for user registration
                 // in this sample we don't show how that would be done, as our sample implementation
                 // simply auto-provisions new external user
-                user = await AutoProvisionUserAsync(provider, providerUserId, claims);
+                user = await AutoProvisionUserAsync(provider, providerUserId, claims, context);
             }
 
             // this allows us to collect any additonal claims or properties
@@ -124,60 +123,12 @@ namespace Host.Quickstart.Account
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             // validate return URL and redirect back to authorization endpoint or a local page
-            var returnUrl = result.Properties.Items["returnUrl"];
             if (_interaction.IsValidReturnUrl(returnUrl) || Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);
             }
 
             return Redirect("~/");
-        }
-
-        private async Task<IActionResult> ProcessWindowsLoginAsync(string returnUrl)
-        {
-            // see if windows auth has already been requested and succeeded
-            var result = await HttpContext.AuthenticateAsync(AccountOptions.WindowsAuthenticationSchemeName);
-            if (result?.Principal is WindowsPrincipal wp)
-            {
-                // we will issue the external cookie and then redirect the
-                // user back to the external callback, in essence, treating windows
-                // auth the same as any other external authentication mechanism
-                var props = new AuthenticationProperties()
-                {
-                    RedirectUri = Url.Action("Callback"),
-                    Items =
-                    {
-                        { "returnUrl", returnUrl },
-                        { "scheme", AccountOptions.WindowsAuthenticationSchemeName },
-                    }
-                };
-
-                var id = new ClaimsIdentity(AccountOptions.WindowsAuthenticationSchemeName);
-                id.AddClaim(new Claim(JwtClaimTypes.Subject, wp.Identity.Name));
-                id.AddClaim(new Claim(JwtClaimTypes.Name, wp.Identity.Name));
-
-                // add the groups as claims -- be careful if the number of groups is too large
-                if (AccountOptions.IncludeWindowsGroups)
-                {
-                    var wi = wp.Identity as WindowsIdentity;
-                    var groups = wi.Groups.Translate(typeof(NTAccount));
-                    var roles = groups.Select(x => new Claim(JwtClaimTypes.Role, x.Value));
-                    id.AddClaims(roles);
-                }
-
-                await HttpContext.SignInAsync(
-                    IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme,
-                    new ClaimsPrincipal(id),
-                    props);
-                return Redirect(props.RedirectUri);
-            }
-            else
-            {
-                // trigger windows auth
-                // since windows auth don't support the redirect uri,
-                // this URL is re-triggered when we call challenge
-                return Challenge(AccountOptions.WindowsAuthenticationSchemeName);
-            }
         }
 
         private async Task<(ApplicationUser user, string provider, string providerUserId, IEnumerable<Claim> claims)>
@@ -205,7 +156,7 @@ namespace Host.Quickstart.Account
             return (user, provider, providerUserId, claims);
         }
 
-        private async Task<ApplicationUser> AutoProvisionUserAsync(string provider, string providerUserId, IEnumerable<Claim> claims)
+        private async Task<ApplicationUser> AutoProvisionUserAsync(string provider, string providerUserId, IEnumerable<Claim> claims, AuthorizationRequest context)
         {
             // create a list of claims that we want to transfer into our store
             var filtered = new List<Claim>();
@@ -244,6 +195,11 @@ namespace Host.Quickstart.Account
             {
                 filtered.Add(new Claim(JwtClaimTypes.Email, email));
             }
+
+
+            filtered.Add(new Claim(JwtClaimTypes.Role, "User"));
+            var tenant = new Claim("tenant", context.Tenant.Split(".").First());
+            filtered.Add(tenant);
 
             var user = new ApplicationUser
             {

@@ -8,7 +8,8 @@ using IdentityServer4.Extensions;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
-using IdentityServerAspNetIdentity.Models;
+using IdentityServerAspNetIdentity.Data;
+using IdentityServerAspNetIdentity.Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +31,7 @@ namespace IdentityServer4.Quickstart.UI
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
+        private readonly Repository _repo;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
@@ -37,7 +39,8 @@ namespace IdentityServer4.Quickstart.UI
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
             IAuthenticationSchemeProvider schemeProvider,
-            IEventService events)
+            IEventService events,
+            Repository repo)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -45,6 +48,7 @@ namespace IdentityServer4.Quickstart.UI
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
             _events = events;
+            _repo = repo;
         }
 
         /// <summary>
@@ -235,12 +239,14 @@ namespace IdentityServer4.Quickstart.UI
                 }).ToList();
 
             var allowLocal = true;
+            string tenant = null;
             if (context?.ClientId != null)
             {
                 var client = await _clientStore.FindEnabledClientByIdAsync(context.ClientId);
                 if (client != null)
                 {
-                    allowLocal = client.EnableLocalLogin;
+                    tenant = context.Tenant.Split(".").First();
+                    allowLocal = _repo.GetTenant(tenant).LoginType.Equals("local");
 
                     if (client.IdentityProviderRestrictions != null && client.IdentityProviderRestrictions.Any())
                     {
@@ -255,7 +261,8 @@ namespace IdentityServer4.Quickstart.UI
                 EnableLocalLogin = allowLocal && AccountOptions.AllowLocalLogin,
                 ReturnUrl = returnUrl,
                 Username = context?.LoginHint,
-                ExternalProviders = providers.ToArray()
+                ExternalProviders = providers.ToArray(),
+                ExternalLoginScheme = _repo.GetTenant(tenant).TenantId + "-scheme"
             };
         }
 
