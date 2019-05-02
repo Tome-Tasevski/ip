@@ -49,12 +49,75 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             }
         }
 
+        [HttpPost("Add Role")]
+        public async Task<IActionResult> AddRoleToUserAsync(string name)
+        {
+            try
+            {
+                await _repo.AddRole(name);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost("Add User")]
+        public async Task<IActionResult> AddUserAsync(NewUser user, string tennat)
+        {
+            var tenant = _repo.GetTenant(tennat);
+            var newUser = new ApplicationUser
+            {
+                UserName = user.UserName,
+                Tenant = tenant
+            };
+            try
+            {
+                await _repo.AddUserAsync(newUser, user.Password);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost("Add Role to User")]
+        public async Task<IActionResult> AddRoleToUserAsync(NewRoleToUser role, string userName)
+        {
+            try
+            {
+                await _repo.AddRoleToUser(userName, role.Name);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost("Add Claims to User")]
+        public async Task<IActionResult> AddClaimsToUserAsync(string userName, string email)
+        {
+            try
+            {
+                await _repo.AddClaimsToUser(userName, email);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
         [ApiExplorerSettings(IgnoreApi = true)]
         private void UpdateClientConfig(IS4Tenant tenant, List<int> serviceProviders)
         {
             foreach (var client in _configurationDbContext.Clients.AsQueryable().Where(c => serviceProviders.Contains(c.Id)).Include("RedirectUris").Include("PostLogoutRedirectUris"))
             {
-                client.RedirectUris.Add(new ClientRedirectUri() { Client = client, RedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signin-oidc-{tenant.TenantId}" });
+                //this client.Id == 4 shoudl be dinamic !!!
+                client.RedirectUris.Add(new ClientRedirectUri() { Client = client, RedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 4 ? "44372" : "44334")}/signin-oidc-{tenant.TenantId}" });
                 client.PostLogoutRedirectUris.Add(new ClientPostLogoutRedirectUri() { Client = client, PostLogoutRedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signout-callback-oidc-{tenant.TenantId}" });
                 _configurationDbContext.Clients.Attach(client).State = EntityState.Modified;
             }

@@ -40,6 +40,7 @@ using IdentityServerAspNetIdentity.Quickstart;
 using IdentityServerAspNetIdentity.Data.Models;
 using System.Security.Claims;
 using AutoMapper;
+using System.Collections.Generic;
 
 namespace IdentityServerAspNetIdentity
 {
@@ -124,7 +125,7 @@ namespace IdentityServerAspNetIdentity
             loggerFactory.AddConsole();
             loggerFactory.AddDebug();
 
-            InitializeDatabase(app);
+            InitializeDatabaseAsync(app);
 
             
             app.UseSwagger();
@@ -142,11 +143,11 @@ namespace IdentityServerAspNetIdentity
             app.UseMvcWithDefaultRoute();
         }
 
-        private void InitializeDatabase(IApplicationBuilder app)
+        private void InitializeDatabaseAsync(IApplicationBuilder app)
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-               EnsureSeedData(serviceScope.ServiceProvider);
+                EnsureSeedDataAsync(serviceScope.ServiceProvider);
 
             }
 
@@ -168,14 +169,13 @@ namespace IdentityServerAspNetIdentity
             builder.Services.TryAddScoped<ISamlCorrelationStore, CookieCorrelationStore>();
         }
 
-        public void EnsureSeedData(IServiceProvider provider)
+        public void EnsureSeedDataAsync(IServiceProvider provider)
         {
             provider.GetRequiredService<ApplicationDbContext>().Database.Migrate();
             provider.GetRequiredService<PersistedGrantDbContext>().Database.Migrate();
             provider.GetRequiredService<ConfigurationDbContext>().Database.Migrate();
 
-            //AddTwoUsesWithClaims(provider);
-
+       
             //this method will be executed only if we already have config file for IDS4
             //if not put it in comments
             var context = provider.GetRequiredService<ConfigurationDbContext>();
@@ -186,6 +186,41 @@ namespace IdentityServerAspNetIdentity
             var authSchemeProvider = provider.GetRequiredService<AuthSchemeProvider>();
             GetAllSchemes(authSchemeProvider).GetAwaiter().GetResult();
             //----------------------***************--------------------------
+        }
+
+        private void PopulateDBWithConfig(ConfigurationDbContext context)
+        {
+            if (!context.Clients.Any())
+            {
+                foreach (var client in Config.GetClients())
+                {
+                    context.Clients.Add(client.ToEntity());
+                }
+                context.SaveChanges();
+            }
+
+            if (!context.IdentityResources.Any())
+            {
+                foreach (var resource in Config.GetIdentityResources())
+                {
+                    context.IdentityResources.Add(resource.ToEntity());
+                }
+                context.SaveChanges();
+            }
+
+            if (!context.ApiResources.Any())
+            {
+                foreach (var resource in Config.GetApiResources())
+                {
+                    context.ApiResources.Add(resource.ToEntity());
+                }
+                context.SaveChanges();
+            }
+        }
+
+        private async Task GetAllSchemes(AuthSchemeProvider authSchemeProvider)
+        {
+            await authSchemeProvider.LoadAllSchemes();
         }
 
         public void AddTwoUsesWithClaims(IServiceProvider provider)
@@ -258,41 +293,6 @@ namespace IdentityServerAspNetIdentity
                     Console.WriteLine("bob already exists");
                 }
             }
-        }
-
-        private void PopulateDBWithConfig(ConfigurationDbContext context)
-        {
-            if (!context.Clients.Any())
-            {
-                foreach (var client in Config.GetClients())
-                {
-                    context.Clients.Add(client.ToEntity());
-                }
-                context.SaveChanges();
-            }
-
-            if (!context.IdentityResources.Any())
-            {
-                foreach (var resource in Config.GetIdentityResources())
-                {
-                    context.IdentityResources.Add(resource.ToEntity());
-                }
-                context.SaveChanges();
-            }
-
-            if (!context.ApiResources.Any())
-            {
-                foreach (var resource in Config.GetApiResources())
-                {
-                    context.ApiResources.Add(resource.ToEntity());
-                }
-                context.SaveChanges();
-            }
-        }
-
-        private async Task GetAllSchemes(AuthSchemeProvider authSchemeProvider)
-        {
-            await authSchemeProvider.LoadAllSchemes();
         }
     }
 }

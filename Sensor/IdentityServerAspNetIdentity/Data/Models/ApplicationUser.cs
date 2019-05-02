@@ -7,5 +7,6 @@ namespace IdentityServerAspNetIdentity.Data.Models
     public class ApplicationUser : IdentityUser
     {
         public IS4Tenant Tenant { get; set; }
+
     }
 }

@@ -58,7 +58,6 @@ namespace ServiceProviderMultiTenant
                 opt.Scope.Add("openid");
                 opt.Scope.Add("profile");
                 opt.Scope.Add("role");
-                opt.Scope.Add("sensorsapi");
                 opt.Scope.Add("tenant");
                 opt.ResponseType = "id_token token";
                 opt.ClientSecret = "secret";

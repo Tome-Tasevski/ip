@@ -52,7 +52,6 @@ namespace IdentityServerAspNetIdentity
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "sensorsapi",
                         "role",
                         "tenant"
                     },
@@ -74,7 +73,6 @@ namespace IdentityServerAspNetIdentity
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "sensorsapi",
                         "role",
                         "tenant"
                     },

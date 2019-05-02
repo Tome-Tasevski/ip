@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using IdentityModel;
 using IdentityServerAspNetIdentity.Data.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace IdentityServerAspNetIdentity.Data
@@ -10,10 +14,14 @@ namespace IdentityServerAspNetIdentity.Data
     public class Repository
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public Repository(ApplicationDbContext dbContext)
+        public Repository(ApplicationDbContext dbContext, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _dbContext = dbContext;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public IS4Tenant GetTenant(string name)
@@ -95,15 +103,40 @@ namespace IdentityServerAspNetIdentity.Data
         {
             return _dbContext.Set<IS4Tenant>().FirstOrDefault(x => x.TenantId.Equals(tenantId));
         }
-        public async Task AddUser(ApplicationUser user)
+
+        public async Task AddUserAsync(ApplicationUser user, string password)
         {
-            _dbContext.Add(user);
-            await _dbContext.SaveChangesAsync();
+            await _userManager.CreateAsync(user, password);
         }
-        public async Task UpdateUser(ApplicationUser user)
+
+        public async Task AddRoleToUser(string userName, string role)
         {
-            _dbContext.Attach(user).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
+            var user = await _userManager.FindByNameAsync(userName);
+            await _userManager.AddToRoleAsync(user, role);
+        }
+
+        public async Task AddClaimsToUser(string userName, string email)
+        {
+            var user = _dbContext.Set<ApplicationUser>().Include("Tenant").Where(u => u.UserName == userName).FirstOrDefault();
+            //var user = _userManager.FindByNameAsync(userName).Result;
+            var roles = await _userManager.GetRolesAsync(user);
+            List<Claim> claims = new List<Claim>();
+            claims.Add(new Claim(JwtClaimTypes.Name, userName));
+            claims.Add(new Claim(JwtClaimTypes.Email, email));
+            claims.Add(new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean));
+            claims.Add(new Claim("tenant", user.Tenant.Name));
+            foreach (string role in roles)
+            {
+                claims.Add(new Claim(JwtClaimTypes.Role, role));
+            }
+            await _userManager.AddClaimsAsync(user, claims);
+        }
+
+        public async Task AddRole(string name)
+        {
+            var role = new IdentityRole();
+            role.Name = name;
+            await _roleManager.CreateAsync(role);
         }
     }
 }

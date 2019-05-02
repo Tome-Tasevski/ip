@@ -50,7 +50,6 @@ namespace FinbuckleMultitenancy
                 o.Scope.Add("openid");
                 o.Scope.Add("profile");
                 o.Scope.Add("role");
-                o.Scope.Add("sensorsapi");
                 o.Scope.Add("tenant");
                 o.ResponseType = "id_token token";
                 o.ClientSecret = "secret";
