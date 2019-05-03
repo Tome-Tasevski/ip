@@ -70,11 +70,13 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             var newUser = new ApplicationUser
             {
                 UserName = user.UserName,
-                Tenant = tenant
+                Tenant = tenant,
+                Email = user.Email
             };
             try
             {
                 await _repo.AddUserAsync(newUser, user.Password);
+                await _repo.AddClaimsToUser(newUser);
                 return Ok();
             }
             catch
@@ -97,12 +99,12 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             }
         }
 
-        [HttpPost("Add Claims to User")]
-        public async Task<IActionResult> AddClaimsToUserAsync(string userName, string email)
+        [HttpPost("Remove user's role")]
+        public async Task<IActionResult> RemoveUserRole(string userName, string role)
         {
             try
             {
-                await _repo.AddClaimsToUser(userName, email);
+                await _repo.RemoveUserRole(userName, role);
                 return Ok();
             }
             catch

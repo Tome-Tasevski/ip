@@ -113,22 +113,24 @@ namespace IdentityServerAspNetIdentity.Data
         {
             var user = await _userManager.FindByNameAsync(userName);
             await _userManager.AddToRoleAsync(user, role);
+            await _userManager.AddClaimAsync(user, new Claim(JwtClaimTypes.Role, role));
         }
 
-        public async Task AddClaimsToUser(string userName, string email)
+        public async Task RemoveUserRole(string userName, string role)
         {
-            var user = _dbContext.Set<ApplicationUser>().Include("Tenant").Where(u => u.UserName == userName).FirstOrDefault();
-            //var user = _userManager.FindByNameAsync(userName).Result;
-            var roles = await _userManager.GetRolesAsync(user);
+            var user = await _userManager.FindByNameAsync(userName);
+            await _userManager.RemoveFromRoleAsync(user, role);
+            await _userManager.RemoveClaimAsync(user, new Claim(JwtClaimTypes.Role, role));
+        }
+
+        public async Task AddClaimsToUser(ApplicationUser user)
+        {
             List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim(JwtClaimTypes.Name, userName));
-            claims.Add(new Claim(JwtClaimTypes.Email, email));
+            claims.Add(new Claim(JwtClaimTypes.Name, user.UserName));
+            claims.Add(new Claim(JwtClaimTypes.Email, user.Email));
             claims.Add(new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean));
             claims.Add(new Claim("tenant", user.Tenant.Name));
-            foreach (string role in roles)
-            {
-                claims.Add(new Claim(JwtClaimTypes.Role, role));
-            }
+
             await _userManager.AddClaimsAsync(user, claims);
         }
 

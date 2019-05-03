@@ -49,7 +49,7 @@ namespace Host.Quickstart.Account
         [HttpGet]
         public async Task<IActionResult> Challenge(string provider, string returnUrl)
         {
-            if (string.IsNullOrEmpty(returnUrl)) returnUrl = "~/";
+          if (string.IsNullOrEmpty(returnUrl)) returnUrl = "~/";
 
             // validate returnUrl - either it is a valid OIDC URL or back to a local page
             if (Url.IsLocalUrl(returnUrl) == false && _interaction.IsValidReturnUrl(returnUrl) == false)
@@ -81,7 +81,7 @@ namespace Host.Quickstart.Account
         public async Task<IActionResult> Callback()
         {
             // read external identity from the temporary cookie
-            var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
+            var result = await HttpContext.AuthenticateAsync(IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme);
 
             var returnUrl = result.Properties.Items["returnUrl"];
             var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
