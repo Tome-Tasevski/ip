@@ -82,7 +82,7 @@ namespace IdentityServerAspNetIdentity.Quickstart
                 {
                     EntityId = samlConfig.IdpEntityId,
                     SingleSignOnEndpoint = new SamlEndpoint(samlConfig.SingleSignOnEndpoint, SamlBindingTypes.HttpRedirect),
-                    SingleLogoutEndpoint = new SamlEndpoint(samlConfig.SingleLogoutEndpoint, SamlBindingTypes.HttpRedirect),
+                    SingleLogoutEndpoint = new SamlEndpoint(samlConfig.SingleLogoutEndpoint, SamlBindingTypes.HttpPost),
                     SigningCertificate = new X509Certificate2(samlConfig.IdpSigningCertificate), //file name
                 };
 
