@@ -182,6 +182,7 @@ namespace IdentityServer4.Quickstart.UI
             // build a model so the logged out page knows what to display
             var vm = await BuildLoggedOutViewModelAsync(model.LogoutId);
 
+            //var user = HttpContext.User;
             if (User?.Identity.IsAuthenticated == true)
             {
                 // delete local authentication cookie

@@ -4,6 +4,7 @@ using IdentityServer4.Models;
 using IdentityServer4.Quickstart.UI;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
+using IdentityServerAspNetIdentity.Data;
 using IdentityServerAspNetIdentity.Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -28,19 +29,22 @@ namespace Host.Quickstart.Account
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clientStore;
         private readonly IEventService _events;
+        private readonly Repository _repo;
 
         public ExternalController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
-            IEventService events)
+            IEventService events,
+            Repository repo)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _interaction = interaction;
             _clientStore = clientStore;
             _events = events;
+            _repo = repo;
         }
 
         /// <summary>
@@ -49,7 +53,9 @@ namespace Host.Quickstart.Account
         [HttpGet]
         public async Task<IActionResult> Challenge(string provider, string returnUrl)
         {
-          if (string.IsNullOrEmpty(returnUrl)) returnUrl = "~/";
+
+
+            if (string.IsNullOrEmpty(returnUrl)) returnUrl = "~/";
 
             // validate returnUrl - either it is a valid OIDC URL or back to a local page
             if (Url.IsLocalUrl(returnUrl) == false && _interaction.IsValidReturnUrl(returnUrl) == false)
@@ -196,14 +202,26 @@ namespace Host.Quickstart.Account
                 filtered.Add(new Claim(JwtClaimTypes.Email, email));
             }
 
+            //tenant
+            var tenantStr = context.Tenant.Split(".").First();
+            var tenantClaim = new Claim("tenant", tenantStr);
+            filtered.Add(tenantClaim);
 
-            filtered.Add(new Claim(JwtClaimTypes.Role, "User"));
-            var tenant = new Claim("tenant", context.Tenant.Split(".").First());
-            filtered.Add(tenant);
+            var tenant = _repo.GetTenant(tenantStr);
 
+            //azure
+            var userName = claims.FirstOrDefault(x => x.Type == "unique_name")?.Value ??
+                claims.FirstOrDefault(x => x.Type == "unique_name")?.Value ;
+            if (userName == null)
+            {
+                //adfs
+                userName = claims.FirstOrDefault(x => x.Type == "userPrincipalName")?.Value ??
+                claims.FirstOrDefault(x => x.Type == "userPrincipalName")?.Value;
+            }
             var user = new ApplicationUser
             {
-                UserName = Guid.NewGuid().ToString(),
+                UserName = userName.Split('@')[0],
+                Tenant = tenant
             };
             var identityResult = await _userManager.CreateAsync(user);
             if (!identityResult.Succeeded) throw new Exception(identityResult.Errors.First().Description);
