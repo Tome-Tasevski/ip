@@ -87,6 +87,7 @@ namespace IdentityServerAspNetIdentity.Quickstart
                 };
 
                 samlOptions = BuildSamlOptions(samlConfig, saml2SpOptions, saml2IdpOptions);
+                samlOptions.TimeComparisonTolerance = 15;
             }
 
             if (await _schemeProvider.GetSchemeAsync(scheme) == null)
@@ -140,7 +141,7 @@ namespace IdentityServerAspNetIdentity.Quickstart
                     NameClaimType = JwtClaimTypes.Subject,
                     RoleClaimType = JwtClaimTypes.Role,
                 },
-                //SaveTokens = true,
+                SaveTokens = true,
                 CallbackPath = $"/signin-oidc-{config.TenantId}"
             };
         }
@@ -154,7 +155,7 @@ namespace IdentityServerAspNetIdentity.Quickstart
                 IdentityProviderOptions = idpOptions,
                 ServiceProviderOptions = spOptions,
 
-                SaveTokens = true,
+                //SaveTokens = true,
                 NameIdClaimType = "sub",
                 CallbackPath = $"/signin-saml-{config.TenantId}",
                 SignInScheme = "idsrv.external",

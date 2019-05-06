@@ -120,7 +120,7 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             {
                 //this client.Id == 4 shoudl be dinamic !!!
                 client.RedirectUris.Add(new ClientRedirectUri() { Client = client, RedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 4 ? "44372" : "44334")}/signin-oidc-{tenant.TenantId}" });
-                client.PostLogoutRedirectUris.Add(new ClientPostLogoutRedirectUri() { Client = client, PostLogoutRedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 1 ? "44372" : "44334")}/signout-callback-oidc-{tenant.TenantId}" });
+                client.PostLogoutRedirectUris.Add(new ClientPostLogoutRedirectUri() { Client = client, PostLogoutRedirectUri = $"https://{tenant.Name}.localhost:{(client.Id == 4 ? "44372" : "44334")}/signout-callback-oidc-{tenant.TenantId}" });
                 _configurationDbContext.Clients.Attach(client).State = EntityState.Modified;
             }
             _configurationDbContext.SaveChanges();
