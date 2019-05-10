@@ -4,14 +4,9 @@
 
 using System.Collections.Generic;
 using System.Security.Claims;
-using System.Security.Cryptography.X509Certificates;
-using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
-using IdentityServer4.Quickstart.UI;
-using IdentityServer4.Saml;
 using IdentityServer4.Saml.Models;
-using IdentityServer4.Test;
 
 namespace IdentityServerAspNetIdentity
 {

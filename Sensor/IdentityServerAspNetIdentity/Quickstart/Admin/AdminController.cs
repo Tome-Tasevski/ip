@@ -49,7 +49,7 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             }
         }
 
-        [HttpPost("Add Role")]
+        [HttpPost("add-role")]
         public async Task<IActionResult> AddRoleToUserAsync(string name)
         {
             try
@@ -63,7 +63,7 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             }
         }
 
-        [HttpPost("Add User")]
+        [HttpPost("add-user")]
         public async Task<IActionResult> AddUserAsync(NewUser user, string tennat)
         {
             var tenant = _repo.GetTenant(tennat);
@@ -85,7 +85,7 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             }
         }
 
-        [HttpPost("Add Role to User")]
+        [HttpPost("add-role-to-user")]
         public async Task<IActionResult> AddRoleToUserAsync(NewRoleToUser role, string userName)
         {
             try
@@ -99,7 +99,7 @@ namespace IdentityServerAspNetIdentity.Quickstart.Admin
             }
         }
 
-        [HttpPost("Remove user's role")]
+        [HttpPost("remove-users-role")]
         public async Task<IActionResult> RemoveUserRole(string userName, string role)
         {
             try
