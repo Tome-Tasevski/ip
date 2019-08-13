@@ -32,6 +32,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.IdentityModel.Logging;
 using IdentityModel;
 using Swashbuckle.AspNetCore.Swagger;
+using IdentityServer4.Saml.Caching;
 
 namespace IdSrv
 {
@@ -54,7 +55,6 @@ namespace IdSrv
             services.AddDbContext<IS4DbContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddHttpContextAccessor();
-
             services
                 .AddIdentityServer()
                 .AddConfigurationStore(options =>
@@ -75,7 +75,7 @@ namespace IdSrv
                 .AddSigningCredential(new X509Certificate2("idsrv3test.pfx", "idsrv3test"))
                 .AddSamlPlugin(options => {
                     options.Licensee = "Demo";
-                    options.LicenseKey = "eyJTb2xkRm9yIjowLjAsIktleVByZXNldCI6NiwiU2F2ZUtleSI6ZmFsc2UsIkxlZ2FjeUtleSI6ZmFsc2UsImF1dGgiOiJERU1PIiwiZXhwIjoiMjAxOS0wNS0xMVQwMTowMDowMC45Njc1MTI5KzAxOjAwIiwiaWF0IjoiMjAxOS0wNC0xMVQwMDowMDowMC4wMDA1MTI5Iiwib3JnIjoiREVNTyIsImF1ZCI6Mn0=.PKaOIARp3KB5GYWCoBXkJHOSqpGg2BcPpQX9/N/4SJ9rFyI3CLGILF/qrQzWBBUdTTKxMGU4LaPToCQE3XAF1M4Ikh8QCYNMsS2o5OlfO2+sqmVvI6Y8ucjMgwPnEigFW+q1+mZbWHlqPto0OsHhSjX8PgZb+g8nsWbGb5MLSAaM+8bLgcghizj3xZctr6QyOI0a9p9VThzPSNi4hKEyPBZ/EOjt7Qxh2R4TVsY9TnbeTIRT+P9yGXGQoJqmIIqVhlMu7v6Qe0hV1orgLKonJpqQVRsYUK/rl9ygyMV7lfB3KQ4k3EwqsUFF9OclMF+DZBNa1YOfqBmYnVebQWmpvkqxh/RiEiRrh+ERoGDNrOBgPbPlNj80dxy37rkqZSFyNg6su3F7v3ZyjFyS9kVha0HsnhkvN8Kz14myzokxwiBe2BVDy7ErzXajhP3q8a04SP6qL22mO9uBwAppHPD7UOU88+CC3GHVD5NmSjzMwN2sNzgExjOQ4dFDjvfcz9byilMUPCW1o3vRcIVA7CJx7F28ZYQFw/LuBlTPcZ9LlkWq1LptZR1KeusKX5vcz5QvWj7F+uO1fA2uwrUSdghGGkHbfLrh6OJmUFUD8HGm0N83ydLQKaEMMJgeA4T3ox19zycws7RdrZ6uLX2hTySCZ5xjf6eUu97QDxxd/LEnQvU=";
+                    options.LicenseKey = "eyJTb2xkRm9yIjowLjAsIktleVByZXNldCI6NiwiU2F2ZUtleSI6ZmFsc2UsIkxlZ2FjeUtleSI6ZmFsc2UsImF1dGgiOiJERU1PIiwiZXhwIjoiMjAxOS0wOS0xMlQwMTowMDowMS4wODkwNTkzKzAxOjAwIiwiaWF0IjoiMjAxOS0wOC0xM1QwMDowMDowMS4wMDAwNTkzIiwib3JnIjoiREVNTyIsImF1ZCI6Mn0=.aIIw1/atlaiBci5zSxPIhdinI7tEmBZYK3Xuhe19a5twDeSzRm/i57gWpMMu/2x8O40nfAi9yk2Gbpadzv8RpOxaF5+OnnIcg4yevKLipJKZJ9bBDDC78Yl/nkhM6N65e18haUmgO/l8EYeRpYNTBE7dNGK2wZJAyqDpWpBYQ8tbCvfjchj5GGqudqFT/YLNuHn1y0Ps7mP4rh4V5G7TyIaY9QfW3ZMGJGtOQyjvTzlc02IZrw6idhRpNNazMqZAFnUKUV+bR//jyx1uBkz1H+hF0eslQt9Wt9yse3JAZi/D4oUTFyPOfzzhGkW2ceftX8tmYEWE/lPjQ3+xonKX+XNxJEXjib6d6GkTJpALpBniXS6XIKDnDV2h0Bs14lMA+2ddEDBMWVid4ubdUBZBkQLKWfZkPACUd6aBfx001v3QE2YQ9yxzdq0EAWnvEV5EE3NR4sLaNNuYxxMSoBs8ZRovhcT7Yo+o6skNu1cVvGVjOl+YMURdQgc7dPU+NxNG4oekEyW+i9N3RidvZeM1xz8dQipBMCMrrOymLV5hT32N9Y/XX4yC26zbuc5aYoaQKNqF7ZVfbrOa2H4G/Jr3pYj3EWRWfy2xlLDbUSzjcJ4ut2OZFHs5ql2Ut9y/LQ8yB3Impur6h8TpwbziWza/z2j2Gmj3rwKbN0vO2zYQJv4=";
                 })
                 .AddInMemoryServiceProviders(Config.GetServiceProviders());
             IdentityModelEventSource.ShowPII = true;
@@ -155,6 +155,8 @@ namespace IdSrv
             builder.Services.TryAddScoped<ISamlFactory<ISaml2SingleSignOnRequestGenerator>, Saml2SingleSignOnRequestGeneratorFactory>();
             builder.Services.TryAddScoped<ISamlFactory<ISaml2SingleLogoutRequestGenerator>, Saml2SingleLogoutRequestGeneratorFactory>();
             builder.Services.TryAddScoped<ISamlFactory<ISaml2SingleSignOnResponseValidator>, Saml2SingleSignOnResponseValidatorFactory>();
+            builder.Services.TryAddScoped<IReplayDetectionService, ReplayDetectionService>();
+            builder.Services.TryAddScoped<IReplayCache, DistributedReplayCache>();
 
             builder.Services.TryAddScoped<ISamlBindingService, SamlBindingService>();
             builder.Services.TryAddScoped<ISamlSigningService, SamlSigningService>();
